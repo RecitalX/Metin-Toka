@@ -2220,6 +2220,7 @@
     <Content Include="Content\img\instagram\4.jpg" />
     <Content Include="Content\img\instagram\5.jpg" />
     <Content Include="Content\img\instagram\6.jpg" />
+    <Content Include="Content\img\k.gif" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\newslatter.png" />
     <Content Include="Content\img\page-top-bg.jpg" />
@@ -2612,19 +2613,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\SeoHelper.cs" />
-    <Compile Include="Migrations\202007241326338_InitialCreate.cs" />
-    <Compile Include="Migrations\202007241326338_InitialCreate.Designer.cs">
-      <DependentUpon>202007241326338_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007241520337_Olutur.cs" />
-    <Compile Include="Migrations\202007241520337_Olutur.Designer.cs">
-      <DependentUpon>202007241520337_Olutur.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007241529301_ol.cs" />
-    <Compile Include="Migrations\202007241529301_ol.Designer.cs">
-      <DependentUpon>202007241529301_ol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DB-Context\Initializer.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Banner.cs" />
@@ -2695,17 +2683,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\Banner\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007241326338_InitialCreate.resx">
-      <DependentUpon>202007241326338_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007241520337_Olutur.resx">
-      <DependentUpon>202007241520337_Olutur.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007241529301_ol.resx">
-      <DependentUpon>202007241529301_ol.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
