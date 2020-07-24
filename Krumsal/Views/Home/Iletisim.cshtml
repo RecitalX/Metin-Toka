@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Iletisim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Contact -->
+
+<div class="contact mtx">
+    <div class="container">
+        <div class="row">
+
+            <!-- Get in touch -->
+            <div class="col-lg-8 contact_col">
+                <div class="get_in_touch">
+                    <h3 class="section_title">İletişim</h3>
+                    <div class="contact_form_container">
+                        @if (ViewBag.Uyari == "Mesajınız başarı ile gönderilmiştir.")
+                        {
+                            <div class="alert alert-info">@ViewBag.Uyari</div>
+                        }
+                    <form action="/Home/Iletisim/" method="post" role="form" id="contact_form" class="contact_form">
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <!-- Name -->
+                                <label for="contact_name">Ad Soyad*</label>
+                                <input type="text" name="adsoyad" id="adsoyad" class="contact_input" required="required">
+                            </div>
+                            <div class="col-xl-6 last_name_col">
+                                <!-- Last Name -->
+                                <label for="contact_last_name">Email*</label>
+                                <input type="email" name="email" id="email" class="contact_input" required="required">
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Subject -->
+                            <label for="contact_company">Konu</label>
+                            <input type="text" name="konu" id="konu" class="contact_input">
+                        </div>
+                        <div>
+                            <label for="contact_textarea">Mesaj*</label>
+                            <textarea id="contact_textarea" name="mesaj" class="contact_input contact_textarea" required="required"></textarea>
+                        </div>
+                        <button type="submit" class="button contact_button"><span style="color:black">Gönder</span></button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+            @{ 
+                Html.RenderAction("IletisimPartial", "Home");
+            }
+        </div>
+        
+    </div>
+</div>
+

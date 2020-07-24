@@ -1,0 +1,49 @@
+﻿@model Kurumsal.Models.HizmetKategori
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <div class="container">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h3>Kategoriyi Güncelle</h3>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.HizmetKategoriId)
+
+            <div class="form-group">
+                <div class = "control-label col-md-2">Kategori Adı</div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HizmetKategoriAdi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HizmetKategoriAdi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class = "control-label col-md-2">Açıklama</div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Aciklama, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Aciklama, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Güncelle" class="btn btn-primary" />
+
+                    @Html.ActionLink("Listeye Dön", "Index",null, new { @class ="btn btn-warning"})
+
+                </div>
+
+            </div>
+        </div>
+
+        }
+        
+    </div>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Kurumsal.Models.Hizmet>
+@{ 
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    <div class="col-lg-4 col-md-6">
+        <div class="recipe">
+            <img src="@item.ResimURL" alt="">
+            <div class="recipe-info-warp">
+                <div class="recipe-info">
+                    <h3>@item.Baslik</h3>
+                    <div class="rating">
+                        <h3>@item.UrunKodu</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,209 @@
+﻿@using System.Web.Optimization
+@{
+    if (Session["adminid"] == null)
+    {
+        Response.Redirect("/yonetimpaneli/giris/");
+    }
+
+    string ControllerAdi = ViewContext.RouteData.GetRequiredString("controller");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin Panel</title>
+    <link href="~/Content/Admin Panel/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+
+    @Styles.Render("~/css/adminlayout")
+
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/Admin Panel/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Content/Admin Panel/vendor/jquery/jquery.min.js"></script>
+
+    @Scripts.Render("~/script/adminlayout")
+
+</head>
+
+<body id="page-top">
+
+    <div id="wrapper">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/yonetimpaneli">
+                    <i class="fas fa-home"></i>
+                    <span>Yönetim Paneli</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Banner/Index">
+                    <i class="fas fa-ad"></i>
+                    <span>Banner</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Kimlik/Index">
+                    <i class="fas fa-id-card"></i>
+                    <span>Site Kimlik</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Iletisim/Index">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>İletişim</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fab fa-product-hunt"></i>
+                    <span>
+                        Ürün
+                    </span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/HizmetKategori/Index">
+                            <i class="fas fa-swatchbook"></i>
+                            Kategoriler
+                        </a>
+
+                        <a class="collapse-item" href="/Hizmet/Index">
+                            <i class="fab fa-product-hunt"></i>
+                            Ürünler
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                @if (ViewBag.YorumOnay == 0)
+                                {
+                                    <span class="badge badge-danger badge-counter"></span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-danger badge-counter">@ViewBag.YorumOnay</span>
+                                }
+
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in text-center" aria-labelledby="alertsDropdown">
+                                @if (ViewBag.YorumOnay == 0)
+                                {
+                                    <h6 class="dropdown-header">
+                                        Bekleyen Yorum Bulunmamaktadır
+                                    </h6>
+                                }
+                                else
+                                {
+                                    <h6 class="dropdown-header">
+                                        Bekleyen @ViewBag.YorumOnay Yorum Bulunmaktadır
+                                    </h6>
+                                    <a class="dropdown-item text-center small text-gray-500" href="/Yorum/Index/">Yorumları onayla</a>
+                                }
+
+
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@Session["eposta"]</span>
+                                <img class="img-profile" src="~/Content/images/product_3.jpg" />
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/Admin/Adminler">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Admin Yönetim
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/Admin/Logout" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Çıkış Yap
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                @RenderBody()
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; @DateTime.Now.Year</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Çıkıyor musun?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">İyi görüşürüz o zaman</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Vazgeçtim</button>
+                    <a class="btn btn-primary" href="/Admin/Logout">Görüşürüz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/script/adminlayout2")
+
+</body>
+
+</html>

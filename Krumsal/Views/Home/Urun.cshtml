@@ -1,0 +1,91 @@
+﻿@model IPagedList<Kurumsal.Models.Hizmet>
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Hero section -->
+<section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
+    <div class="container">
+        <h2>Ürünler</h2>
+    </div>
+</section>
+<!-- Hero section end -->
+<!-- Search section -->
+<div class="search-form-section">
+    <div class="sf-warp">
+        <div class="container">
+            <form class="big-search-form">
+                <select>
+                    <option>Kategori Seçiniz</option>
+                    @*@{
+                        Html.RenderAction("KategoriListesi", "Home");
+                    }*@
+                </select>
+                @*<select>
+                    <option>All Ingredients</option>
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                </select>*@
+                <input type="text" placeholder="Search Receipies">
+                <button class="bsf-btn">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Search section end -->
+<!-- Recipes section -->
+<section class="recipes-page spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-title">
+                    <h2>Tüm Ürünlerimiz</h2>
+                </div>
+            </div>
+     
+        </div>
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="recipe">
+                        <img src="@item.ResimURL" alt="">
+                        <div class="recipe-info-warp">
+                            <div class="recipe-info">
+                                <h3>@item.Baslik</h3>
+                                <div class="rating">
+                                    <h3>@item.UrunKodu</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="site-pagination">
+            <span>01</span>
+            <a href="#">02</a>
+            <a href="#">03</a>
+        </div>
+    </div>
+</section>
+<!-- Recipes section end -->
+<!-- Gallery section -->
+<div class="gallery">
+    <div class="gallery-slider owl-carousel">
+        <div class="gs-item set-bg" data-setbg="img/instagram/1.jpg"></div>
+        <div class="gs-item set-bg" data-setbg="img/instagram/2.jpg"></div>
+        <div class="gs-item set-bg" data-setbg="img/instagram/3.jpg"></div>
+        <div class="gs-item set-bg" data-setbg="img/instagram/4.jpg"></div>
+        <div class="gs-item set-bg" data-setbg="img/instagram/5.jpg"></div>
+        <div class="gs-item set-bg" data-setbg="img/instagram/6.jpg"></div>
+    </div>
+</div>
+<!-- Gallery section end -->

@@ -1,0 +1,41 @@
+﻿@model Kurumsal.Models.Hizmet
+@{
+    ViewBag.Title = "HizmetDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="product_details py-5">
+        <div class="container">
+            <div class="row details_row">
+
+                <!-- Product Image -->
+                <div class="col-lg-6">
+                    <div class="details_image">
+                        <div class="details_image_large">
+                            <img src="@Model.ResimURL" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Product Content -->
+                <div class="col-lg-6">
+
+                    <div class="details_text">
+                        <h2>@Model.Baslik</h2>
+                        <p>
+                           @Html.Raw(Model.Icerik)
+                        </p>
+                    </div>
+
+                    <!-- Share -->
+                    <div class="details_share">
+
+                        <h3 class="mt-4">
+                            <div class="badge badge-primary">@Model.UrunKodu</div>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

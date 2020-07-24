@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Kurumsal.Models.Banner>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="m-4">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Hakkımızda</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Banner1)
+                        </th>
+                        <th>
+                            Resim-1
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Banner2)
+                        </th>
+                        <th>
+                           Resim-2
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Banner3)
+                        </th>
+                        <th>
+                            Resim-3
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>
+                        @Html.Raw( item.Banner1)
+                    </td>
+                    <td>
+                        <img class="img-responsive" src="@item.ResimURL1" width="125" height="125" />
+                    </td>
+                    <td>
+                        @Html.Raw( item.Banner2)
+                    </td>
+                    <td>
+                        <img class="img-responsive" src="@item.ResimURL2" width="125" height="125" />
+                    </td>
+                    <td>
+                        @Html.Raw( item.Banner3)
+                    </td>
+                    <td>
+                        <img class="img-responsive" src="@item.ResimURL3" width="125" height="125" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }, new { @class = " btn btn-primary" })
+                    </td>
+                </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

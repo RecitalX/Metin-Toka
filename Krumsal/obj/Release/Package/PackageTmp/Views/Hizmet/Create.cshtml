@@ -1,0 +1,71 @@
+﻿@model Kurumsal.Models.Hizmet
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script type="text/javascript">CKEDITOR.replace('editor')</script>
+
+<div class="container">
+
+    @using (Html.BeginForm("Create", "Hizmet", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h3>Ürün Ekle</h3>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group ">
+                <label for="cname" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="Baslik" name="Baslik" type="text" required />
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label for="cemail" class="control-label col-lg-2">İçerik <span class="required">*</span></label>
+                <div class="col-lg-10">
+                    <textarea class="ckeditor" name="Icerik">İçerik</textarea>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label for="curl" class="control-label col-lg-2">Resim</label>
+                <div class="col-lg-10">
+                    <input required type="file" class="form-control" name="ResimURL" accept=".jpg,.png,.jpeg" />
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label for="cemail" class="control-label col-lg-2">Kategori <span class="required">*</span></label>
+                <div class="col-lg-10">
+                    @Html.DropDownList("HizmetKategoriId", null, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label for="cname" class="control-label col-lg-2">Urun Kodu <span class="required">*</span></label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="UrunKodu" name="UrunKodu" type="text" required />
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label for="cname" class="control-label col-lg-2">Renk <span class="required">*</span></label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="Renk" name="Renk" type="text" required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Ekle" class="btn btn-primary" />
+                    @Html.ActionLink("İptal", "Index", null, new { @class = "btn btn-danger" })
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
