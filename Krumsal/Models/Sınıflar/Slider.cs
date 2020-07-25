@@ -12,10 +12,10 @@ namespace Kurumsal.Models.Sınıflar
     {
         public int ID { get; set; }
 
-        [StringLength(200)]
+        [StringLength(100)]
         public string Baslik { get; set; }
-        
-        [StringLength(300)]
+
+        [StringLength(100)]
         public string Aciklama { get; set; }
 
         [StringLength(500)]

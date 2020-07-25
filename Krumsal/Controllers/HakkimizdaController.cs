@@ -1,11 +1,12 @@
 ﻿using Kurumsal.Models;
+using Kurumsal.Models.Sınıflar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Krumsal.Controllers
+namespace Kurumsal.Controllers
 {
     public class HakkimizdaController : Controller
     {

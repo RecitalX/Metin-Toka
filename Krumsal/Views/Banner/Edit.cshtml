@@ -21,34 +21,35 @@
 
         <div class="form-group">
             <div class="control-label col-md-2 mb-3">
-                Başılk
+                Başlık
             </div>
             <div class="col-md-10">
-                <textarea name="Baslik" class="ckeditor">@Model.Baslik</textarea>
+                <input class="form-control" name="Baslik" required placeholder="Banner başlık">
+                <input type="hidden" name="Baslik" value="@Model.Baslik" />
             </div>
             <div class="control-label col-md-2 mb-3">
                 Açıklama
             </div>
             <div class="col-md-10">
-                <textarea name="Aciklama" class="ckeditor">@Model.Aciklama</textarea>
+                <input class="form-control" name="Aciklama" required placeholder="Banner açıklama">
+                <input type="hidden" name="Aciklama" value="@Model.Aciklama" />
             </div>
             <div class="control-label col-md-2 mb-3">
-                Resimin gideceği adres
+                Gideceği yer
             </div>
             <div class="col-md-10">
-                <textarea name="Url" class="ckeditor">@Model.Url</textarea>
+                <input class="form-control" name="Url" required placeholder="Resme tıklandığı zaman gidecek url giriniz">
+                <input type="hidden" name="Url" value="@Model.Url" />
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="control-label col-md-2 mb-3">
-                Resim
+            <div class="form-group">
+                @Html.LabelFor(model => model.ResimURL, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" name="ResimURL" accept=".png,.jpg,.jpeg" />
+                    @Html.ValidationMessageFor(model => model.ResimURL, "", new { @class = "text-danger" })
+                </div>
             </div>
-            <div class="col-md-10">
-                <input type="file" name="ResimURL" accept=".png,.jpg,.jpeg" />
-                @Html.ValidationMessageFor(model => model.ResimURL, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">

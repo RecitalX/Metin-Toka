@@ -105,7 +105,7 @@ namespace Kurumsal.Controllers
         public ActionResult Hakkimizda()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-            return View(db.Hakkimizda.ToList());
+            return View();
         }
         #endregion
 

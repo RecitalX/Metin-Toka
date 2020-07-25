@@ -22,9 +22,7 @@
     <div class="text-center">
         @if (TempData["Bilgi"] != null)
         {
-            <h5 class="alert alert-success">
-                @TempData["Bilgi"]
-            </h5>
+            <h5 class="alert alert-success"> @TempData["Bilgi"]</h5>
         }
     </div>
     <div class="card shadow mb-4">
@@ -53,33 +51,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @{ string baslik = "";
-                                        if (item.Baslik.Length > 110)
-                                        {
-                                            baslik = item.Baslik.Substring(0, 110) + "...";
-                                        }
-                                        else
-                                        {
-                                            baslik = @item.Baslik;
-                                        }
-                                    }
-
-                                    @baslik
-                                </td>
-                                <td><img src="@item.ResimURL" width="100" height="100" /></td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.UrunKodu)
-                                </td>
-                                <td width="200" height="100">
-                                    @Html.ActionLink("Güncelle", "Edit", new { id = item.HizmetId }, new { @class = "  btn btn-primary  btn-sm" })
-                                    @Html.ActionLink("Sil", "Delete", new { id = item.HizmetId }, new { @class = " btn btn-danger btn-sm" })
-                                </td>
-                            </tr>
-                        }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Baslik)
+                            </td>
+                            <td><img src="@item.ResimURL" width="100" height="100" /></td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UrunKodu)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Güncelle", "Edit", new { id = item.HizmetId }, new { @class = "  btn btn-primary  btn-sm" }) 
+                                @Html.ActionLink("Sil", "Delete", new { id = item.HizmetId }, new { @class = " btn btn-danger btn-sm" })
+                            </td>
+                        </tr>
+                    }
                     </tbody>
                 </table>
             </div>

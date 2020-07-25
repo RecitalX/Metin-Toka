@@ -57,6 +57,8 @@ namespace Kurumsal.App_Start
 
                 ));
 
+
+
             bundles.Add(new ScriptBundle("~/script/adminlayout2").Include(
                 "~/Content/Admin Panel/vendor/bootstrap/js/bootstrap.bundle.min.js",
                 "~/Content/Admin Panel/js/sb-admin-2.min.js",
@@ -74,7 +76,6 @@ namespace Kurumsal.App_Start
             bundles.Add(new ScriptBundle("~/script/login").Include(
                     "~/Content/Admin Panel/vendor/jquery-easing/jquery.easing.min.js",
                     "~/Content/Admin Panel/vendor/jquery/jquery.min.js",
-                    "~/Scripts/DataTables/jquery.dataTables.js",
                     "~/Scripts/DataTables/dataTables.bootstrap4.js"
                 ));
 

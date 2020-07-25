@@ -1,5 +1,4 @@
-﻿using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
+﻿using Kurumsal.Models.Sınıflar;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,7 +8,7 @@ using System.Web.Helpers;
 
 namespace Kurumsal.Models.DB_Contect
 {
-    public class Initializer:DropCreateDatabaseIfModelChanges<KurumsalDB>
+    public class Initializer : DropCreateDatabaseIfModelChanges<KurumsalDB>
     {
         protected override void Seed(KurumsalDB context)
         {
@@ -42,7 +41,6 @@ namespace Kurumsal.Models.DB_Contect
                 context.Hakkimizda.Add(item);
             }
             context.SaveChanges();
-
             var banner = new List<Banner>()
             {
                 new Banner(){Baslik="Test Verisi",Aciklama="Test Verisi",ResimURL=".JPG"}
@@ -65,10 +63,9 @@ namespace Kurumsal.Models.DB_Contect
 
             Admin admin = new Admin()
             {
-                Eposta = "selahattinfurkanaltun1@gmail.com",
+                Eposta = "isemihbl@gmail.com",
                 Sifre = Crypto.HashPassword("123"),
                 Yetki = "Admin"
-             
             };
             context.Admin.Add(admin);
             context.SaveChanges();

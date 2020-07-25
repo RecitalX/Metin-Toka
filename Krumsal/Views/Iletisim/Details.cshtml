@@ -11,6 +11,14 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
+                @Html.DisplayNameFor(model => model.Adres)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Adres)
+            </dd>
+
+            <dt>
                 @Html.DisplayNameFor(model => model.Telefon)
             </dt>
 
@@ -19,20 +27,13 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.WeChat)
+                @Html.DisplayNameFor(model => model.Email)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.WeChat)
+                @Html.DisplayFor(model => model.Email)
             </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Mail)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Mail)
-            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.Whatsapp)
             </dt>
@@ -40,20 +41,8 @@
             <dd>
                 @Html.DisplayFor(model => model.Whatsapp)
             </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.instagram)
-            </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.instagram)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Fax)
-            </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Fax)
-            </dd>
         </dl>
         <hr />
         <div class="form-group">

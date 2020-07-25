@@ -1,8 +1,14 @@
-﻿@model IEnumerable<Kurumsal.Models.Hakkimizda>
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Hakkimizda>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+    <div class="text-center">
+        @if (TempData["Bilgi"] != null)
+        {
+            <h5 class="alert alert-success"> @TempData["Bilgi"]</h5>
+        }
+    </div>
 <div class="m-4">
     <div class="card shadow mb-4">
         <div class="card-header py-3">

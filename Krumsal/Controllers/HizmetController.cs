@@ -21,7 +21,7 @@ namespace Kurumsal.Controllers
         {
             db.Configuration.LazyLoadingEnabled = false;
             var hizmet = db.Hizmet.Include(h => h.HizmetKategori);
-            return View(hizmet.ToList().OrderByDescending(x=>x.HizmetId));
+            return View(hizmet.ToList().OrderByDescending(x => x.HizmetId));
         }
 
         // GET: Hizmet/Create
@@ -73,7 +73,7 @@ namespace Kurumsal.Controllers
                 db.SaveChanges();
 
             }
-            TempData["Bilgi"] = "Ürün Ekleme İşleminiz Başarılı ";
+            TempData["Bilgi"] = "Ürün ekleme işlemi başarılı";
             return RedirectToAction("Index");
         }
 
@@ -143,7 +143,8 @@ namespace Kurumsal.Controllers
             mkl.Aciklama = m.Aciklama;
             mkl.HizmetKategoriId = m.HizmetKategoriId;
             db.SaveChanges();
-            TempData["Bilgi"] = "Ürün Güncelleme İşleminiz Başarılı ";
+            TempData["Bilgi"] = "Ürün güncelleme işlemi başarılı";
+
             return RedirectToAction("Index", "Hizmet");
         }
 
@@ -170,7 +171,7 @@ namespace Kurumsal.Controllers
 
             db.Hizmet.Remove(hizmet);
             db.SaveChanges();
-            TempData["Bilgi"] = "Ürün Silme İşleminiz Başarılı ";
+            TempData["Bilgi"] = "Ürün silme işlemi başarılı";
             return RedirectToAction("Index", "Hizmet");
         }
         [HttpPost]
@@ -193,7 +194,7 @@ namespace Kurumsal.Controllers
             }
             db.Hizmet.Remove(mkl);
             db.SaveChanges();
-
+            TempData["Bilgi"] = "Ürün silme işlemi başarılı";
             return RedirectToAction("Index", "Hizmet");
         }
     }

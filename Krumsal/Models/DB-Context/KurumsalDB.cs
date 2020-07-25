@@ -6,7 +6,6 @@ namespace Kurumsal.Models
     using System.Linq;
     using Kurumsal.Models.DB_Contect;
     using Kurumsal.Models.Sýnýflar;
-    using Kurumsal.Models;
 
     public partial class KurumsalDB : DbContext
     {
@@ -17,8 +16,8 @@ namespace Kurumsal.Models
         }
 
         public virtual DbSet<Admin> Admin { get; set; }
-        public virtual DbSet<Slider> Slider { get; set; }
         public virtual DbSet<Hakkimizda> Hakkimizda { get; set; }
+        public virtual DbSet<Slider> Slider { get; set; }
         public virtual DbSet<Banner> Banner { get; set; }
         public virtual DbSet<Hizmet> Hizmet { get; set; }
         public virtual DbSet<HizmetKategori> HizmetKategori { get; set; }

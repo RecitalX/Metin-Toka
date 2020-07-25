@@ -2251,6 +2251,7 @@
     <Content Include="Content\img\thumb\7.jpg" />
     <Content Include="Content\img\thumb\8.jpg" />
     <Content Include="Content\img\thumb\9.jpg" />
+    <Content Include="Content\img\WhatsApp Image 2020-07-25 at 20.40.37.jpeg" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\circle-progress.min.js" />
     <Content Include="Content\js\jquery-3.2.1.min.js" />
@@ -2614,18 +2615,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\SeoHelper.cs" />
-<<<<<<< HEAD
-    <Compile Include="Migrations\202007251447197_InitialCreate.cs" />
-    <Compile Include="Migrations\202007251447197_InitialCreate.Designer.cs">
-      <DependentUpon>202007251447197_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007251456559_Güncelleme.cs" />
-    <Compile Include="Migrations\202007251456559_Güncelleme.Designer.cs">
-      <DependentUpon>202007251456559_Güncelleme.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-=======
->>>>>>> b1135670cb3267f3ce4ca9c29cfd5f29cb253cfd
     <Compile Include="Models\DB-Context\Initializer.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Banner.cs" />
@@ -2698,17 +2687,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\Banner\" />
   </ItemGroup>
-<<<<<<< HEAD
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007251447197_InitialCreate.resx">
-      <DependentUpon>202007251447197_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007251456559_Güncelleme.resx">
-      <DependentUpon>202007251456559_Güncelleme.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-=======
->>>>>>> b1135670cb3267f3ce4ca9c29cfd5f29cb253cfd
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

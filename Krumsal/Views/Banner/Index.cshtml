@@ -7,9 +7,7 @@
 <div class="text-center">
     @if (TempData["Bilgi"] != null)
     {
-        <h5 class="alert alert-success">
-            @TempData["Bilgi"]
-        </h5>
+        <h5 class="alert alert-success"> @TempData["Bilgi"]</h5>
     }
 </div>
 <div class="m-4">
@@ -40,23 +38,23 @@
 
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.Raw(item.Baslik)
-                            </td>
-                            <td>
-                                @Html.Raw(item.Aciklama)
-                            </td>
-                            <td>
-                                @Html.Raw(item.Url)
-                            </td>
-                            <td>
-                                <img class="img-responsive" src="@item.ResimURL" width="125" height="125" />
-                            </td>
-                            <td>
-                                @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }, new { @class = " btn btn-primary" })
-                            </td>
-                        </tr>
+                <tr>
+                    <td>
+                        @Html.Raw(item.Baslik)
+                    </td>
+                    <td>
+                        @Html.Raw(item.Aciklama)
+                    </td>
+                    <td>
+                        @Html.Raw(item.Url)
+                    </td>
+                    <td>
+                        <img class="img-responsive" src="@item.ResimURL" width="125" height="125" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }, new { @class = " btn btn-primary" })
+                    </td>
+                </tr>
                     }
 
                 </table>

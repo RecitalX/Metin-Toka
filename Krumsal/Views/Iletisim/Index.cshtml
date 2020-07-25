@@ -4,14 +4,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<div class="text-center">
-    @if (TempData["Bilgi"] != null)
-    {
-        <h5 class="alert alert-success">
-            @TempData["Bilgi"]
-        </h5>
-    }
-</div>
+    <div class="text-center">
+        @if (TempData["Bilgi"] != null)
+        {
+            <h5 class="alert alert-success"> @TempData["Bilgi"]</h5>
+        }
+    </div>
 <div class="m-4">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -44,31 +42,30 @@
 
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Telefon)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Mail)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.WeChat)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Whatsapp)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.instagram)
-                            </td>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WeChat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Whatsapp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.instagram)
+                    </td>
 
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Fax)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Güncelle", "Edit", new { id = item.IletisimId }, new { @class = " btn btn-primary btn-sm" })
-                                @Html.ActionLink("Detay", "Details", new { id = item.IletisimId }, new { @class = " btn btn-warning btn-sm" })
-                            </td>
-                        </tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fax)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Detay", "Details", new { id = item.IletisimId }, new { @class = " btn btn-warning btn-sm" })
+                    </td>
+                </tr>
                     }
 
                 </table>

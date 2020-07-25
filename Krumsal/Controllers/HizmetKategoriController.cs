@@ -42,9 +42,7 @@ namespace Kurumsal.Controllers
             return View();
         }
 
-        // POST: HizmetKategori/Create
-        // Aşırı gönderim saldırılarından korunmak için, lütfen bağlamak istediğiniz belirli özellikleri etkinleştirin, 
-        // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "HizmetKategoriId,HizmetKategoriAdi,Aciklama")] HizmetKategori hizmetKategori)
@@ -53,7 +51,7 @@ namespace Kurumsal.Controllers
             {
                 db.HizmetKategori.Add(hizmetKategori);
                 db.SaveChanges();
-                TempData["Bilgi"] = "Kategori Ekleme İşleminiz Başarılı ";
+                TempData["Bilgi"] = "Kategori ekleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
 
@@ -86,7 +84,7 @@ namespace Kurumsal.Controllers
             {
                 db.Entry(hizmetKategori).State = EntityState.Modified;
                 db.SaveChanges();
-                TempData["Bilgi"] = "Kategori Güncelleme İşleminiz Başarılı ";
+                TempData["Bilgi"] = "Kategori güncelleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
             return View(hizmetKategori);
@@ -116,7 +114,7 @@ namespace Kurumsal.Controllers
                 TempData["DeleteMessage"] = "failed : " + ex.Message;
                 TempData["DeleteMessage1"] = "Hata : " + "Bu kategoriyi kullanan ürün varken bu kategoriyi silemezsiniz.";
             }
-            TempData["Bilgi"] = "Kategori Silme İşleminiz Başarılı ";
+            TempData["Bilgi"] = "Kategori silme işlemi başarılı";
             return RedirectToAction("Index", "HizmetKategori");
         }
 

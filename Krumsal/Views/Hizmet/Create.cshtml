@@ -18,44 +18,44 @@
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group ">
-                <label for="cname" class="control-label col-lg-2">Başlık<span class="required"></span></label>
+                <label for="cname" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
                 <div class="col-lg-10">
-                    <input class="form-control" placeholder="Ürünün Adını Giriniz" id="Baslik" name="Baslik" type="text" required />
+                    <input class="form-control" id="Baslik" name="Baslik" type="text" required />
                 </div>
             </div>
 
             <div class="form-group ">
-                <label for="cemail" class="control-label col-lg-2">Ürün Açıklaması <span class="required"></span></label>
+                <label for="cemail" class="control-label col-lg-2">İçerik <span class="required">*</span></label>
                 <div class="col-lg-10">
-                    <textarea class="ckeditor" placeholder="Ürün hakkında açıklmasını yazınız" name="Icerik"></textarea>
+                    <textarea class="ckeditor" name="Icerik"></textarea>
                 </div>
             </div>
 
             <div class="form-group ">
                 <label for="curl" class="control-label col-lg-2">Resim</label>
                 <div class="col-lg-10">
-                    <input required type="file" placeholder="Dosya seçiniz"      name="ResimURL" accept=".jpg,.png,.jpeg" />
+                    <input required type="file" class="form-control" name="ResimURL" accept=".jpg,.png,.jpeg" />
                 </div>
             </div>
 
             <div class="form-group ">
-                <label for="cemail" class="control-label col-lg-2">Kategori <span class="required"></span></label>
+                <label for="cemail" class="control-label col-lg-2">Kategori <span class="required">*</span></label>
                 <div class="col-lg-10">
                     @Html.DropDownList("HizmetKategoriId", null, new { @class = "form-control" })
                 </div>
             </div>
 
             <div class="form-group ">
-                <label for="cname" class="control-label col-lg-2">Urun Kodu <span class="required"></span></label>
+                <label for="cname" class="control-label col-lg-2">Urun Kodu <span class="required">*</span></label>
                 <div class="col-lg-10">
-                    <input class="form-control" placeholder="Ürünün Kodunu Giriniz " id="UrunKodu" name="UrunKodu" type="text" required />
+                    <input class="form-control" id="UrunKodu" name="UrunKodu" type="text" required />
                 </div>
             </div>
 
             <div class="form-group ">
-                <label for="cname" class="control-label col-lg-2">Renk <span class="required"></span></label>
+                <label for="cname" class="control-label col-lg-2">Renk <span class="required">*</span></label>
                 <div class="col-lg-10">
-                    <input class="form-control" placeholder="Renkleri virgül ile ayırınız " id="Renk" name="Renk" type="text" required />
+                    <input class="form-control" id="Renk" name="Renk" type="text" required />
                 </div>
             </div>
 

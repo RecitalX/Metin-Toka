@@ -19,22 +19,7 @@ namespace Kurumsal.Controllers
             return View(db.Slider.ToList().OrderByDescending(x => x.ID));
         }
 
-        // GET: Slider/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Slider slider = db.Slider.Find(id);
-            if (slider == null)
-            {
-                return HttpNotFound();
-            }
-            return View(slider);
-        }
 
-        // GET: Slider/Create
         public ActionResult Create()
         {
             return View();
@@ -57,7 +42,7 @@ namespace Kurumsal.Controllers
                 }
                 db.Slider.Add(slider);
                 db.SaveChanges();
-                TempData["Bilgi"] = "Slider Ekleme İşleminiz Başarılı ";
+                TempData["Bilgi"] = "Slider ekleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
 
@@ -107,7 +92,7 @@ namespace Kurumsal.Controllers
                 s.Baslik = slider.Baslik;
                 s.Aciklama = slider.Aciklama;
                 db.SaveChanges();
-                TempData["Bilgi"] = "Ürün Güncelleme İşleminiz Başarılı ";
+                TempData["Bilgi"] = "Slider güncelleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
             return View(slider);
@@ -126,7 +111,7 @@ namespace Kurumsal.Controllers
             }
             db.Slider.Remove(slider);
             db.SaveChanges();
-            TempData["Bilgi"] = "Ürün Silme İşleminiz Başarılı ";
+            TempData["Bilgi"] = "Slider silme işlemi başarılı";
             return RedirectToAction("Index");
         }
 
