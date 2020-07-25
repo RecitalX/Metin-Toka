@@ -1,29 +1,67 @@
 ﻿
-@{
-    ViewBag.Title = "Hakkimizda";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
-<div class="general" style="background-color:white;">
-    <div class="container pb-5">
-        <div style="width: 100%;">
-            <div class="imgCenter">
-                <img width="200" class="imageAbout" src="~/Content/images/birlikdüğme.jpg" />
+    <section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
+        <div class="container">
+            <h2>Hakkımızda</h2>
+        </div>
+    </section>
+
+<section class="about-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 about-text">
+                <h2>About our great team</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magni. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et magni.</p>
+                <div class="site-btn">Read more</div>
             </div>
-            <p class="descriptionAbout text-justify">
-                Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.
-                Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı o
-                luşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden ber
-                i endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl b
-                oyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elek
-                tronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içer
-                en Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageM
-                aker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları
-                ile popüler olmuştur.
-
-
-            </p>
+            <div class="col-lg-6">
+                <img src="~/Content/img/about.jpg" />
+            </div>
         </div>
     </div>
+</section>
+<!-- About section end -->
+<!-- Facts section -->
+<section class="facts-section">
+    <div class="facts-warp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 fact-item">
+                    <div class="fact-icon">
+                        <i style="font-size:60px;" class="fas fa-people-carry"></i>
 
-</div>
+                    </div>
+                    <h2>1287</h2>
+                    <p>Ekip Üyesi Sayımız</p>
+                </div>
+                <div class="col-lg-3 col-sm-6 fact-item">
+                    <div class="fact-icon">
+                        <i style="font-size:60px;" class="fas fa-building"></i>
+
+
+                    </div>
+                    <h2>25</h2>
+                    <p>Şube Sayımız</p>
+                </div>
+                <div class="col-lg-3 col-sm-6 fact-item">
+                    <div class="fact-icon">
+                        <i style="font-size:60px;" class="fab fa-product-hunt"></i>
+
+                    </div>
+                    <h2>471</h2>
+                    <p>Günlük Üretim Adetimiz</p>
+                </div>
+                <div class="col-lg-3 col-sm-6 fact-item">
+                    <div class="fact-icon">
+                        <i style="font-size:60px;" class="fas fa-building"></i>
+                    </div>
+                    <h2>326</h2>
+                    <p>Desert receipies</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Facts section end -->

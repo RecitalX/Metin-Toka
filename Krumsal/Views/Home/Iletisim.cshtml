@@ -1,59 +1,80 @@
 ﻿
-@{
-    ViewBag.Title = "Iletisim";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Iletisim";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
+<section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
+    <div class="container">
+        <h2>İletişim</h2>
+    </div>
+</section>
 
-<!-- Contact -->
-
-<div class="contact mtx">
+<section class="contact-section spad">
     <div class="container">
         <div class="row">
-
-            <!-- Get in touch -->
-            <div class="col-lg-8 contact_col">
-                <div class="get_in_touch">
-                    <h3 class="section_title">İletişim</h3>
-                    <div class="contact_form_container">
-                        @if (ViewBag.Uyari == "Mesajınız başarı ile gönderilmiştir.")
-                        {
-                            <div class="alert alert-info">@ViewBag.Uyari</div>
-                        }
-                    <form action="/Home/Iletisim/" method="post" role="form" id="contact_form" class="contact_form">
+            <div class="col-lg-8">
+                <div class="contact-form-warp">
+                    <h4>Bize ulaşın!</h4>
+                    <form class="contact-form" action="/Home/Iletisim/" method="post" role="form">
                         @Html.AntiForgeryToken()
                         <div class="row">
-                            <div class="col-xl-6">
-                                <!-- Name -->
-                                <label for="contact_name">Ad Soyad*</label>
-                                <input type="text" name="adsoyad" id="adsoyad" class="contact_input" required="required">
+                            <div class="col-md-6">
+                                <input type="text" name="adsoyad" id="adsoyad" placeholder="İsim" required>
                             </div>
-                            <div class="col-xl-6 last_name_col">
-                                <!-- Last Name -->
-                                <label for="contact_last_name">Email*</label>
-                                <input type="email" name="email" id="email" class="contact_input" required="required">
+                            <div class="col-md-6">
+                                <input type="text" name="email" id="email" placeholder="E-mail" required>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="text" name="konu" id="konu" placeholder="Konu" required>
+                                <textarea name="mesaj" placeholder="Mesaj" required></textarea>
+                                <button type="submit" class="site-btn">Gönder</button>
                             </div>
                         </div>
-                        <div>
-                            <!-- Subject -->
-                            <label for="contact_company">Konu</label>
-                            <input type="text" name="konu" id="konu" class="contact_input">
-                        </div>
-                        <div>
-                            <label for="contact_textarea">Mesaj*</label>
-                            <textarea id="contact_textarea" name="mesaj" class="contact_input contact_textarea" required="required"></textarea>
-                        </div>
-                        <button type="submit" class="button contact_button"><span style="color:black">Gönder</span></button>
                     </form>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="contact-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="contact-info">
+                    <ul class="ct-list">
+                        <li>
+                            <h6>Adres:</h6>
+                            <p>481 Creekside Lane Avila</p>
+                            <p>Beach, CA 93424</p>
+                        </li>
+                        <li>
+                            <h6>Telefon:</h6>
+                            <p>+53 345 7953 32453</p>
+                            <p>+53 345 7557 822112</p>
+                        </li>
+                        <li>
+                            <h6>Email:</h6>
+                            <p>yourmail@gmail.com</p>
+                        </li>
+                    </ul>
+                    <div class="contact-social">
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
-
-            @{ 
-                Html.RenderAction("IletisimPartial", "Home");
-            }
         </div>
-        
+        <!-- map -->
+        <div class="location-map" id="map-canvas"></div>
     </div>
-</div>
+</section>
+
+
+
+
+
+
+
+
+
 
