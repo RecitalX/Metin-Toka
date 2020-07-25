@@ -22,14 +22,16 @@
 
     <title>Admin Panel</title>
     <link href="~/Content/Admin Panel/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
-
+    @*<link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />*@
+    <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
     @Styles.Render("~/css/adminlayout")
 
     <script src="~/Content/ckeditor/ckeditor.js"></script>
     <script src="~/Content/Admin Panel/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="~/Content/Admin Panel/vendor/jquery/jquery.min.js"></script>
 
-    @Scripts.Render("~/script/adminlayout")
+    @*@Scripts.Render("~/script/adminlayout")*@
 
 </head>
 
@@ -49,6 +51,21 @@
                 <a class="nav-link" href="/Banner/Index">
                     <i class="fas fa-ad"></i>
                     <span>Banner</span>
+<<<<<<< HEAD
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Hakkimizda/Index">
+                    <i class="fas fa-ad"></i>
+                    <span>Hakkımızda</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Slider/Index">
+                    <i class="fas fa-ad"></i>
+                    <span>Slider</span>
+=======
+>>>>>>> b1135670cb3267f3ce4ca9c29cfd5f29cb253cfd
                 </a>
             </li>
             <li class="nav-item">
@@ -203,7 +220,8 @@
     </div>
 
     @Scripts.Render("~/script/adminlayout2")
-
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Kurumsal.Models.Iletisim>
+@{
+    Layout = null;
+}
+
+<div class="col-lg-3 offset-xl-1 contact_col">
+    <div class="contact_info">
+        <div class="contact_info_section">
+            <div class="contact_info_title">İletişim Bilgileri</div>
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li style="font-size:18px;"><i class="fa fa-phone"></i> <span>@item.Telefon</span></li>
+                    <li style="font-size:18px;"><i class="fa fa-envelope"></i> <span>@item.Mail</span></li>
+                    <li style="font-size:18px;"><i class="fa fa-wechat"></i> <span>@item.WeChat</span></li>
+                    <li style="font-size:18px;"><i style="font-size: 22px;" class="fa fa-whatsapp"></i> <span>@item.Whatsapp</span></li>
+                    <li style="font-size:18px;"><i style="font-size: 22px;" class="fa fa-instagram"></i> <span>@item.instagram</span></li>
+                    <li style="font-size:18px;"><i class="fa fa-fax"></i> <span>@item.Fax</span></li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

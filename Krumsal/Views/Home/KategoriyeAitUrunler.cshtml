@@ -1,0 +1,49 @@
+﻿@model IPagedList<Kurumsal.Models.Hizmet>
+@using PagedList;
+@using PagedList.Mvc;
+@using Kurumsal.Helper;
+@{
+    ViewBag.Title = "KategoriHizmet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="products margintopxx">
+    <div class="container">
+
+        <h1 class="mb-5">Kategori Adı</h1>
+
+        <div class="row">
+            <div class="col">
+
+                <div class="product_grid">
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="product">
+                            <div class="product_image"><img src="@item.ResimURL" alt=""></div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="/UrunPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId">@item.Baslik</a></div>
+                                <div class="product_price">@item.Aciklama</div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="avds_xl pb-5">
+    <div class="container">
+        <div class="pagination-container">
+            <div class="pagination">
+                <span class="pagination-inner">
+
+                    @Html.PagedListPager(Model, Sayfa => Url.Action("Hizmet", new { Sayfa }), PagedListRenderOptions.PageNumbersOnly)
+
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

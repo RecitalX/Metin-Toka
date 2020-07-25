@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Kurumsal.Models.Hizmet>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "AramaYap";
+}
+
+
+
+<div class="general">
+    <div class="py-5">
+        <div class="container">
+            <h3>Arama Sonuçları</h3>
+        </div>
+        @if (ViewBag.Notfound == null)
+        {
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.Grid(Model).Columns(columns =>
+                   {
+                       columns.Add(m => m.HizmetKategori.HizmetKategoriAdi).Titled("Kategori Adı");
+
+                       columns.Add(m => m.Baslik).Titled("Başlık").Sanitized(false).Encoded(false).RenderValueAs(m => Html.ActionLink(m.Baslik, "HizmetDetay", "Home", new { id = m.HizmetId }, null).ToHtmlString());
+
+                       columns.Add(m => m.UrunKodu).Titled("Ürün Kodu");
+
+
+                   }).WithPaging(30)
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="container" style="padding-top:70px;">
+                <div class="row">
+                    <div class="col-md-12 text-center mt-80">
+                        <h3 id="notfound">@ViewBag.Notfound</h3>
+                        <a href="/Anasayfa" class="btn btn-primary m-4">Anasayfa'ya Dön</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

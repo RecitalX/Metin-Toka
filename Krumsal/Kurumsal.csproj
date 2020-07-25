@@ -2603,6 +2603,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BannerController.cs" />
+    <Compile Include="Controllers\HakkimizdaController.cs" />
     <Compile Include="Controllers\HizmetController.cs" />
     <Compile Include="Controllers\HizmetKategoriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2613,9 +2614,22 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\SeoHelper.cs" />
+<<<<<<< HEAD
+    <Compile Include="Migrations\202007251447197_InitialCreate.cs" />
+    <Compile Include="Migrations\202007251447197_InitialCreate.Designer.cs">
+      <DependentUpon>202007251447197_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007251456559_Güncelleme.cs" />
+    <Compile Include="Migrations\202007251456559_Güncelleme.Designer.cs">
+      <DependentUpon>202007251456559_Güncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+=======
+>>>>>>> b1135670cb3267f3ce4ca9c29cfd5f29cb253cfd
     <Compile Include="Models\DB-Context\Initializer.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Banner.cs" />
+    <Compile Include="Models\Sınıflar\Hakkimizda.cs" />
     <Compile Include="Models\Sınıflar\Hizmet.cs" />
     <Compile Include="Models\Sınıflar\HizmetKategori.cs" />
     <Compile Include="Models\Sınıflar\Iletisim.cs" />
@@ -2684,6 +2698,17 @@
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\Banner\" />
   </ItemGroup>
+<<<<<<< HEAD
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202007251447197_InitialCreate.resx">
+      <DependentUpon>202007251447197_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007251456559_Güncelleme.resx">
+      <DependentUpon>202007251456559_Güncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+=======
+>>>>>>> b1135670cb3267f3ce4ca9c29cfd5f29cb253cfd
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

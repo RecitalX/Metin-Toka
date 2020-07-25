@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Kurumsal.Models.HizmetKategori>
+@using Kurumsal.Helper;
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "HizmetKategoriPartial";
+}
+
+<ul class="page_menu_selection menu_mm">
+
+    @foreach (var item in Model)
+    {
+        <li class="page_menu_item menu_mm"><a href="/UrunPost/@SeoHelper.ToSeoUrl(item.HizmetKategoriAdi).ToLower()/@item.HizmetKategoriId">@item.HizmetKategoriAdi</a></li>
+    }
+
+</ul>
