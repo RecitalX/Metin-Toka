@@ -2,6 +2,7 @@
 using Kurumsal.Models.Sınıflar;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -19,7 +20,7 @@ namespace Kurumsal.Controllers
             return View(db.Banner.ToList());
         }
 
-        // GET: Banner/Edit/5
+        #region Düzenleme
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -38,7 +39,7 @@ namespace Kurumsal.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Baslik,ResimURL,Aciklama,Url")] Banner banner, HttpPostedFileBase ResimURL, int id)
+        public ActionResult Edit([Bind(Include = "ID,Baslik,ResimURL,Aciklama,Url,Onay")] Banner banner, HttpPostedFileBase ResimURL, int id)
         {
             if (ModelState.IsValid)
             {
@@ -59,6 +60,7 @@ namespace Kurumsal.Controllers
 
                     k.ResimURL = "/Uploads/Banner/" + logoname;
                 }
+                k.Onay = banner.Onay;
                 k.Baslik = banner.Baslik;
                 k.Aciklama = banner.Aciklama;
                 k.Url = banner.Url;
@@ -68,5 +70,6 @@ namespace Kurumsal.Controllers
             }
             return View(banner);
         }
+        #endregion
     }
 }

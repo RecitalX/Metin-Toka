@@ -15,15 +15,15 @@
     <div class="row">
         <div class="col-md-12">
             @Html.Grid(Model).Columns(columns =>
-            {
-                columns.Add(m => m.HizmetKategori.HizmetKategoriAdi).Titled("Kategori Adı");
+       {
+           columns.Add(m => m.HizmetKategori.HizmetKategoriAdi).Titled("Kategori Adı");
 
-                columns.Add(m => m.Baslik).Titled("Başlık").Sanitized(false).Encoded(false).RenderValueAs(m => Html.ActionLink(m.Baslik, m.Baslik, "ÜrünPost", new { id = m.HizmetId }, null).ToHtmlString());
+           columns.Add(m => m.Baslik).Titled("Başlık").Sanitized(false).Encoded(false).RenderValueAs(m => Html.ActionLink(m.Baslik,  m.Baslik, "ÜrünPost", new { id = m.HizmetId }, null).ToHtmlString());
 
-                columns.Add(m => m.UrunKodu).Titled("Ürün Kodu");
+           columns.Add(m => m.UrunKodu).Titled("Ürün Kodu");
 
 
-            }).WithPaging(30)
+       }).WithPaging(30)
         </div>
     </div>
 </div> }

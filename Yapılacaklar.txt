@@ -1,0 +1,19 @@
+Slider : * Üstten alttan sağdan soldan kısalacak 
+* max resim boyutu verilecek 
+* Responsive düzeltilecek
+
+Banner : Max resim boyutu verilecek
+
+Responsive düzenlenecek :
+* Anasayfa 
+* Ürünler Kısmı
+* Ürünler kısmında ki kategori
+
+Yönetim Paneli :
+* Anasayfasında ki gibi kaç ürün olduğu yazdığı gibi kategori ve sliderinde grafiği olacak 
+
+Seo yapılacak : Alicana yazılabilir 
+Güncelleme kısmını boş geçtiğiimizde renklerin kaybolması : Alican 
+Slider resim kaybolması : Alican 
+
+Arama kısmı yapılaka seo olayını yaapmmadım 

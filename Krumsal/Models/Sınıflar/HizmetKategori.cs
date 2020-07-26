@@ -18,9 +18,11 @@ namespace Kurumsal.Models
         public int HizmetKategoriId { get; set; }
 
         [StringLength(100)]
+        [MaxLength(100, ErrorMessage = "100 Karakterden fazla girilemez")]
         public string HizmetKategoriAdi { get; set; }
 
         [StringLength(250)]
+        [MaxLength(250, ErrorMessage = "250 Karakterden fazla girilemez")]
         public string Aciklama { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

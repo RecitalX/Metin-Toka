@@ -14,12 +14,14 @@ namespace Kurumsal.Controllers
     public class SliderController : Controller
     {
         KurumsalDB db = new KurumsalDB();
+        #region Listeleme
         public ActionResult Index()
         {
             return View(db.Slider.ToList().OrderByDescending(x => x.ID));
         }
+        #endregion
 
-
+        #region Slider Ekleme
         public ActionResult Create()
         {
             return View();
@@ -48,6 +50,9 @@ namespace Kurumsal.Controllers
 
             return View(slider);
         }
+        #endregion
+
+        #region Slider Düzenleme
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -63,9 +68,6 @@ namespace Kurumsal.Controllers
             return View(slider);
         }
 
-        // POST: Slider/Edit/5
-        // Aşırı gönderim saldırılarından korunmak için, lütfen bağlamak istediğiniz belirli özellikleri etkinleştirin, 
-        // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -97,7 +99,9 @@ namespace Kurumsal.Controllers
             }
             return View(slider);
         }
+        #endregion
 
+        #region Slider Silme
         public ActionResult Delete(int id)
         {
             Slider slider = db.Slider.Find(id);
@@ -114,14 +118,6 @@ namespace Kurumsal.Controllers
             TempData["Bilgi"] = "Slider silme işlemi başarılı";
             return RedirectToAction("Index");
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        #endregion
     }
 }

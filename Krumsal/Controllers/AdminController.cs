@@ -11,15 +11,17 @@ namespace Kurumsal.Controllers
     public class AdminController : Controller
     {
         KurumsalDB db = new KurumsalDB();
-        // GET: Admin
 
+        #region Anasayfa
         [Route("yonetimpaneli")]
         public ActionResult Index()
         {
             ViewBag.HizmetSay = db.Hizmet.Count();
             return View();
         }
-        
+        #endregion
+
+        #region Login
         [Route("yonetimpaneli/giris")]
         public ActionResult Login()
         {
@@ -42,7 +44,9 @@ namespace Kurumsal.Controllers
             return View(admin);
 
         }
+        #endregion
 
+        #region Logout
         public ActionResult Logout()
         {
             Session["adminid"] = null;
@@ -50,7 +54,9 @@ namespace Kurumsal.Controllers
             Session.Abandon();
             return RedirectToAction("Login", "Admin");
         }
+        #endregion
 
+        #region Şifremi Unuttum (Local Host)
         public ActionResult SifremiUnuttum()
         {
             return View();
@@ -83,6 +89,9 @@ namespace Kurumsal.Controllers
             return View();
 
         }
+        #endregion
+
+        #region Şifremi Unuttum (Server)
         //public ActionResult SifremiUnuttum(string eposta)
         //{
         //    var mail = db.Admin.Where(x => x.Eposta == eposta).SingleOrDefault();
@@ -111,18 +120,16 @@ namespace Kurumsal.Controllers
         //    return View();
 
         //}
+        #endregion
 
-        public ActionResult Hata()
-        {
-            return View();
-        }
-
-
+        #region Admin Listelenen kısım 
         public ActionResult Adminler()
         {
             return View(db.Admin.ToList());
         }
+        #endregion
 
+        #region Yeni Admin Olusturma
         public ActionResult Create()
         {
             return View();
@@ -140,7 +147,9 @@ namespace Kurumsal.Controllers
             }
             return View(admin);
         }
+        #endregion
 
+        #region Admin Düzenleme
         public ActionResult Edit(int id)
         {
             var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
@@ -161,7 +170,9 @@ namespace Kurumsal.Controllers
             }
             return View(admin);
         }
+        #endregion
 
+        #region Admin Silme
         public ActionResult Delete(int id)
         {
             var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
@@ -174,5 +185,6 @@ namespace Kurumsal.Controllers
             }
             return View();
         }
+        #endregion
     }
 }

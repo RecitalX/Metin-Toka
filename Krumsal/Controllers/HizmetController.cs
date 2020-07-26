@@ -16,28 +16,27 @@ namespace Kurumsal.Controllers
     {
         private KurumsalDB db = new KurumsalDB();
 
-        // GET: Hizmet
+        #region Listeleme      
         public ActionResult Index()
         {
             db.Configuration.LazyLoadingEnabled = false;
             var hizmet = db.Hizmet.Include(h => h.HizmetKategori);
             return View(hizmet.ToList().OrderByDescending(x => x.HizmetId));
         }
+        #endregion
 
-        // GET: Hizmet/Create
+        #region Ürün Ekleme
         public ActionResult Create()
         {
             ViewBag.HizmetKategoriId = new SelectList(db.HizmetKategori, "HizmetKategoriId", "HizmetKategoriAdi");
             return View();
         }
 
-        // POST: Hizmet/Create
-        // Aşırı gönderim saldırılarından korunmak için, lütfen bağlamak istediğiniz belirli özellikleri etkinleştirin, 
-        // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Create(Hizmet h, /*string boy,*/ string renk, HttpPostedFileBase ResimURL)
+        public ActionResult Create(Hizmet h, string renk, HttpPostedFileBase ResimURL)
         {
 
             if (ResimURL != null)
@@ -76,9 +75,9 @@ namespace Kurumsal.Controllers
             TempData["Bilgi"] = "Ürün ekleme işlemi başarılı";
             return RedirectToAction("Index");
         }
+        #endregion
 
-        // GET: Hizmet/Edit/5
-
+        #region Ürün Düzenleme
         public ActionResult Edit(int id)
         {
             if (id == 0)
@@ -94,13 +93,10 @@ namespace Kurumsal.Controllers
             return View(b);
         }
 
-        // POST: Hizmet/Edit/5
-        // Aşırı gönderim saldırılarından korunmak için, lütfen bağlamak istediğiniz belirli özellikleri etkinleştirin, 
-        // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [HttpPost]
-        public ActionResult Edit(Hizmet m, /*string boy,*/ string renk, HttpPostedFileBase ResimURL)
+        public ActionResult Edit(Hizmet m,  string renk, HttpPostedFileBase ResimURL)
         {
             var mkl = db.Hizmet.Where(x => x.HizmetId == m.HizmetId).SingleOrDefault();
 
@@ -147,12 +143,11 @@ namespace Kurumsal.Controllers
 
             return RedirectToAction("Index", "Hizmet");
         }
+        #endregion
 
-        // GET: Hizmet/Delete/5
+        #region Ürün Silme
         public ActionResult Delete(int id)
         {
-
-
             var hizmet = db.Hizmet.Where(x => x.HizmetId == id).SingleOrDefault();
             if (System.IO.File.Exists(Server.MapPath(hizmet.ResimURL)))
             {
@@ -174,28 +169,6 @@ namespace Kurumsal.Controllers
             TempData["Bilgi"] = "Ürün silme işlemi başarılı";
             return RedirectToAction("Index", "Hizmet");
         }
-        [HttpPost]
-        public ActionResult Delete(Hizmet m)
-        {
-            var mkl = db.Hizmet.Where(x => x.HizmetId == m.HizmetId).SingleOrDefault();
-            if (System.IO.File.Exists(Server.MapPath(mkl.ResimURL)))
-            {
-                System.IO.File.Delete(Server.MapPath(mkl.ResimURL));
-            }
-
-            //foreach (var e in mkl.Boy.ToList())
-            //{
-            //    db.Boy.Remove(e);
-            //}
-
-            foreach (var r in mkl.Renk.ToList())
-            {
-                db.Renk.Remove(r);
-            }
-            db.Hizmet.Remove(mkl);
-            db.SaveChanges();
-            TempData["Bilgi"] = "Ürün silme işlemi başarılı";
-            return RedirectToAction("Index", "Hizmet");
-        }
+        #endregion
     }
 }

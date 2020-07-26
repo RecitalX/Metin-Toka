@@ -11,22 +11,16 @@ namespace Kurumsal.Models
     {
         public int IletisimId { get; set; }
 
-        [StringLength(250)]
         public string Telefon { get; set; }
 
-        [StringLength(50)]
         public string Mail { get; set; }
 
-        [StringLength(50)]
         public string WeChat { get; set; }
 
-        [StringLength(50)]
         public string Whatsapp { get; set; }
 
-        [StringLength(50)]
         public string instagram { get; set; }
 
-        [StringLength(50)]
         public string Fax { get; set; }
     }
 }

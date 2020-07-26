@@ -93,7 +93,7 @@ namespace Kurumsal.Controllers
         }
         #endregion
 
-        #region Kategooriye Ait Ürünler
+        #region Kategoriye Ait Ürünler
         //Kategoriye Ait Hizmetler
         [Route("ÜrünPost/{HizmetKategoriAdi}/{id:int}")]
         public ActionResult KategoriyeAitUrunler(int id, int Sayfa = 1)
@@ -110,7 +110,7 @@ namespace Kurumsal.Controllers
         public ActionResult Hakkimizda()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-            return View();
+            return View(db.Hakkimizda.ToList());
         }
         #endregion
 

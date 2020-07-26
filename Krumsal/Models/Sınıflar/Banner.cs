@@ -13,12 +13,13 @@ namespace Kurumsal.Models.Sınıflar
         public int ID { get; set; }
 
         [StringLength(100)]
+        [MaxLength(100, ErrorMessage = "100 Karakterden fazla girilemez")]
         public string Baslik { get; set; }
 
         [StringLength(100)]
+        [MaxLength(100, ErrorMessage = "100 Karakterden fazla girilemez")]
         public string Aciklama { get; set; }
-
-        [StringLength(100)]
+        public bool Onay { get; set; }
         public string Url { get; set; }
 
         [StringLength(500)]

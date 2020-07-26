@@ -12,20 +12,20 @@ namespace Kurumsal.Controllers
     public class KimlikController : Controller
     {
         KurumsalDB db = new KurumsalDB();
-        // GET: Kimlik
+        #region Listeleme
         public ActionResult Index()
         {
             return View(db.Kimlik.ToList());
         }
+        #endregion
 
-        // GET: Kimlik/Edit/5
+        #region Kimlik düzenleme
         public ActionResult Edit(int id)
         {
             var kimlik = db.Kimlik.Where(x => x.KimlikId == id).SingleOrDefault();
             return View(kimlik);
         }
 
-        // POST: Kimlik/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -57,10 +57,8 @@ namespace Kurumsal.Controllers
                 TempData["Bilgi"] = "Güncelleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
-
-
             return View(kimlik);
-
         }
+        #endregion
     }
 }

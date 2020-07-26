@@ -14,12 +14,14 @@ namespace Kurumsal.Controllers
     {
         private KurumsalDB db = new KurumsalDB();
 
-        // GET: Iletisim
+        #region Listeleme
         public ActionResult Index()
         {
             return View(db.Iletisim.ToList());
         }
+        #endregion
 
+        #region İletişim Bilgileri Düzenleme
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -48,7 +50,7 @@ namespace Kurumsal.Controllers
             }
             return View(iletisim);
         }
-
+        #endregion
 
     }
 }

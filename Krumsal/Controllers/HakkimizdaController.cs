@@ -11,13 +11,14 @@ namespace Kurumsal.Controllers
     public class HakkimizdaController : Controller
     {
         KurumsalDB db = new KurumsalDB();
-        // GET: Hakkimizda
+
         public ActionResult Index()
         {
             var h = db.Hakkimizda.ToList();
             return View(h);
         }
 
+        #region Düzenleme
         public ActionResult Edit(int id)
         {
             var h = db.Hakkimizda.Where(x => x.HakkimizdaId == id).FirstOrDefault();
@@ -40,5 +41,6 @@ namespace Kurumsal.Controllers
 
             return View(h);
         }
+        #endregion
     }
 }

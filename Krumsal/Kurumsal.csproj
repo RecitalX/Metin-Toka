@@ -2197,6 +2197,7 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\Genel img\advertising.png" />
     <Content Include="Content\icon-fonts\fontawesome-webfont.svg" />
     <Content Include="Content\img\about.jpg" />
     <Content Include="Content\img\add\01_homepage.jpg" />

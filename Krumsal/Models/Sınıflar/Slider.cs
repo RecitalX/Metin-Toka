@@ -12,10 +12,12 @@ namespace Kurumsal.Models.Sınıflar
     {
         public int ID { get; set; }
 
-        [StringLength(100)]
+        [StringLength(150)]
+        [MaxLength(150, ErrorMessage = "150 Karakterden fazla girilemez")]
         public string Baslik { get; set; }
 
-        [StringLength(100)]
+        [StringLength(300)]
+        [MaxLength(300, ErrorMessage = "300 Karakterden fazla girilemez")]
         public string Aciklama { get; set; }
 
         [StringLength(500)]

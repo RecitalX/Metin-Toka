@@ -2,14 +2,14 @@
 @{
     Layout = null;
 }
-@foreach (var item in Model)
+@foreach (var item in Model.OrderByDescending(x=> x.ID).Where(x=> x.Onay == true))
 {
     <div class="add-warp">
         <div class="add-slider owl-carousel">
             <a href="@item.Url">
                 <img src="@item.ResimURL" alt="Banner-Photo" />
             </a>
-           @*<div class="as-item set-bg" data-setbg="@item.ResimURL"></div>*@
+            @*<div class="as-item set-bg" data-setbg="@item.ResimURL"></div>*@
         </div>
         <div class="row add-text-warp">
             <div class="col-lg-4 col-md-5 offset-lg-8 offset-md-7">

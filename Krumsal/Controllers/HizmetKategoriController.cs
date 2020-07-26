@@ -14,29 +14,14 @@ namespace Kurumsal.Controllers
     {
         private KurumsalDB db = new KurumsalDB();
 
-        // GET: HizmetKategori
+        #region Listeleme
         public ActionResult Index()
         {
             return View(db.HizmetKategori.ToList().OrderByDescending(x => x.HizmetKategoriId));
         }
+        #endregion
 
-        // GET: HizmetKategori/Details/5
-        public ActionResult Details(int? id)
-        {
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            HizmetKategori hizmetKategori = db.HizmetKategori.Find(id);
-            if (hizmetKategori == null)
-            {
-                return HttpNotFound();
-            }
-            return View(hizmetKategori);
-        }
-
-        // GET: HizmetKategori/Create
+        #region Kategori Ekleme
         public ActionResult Create()
         {
             return View();
@@ -57,8 +42,9 @@ namespace Kurumsal.Controllers
 
             return View(hizmetKategori);
         }
+        #endregion
 
-        // GET: HizmetKategori/Edit/5
+        #region Kategori Düzenlme
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,9 +59,6 @@ namespace Kurumsal.Controllers
             return View(hizmetKategori);
         }
 
-        // POST: HizmetKategori/Edit/5
-        // Aşırı gönderim saldırılarından korunmak için, lütfen bağlamak istediğiniz belirli özellikleri etkinleştirin, 
-        // daha fazla bilgi için https://go.microsoft.com/fwlink/?LinkId=317598 sayfasına bakın.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "HizmetKategoriId,HizmetKategoriAdi,Aciklama")] HizmetKategori hizmetKategori)
@@ -89,8 +72,9 @@ namespace Kurumsal.Controllers
             }
             return View(hizmetKategori);
         }
+        #endregion
 
-        // GET: HizmetKategori/Delete/5
+        #region Kategori Sil
         public ActionResult Delete(int? id)
         {
             try
@@ -117,8 +101,9 @@ namespace Kurumsal.Controllers
             TempData["Bilgi"] = "Kategori silme işlemi başarılı";
             return RedirectToAction("Index", "HizmetKategori");
         }
+        #endregion
 
-        // POST: HizmetKategori/Delete/5
+        #region Silme İşlemi Onay 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -128,5 +113,6 @@ namespace Kurumsal.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        #endregion
     }
 }

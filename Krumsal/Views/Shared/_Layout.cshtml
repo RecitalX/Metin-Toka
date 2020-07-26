@@ -4,46 +4,45 @@
 <html lang="en">
 
 <head>
+    <title>@ViewBag.Kimlik.Title</title>
+
+    <!-- ========================= Meta Etiketleri ===========================================-->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>@ViewBag.Kimlik.Title</title>
     <meta name="keywords" content="@ViewBag.Kimlik.Keywords" />
     <meta content="@Html.Raw(ViewBag.Kimlik.Description)" name="descriptison">
-
+    <!-- ======================================================================================-->
+    <!-- ========================= Kimlik =====================================================-->
     <link href="@ViewBag.Kimlik.LogoURL" rel="icon">
     <link href="@ViewBag.Kimlik.LogoURL" rel="apple-touch-icon">
-
-    <link href="~/Content/img/favicon.ico" rel="shortcut icon" />
-    <!-- Google Fonts -->
+    <!-- ======================================================================================-->
+    <!-- ========================= Font =======================================================-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700" rel="stylesheet">
-    <!-- Stylesheets -->
     <script src="https://kit.fontawesome.com/fcd59919ba.js" crossorigin="anonymous"></script>
+    <!-- =======================================================================================-->
+    <!-- ========================= CSS =========================================================-->
+    <link href="~/Content/img/favicon.ico" rel="shortcut icon" />
     <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/Content/css/owl.carousel.css" />
     <link rel="stylesheet" href="~/Content/css/animate.css" />
     <link rel="stylesheet" href="~/Content/css/style.css" />
-
-
-    @*@Styles.Render("~/css/layout")*@
+    <!-- =======================================================================================-->
 
 </head>
-
 <body id="top">
-    <!-- Page Preloder -->
+
+    <!-- ====== preloder ======-->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
-    <!-- Header section -->
+    <!-- ==================-->
+    <!-- ====== Menü ======-->
     <header class="header-section">
         <div class="header-bottom">
             <div class="container">
                 <a href="/Anasayfa" class="site-logo">
-                    @*<img src="~/Content/img/logo.png" alt="">*@
                     <img class="navbar-logo" src="~/Content/img/MetinToka1.png" />
-                    @*<img width="200" src="~/Content/img/MetinToka.png" />*@
                 </a>
                 <div class="nav-switch">
                     <i class="fa fa-bars"></i>
@@ -57,11 +56,11 @@
             </div>
         </div>
     </header>
-    <!-- Header section end -->
+    <!-- ==================-->
 
     @RenderBody()
 
-    <!-- Footer section  -->
+    <!-- ====== Footer ======-->
     <footer class="footer-section set-bg text-center">
         <div class="container-fluid">
             <div class="row">
@@ -89,15 +88,12 @@
             </div>
         </div>
     </footer>
-    <!-- Footer section end -->
-    @*@Scripts.Render("~/script/layout")*@
-
-
-    <!-- JS here -->
-    <!--====== Javascripts & Jquery ======-->
+    <!-- ==================-->
+    <!-- ========================= JAVASCRİPT =========================================================-->
     <script src="~/Content/js/jquery-3.2.1.min.js"></script>
     <script src="~/Content/js/owl.carousel.min.js"></script>
     <script src="~/Content/js/main.js"></script>
-</body>
+    <!-- =======================================================================================-->
 
+</body>
 </html>

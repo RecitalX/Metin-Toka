@@ -10,75 +10,60 @@ namespace Kurumsal.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-
+            #region Kullanıcı Cascading Style Layers
             bundles.Add(new StyleBundle("~/css/layout").Include(
-               "~/Content/css/cart.css",
-               "~/Content/css/cart_responsive.css",
-               "~/Content/css/categories.css",
-               "~/Content/css/categories_responsive.css",
-               "~/Content/css/checkout.css",
-               "~/Content/css/checkout_responsive.css",
-               "~/Content/css/contact.css",
-               "~/Content/css/contact_responsive.css",
-               "~/Content/css/main_styles.css",
-               "~/Content/css/product.css",
-               "~/Content/css/product_responsive.css",
-               "~/Content/css/responsive.css",
-               "~/Content/css/bootstrap4/bootstrap.min.css",
-               "~/Content/plugins/OwlCarousel2-2.2.1/owl.theme.default.css",
-               "~/Content/plugins/OwlCarousel2-2.2.1/owl.carousel.css",
-               "~/Content/plugins/OwlCarousel2-2.2.1/animate.css"
-
+               "~/Content/img/favicon.ico",
+               "~/Content/css/bootstrap.min.css",
+               "~/Content/css/font-awesome.min.css",
+               "~/Content/css/owl.carousel.css",
+               "~/Content/css/animate.css",
+               "~/Content/css/style.css"
                 ));
+            #endregion
 
+            #region Kullanıcı Javascript
             bundles.Add(new ScriptBundle("~/script/layout").Include(
-               "~/Content/js/cart.js",
-               "~/Content/js/categories.js",
-               "~/Content/js/checkout.js",
-               "~/Content/js/contact.js",
-               "~/Content/js/custom.js",
                "~/Content/js/jquery-3.2.1.min.js",
-               "~/Content/js/product.js",
-               "~/Content/js/bootstrap4/popper.js",
-               "~/Content/js/bootstrap4/bootstrap.min.js",
-               "~/Content/plugins/easing/easing.js",
-               "~/Content/plugins/greensock/animation.gsap.min.js",
-               "~/Content/plugins/greensock/ScrollToPlugin.min.js",
-               "~/Content/plugins/greensock/TimelineMax.min.js",
-               "~/Content/plugins/greensock/TweenMax.min.js",
-               "~/Content/plugins/Isotope/isotope.min.js",
-               "~/Content/plugins/OwlCarousel2-2.2-1/owl.carousel.js",
-               "~/Content/plugins/scrollmagic/ScrollMagic.min.js"
+               "~/Content/js/owl.carousel.min.js",
+               "~/Content/js/main.js"
                ));
+            #endregion
 
+            #region Admin Cascading Style Layers
             bundles.Add(new StyleBundle("~/css/adminlayout").Include(
                 "~/Content/Admin Panel/css/sb-admin-2.min.css",
                 "~/Content/ckeditor/contents.css"
-
                 ));
+            #endregion
 
-
-
-            bundles.Add(new ScriptBundle("~/script/adminlayout2").Include(
+            #region Admin Javascript
+            bundles.Add(new ScriptBundle("~/script/adminlayout").Include(
                 "~/Content/Admin Panel/vendor/bootstrap/js/bootstrap.bundle.min.js",
                 "~/Content/Admin Panel/js/sb-admin-2.min.js",
                 "~/Content/Admin Panel/vendor/chart.js/Chart.min.js",
+                "~/Content/Admin Panel/vendor/jquery-easing/jquery.easing.min.js",
                 "~/Content/Admin Panel/js/demo/chart-area-demo.js",
                 "~/Content/Admin Panel/js/demo/chart-pie-demo.js"
                 ));
+            #endregion
 
+            #region Login Cascading Style Layers
             bundles.Add(new StyleBundle("~/css/login").Include(
                     "~/Content/Admin Panel/css/sb-admin-2.min.css",
                     "~/Content/DataTables/css/jquery.dataTables.css",
                     "~/Content/DataTables/css/dataTables.bootstrap4.css"
                 ));
+            #endregion
 
+            #region Login Javascript
             bundles.Add(new ScriptBundle("~/script/login").Include(
                     "~/Content/Admin Panel/vendor/jquery-easing/jquery.easing.min.js",
                     "~/Content/Admin Panel/vendor/jquery/jquery.min.js",
                     "~/Scripts/DataTables/dataTables.bootstrap4.js"
                 ));
+            #endregion
 
+            #region Login Javascript-2
             bundles.Add(new ScriptBundle("~/script/login2").Include(
                     "~/Content/Admin Panel/vendor/bootstrap/js/bootstrap.bundle.min.js",
                     "~/Content/Admin Panel/js/sb-admin-2.min.js",
@@ -86,7 +71,7 @@ namespace Kurumsal.App_Start
                     "~/Content/Admin Panel/js/demo/chart-area-demo.js",
                     "~/Content/Admin Panel/js/demo/chart-pie-demo.js"
                 ));
-
+            #endregion
 
             BundleTable.EnableOptimizations = true;
         }
