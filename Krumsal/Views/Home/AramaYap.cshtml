@@ -1,71 +1,112 @@
 ﻿@model IEnumerable<Kurumsal.Models.Hizmet>
 @using GridMvc.Html
+@using PagedList;
+@using PagedList.Mvc;
 @using Kurumsal.Helper;
 @{ ViewBag.Title = "AramaYap"; }
 
 
-<div class="general">
-    <div class="py-5">
+<!-- Hero section -->
+<section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
+    <div class="container">
+        <h2>Ürünler</h2>
+    </div>
+</section>
+<!-- Hero section end -->
+<!-- Search section -->
+<div class="search-form-section">
+    <div class="sf-warp">
         <div class="container">
-            <h3>Arama Sonuçları</h3>
-        </div>
-        @foreach (var item in Model)
-        {
-            
+            <form action="/AramaSayfası" method="post" class="big-search-form">
+                <div class="row">
 
-            <div class="col-lg-4 col-md-6">
-                <div class="recipe">
-                    <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><img src="@item.ResimURL" alt=""></a>
-                    <div class="recipe-info-warp">
-                        <div class="recipe-info">s
-                            <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId">
-                                <h3>
-                                @{ string baslik = "";
-                                    if (item.Baslik.Length > 25)
-                                    {
-                                        baslik = item.Baslik.Substring(0, 25) + "...";
-                                    }
-                                    else
-                                    {
-                                        baslik = @item.Baslik;
-                                    }
-                                }
+                    <div class="col-lg-6 col-sm-6">
+                        <select onchange="window.location=this.value">
+                            <option>Kategori Seçiniz</option>
+                            @foreach (Kurumsal.Models.HizmetKategori item in ViewBag.Kategorilerim)
+                            {
+                <option value="/ÜrünPost/@SeoHelper.ToSeoUrl(item.HizmetKategoriAdi).ToLower()/@item.HizmetKategoriId">
+                    @item.HizmetKategoriAdi
+                </option>}
+                        </select>
 
-                                @baslik
-                                </h3>
-                            </a>
-                            <div class="rating mt-2">
-                                <h4 class="badge" style="display: inline;background-color: white;color:black">@item.UrunKodu</h4>
-                                <h4 class="badge" style="display: inline;background-color: white;color:black">@item.HizmetKategori.HizmetKategoriAdi</h4>
-                            </div>
-                        </div>
+
                     </div>
+
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="row">
+                            @using (Html.BeginForm("AramaYap", "Home", FormMethod.Get))
+                            {
+                <div class="col-lg-8 col-sm-8">
+                    <input type="text" name="aranan" placeholder="Ürün Ara">
+                    @*@Html.TextBox("aranan")*@
                 </div>
-            </div>
-        };
+                                <div class="col-lg-4 col-sm-4">
+                                    <input type="submit" value="Ara" class="bsf-btn" />
+                                </div>}
+                        </div>
 
+                    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-       
-        
-        @*<div class="container" style="padding-top:70px;">
-            <div class="row">
-                <div class="col-md-12 text-center mt-80">
-                    <h3 id="notfound">@ViewBag.Notfound</h3>
-                    <a href="/Ürünler" class="btn btn-primary m-4">Ürünlere'e Dön</a>
                 </div>
-            </div>
-        </div>}*@
+            </form>
+        </div>
     </div>
 </div>
+<!-- Search section end -->
+<!-- Recipes section -->
+<section class="recipes-page spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-title">
+                    <h2>Tüm Ürünlerimiz</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+
+<div class="col-lg-4 col-md-6">
+    <div class="recipe">
+        <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><img src="@item.ResimURL" alt=""></a>
+        <div class="recipe-info-warp">
+            <div class="recipe-info">
+                
+                <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId">
+                    <h3>
+                        @{ string baslik = "";
+                            if (item.Baslik.Length > 25)
+                            {
+                                baslik = item.Baslik.Substring(0, 25) + "...";
+                            }
+                            else
+                            {
+                                baslik = @item.Baslik;
+                            } }
+
+                        @baslik
+                    </h3>
+                </a>
+                <div class="rating mt-2">
+                    <h4 class="badge" style="display: inline;background-color: white;color:black">@item.UrunKodu</h4>
+                    <h4 class="badge" style="display: inline;background-color: white;color:black">@item.HizmetKategori.HizmetKategoriAdi</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>      }
+
+        </div>
+
+        @*<div class="site-pagination text-white">
+            <nav aria-label="...">
+                @Html.PagedListPager(Model, Sayfa => Url.Action("Urun", new { Sayfa }))
+            </nav>
+        </div>*@
+
+    </div>
+</section>

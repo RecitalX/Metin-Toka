@@ -19,7 +19,7 @@ namespace Kurumsal.Controllers
         [Route("")]
         [Route("Anasayfa")]
         [HttpGet]
-        public ActionResult Index() 
+        public ActionResult Index()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             return View();
@@ -39,7 +39,7 @@ namespace Kurumsal.Controllers
 
         #region İletişim
         [HttpGet]
-        [Route("İletişim")] 
+        [Route("İletişim")]
         public ActionResult Iletisim()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
@@ -89,7 +89,12 @@ namespace Kurumsal.Controllers
             List<HizmetKategori> kategorilistesi = db.HizmetKategori.Where(x => x.HizmetKategoriId > 0).OrderByDescending(x => x.HizmetKategoriId).ToList();
             ViewBag.Kategorilerim = kategorilistesi;
             var u = db.Hizmet.Include("HizmetKategori").OrderByDescending(x => x.HizmetId).Where(x => x.HizmetKategori.HizmetKategoriId == id).ToPagedList(Sayfa, 9);
+            if (id != null)
+            {
+                TempData["UrunYok"] = "Bu kategoriye ait ürün bulunmamaktadır.";
+            }
             return View(u);
+
         }
         #endregion
 
@@ -114,6 +119,8 @@ namespace Kurumsal.Controllers
         [Route("AramaSayfası")]
         public ActionResult AramaYap(string aranan)
         {
+            List<HizmetKategori> kategorilistesi = db.HizmetKategori.Where(x => x.HizmetKategoriId > 0).OrderByDescending(x => x.HizmetKategoriId).ToList();
+            ViewBag.Kategorilerim = kategorilistesi;
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             var urun = from d in db.Hizmet select d;
             if (!string.IsNullOrEmpty(aranan))
