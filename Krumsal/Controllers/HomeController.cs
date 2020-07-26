@@ -27,6 +27,7 @@ namespace Kurumsal.Controllers
         #endregion
 
         #region Ürünler
+        [Route("Ürünler")]
         public ActionResult Urun(int Sayfa = 1)
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
@@ -34,9 +35,9 @@ namespace Kurumsal.Controllers
         }
         #endregion
 
-        #region İİletişim
+        #region İletişim
         [HttpGet]
-        [Route("Iletisim")]
+        [Route("İletişim")] 
         public ActionResult Iletisim()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
@@ -67,6 +68,7 @@ namespace Kurumsal.Controllers
         #endregion
 
         #region Ürün Detay
+        [Route("ÜrünPost/{Baslik}-{id:int}")]
         public ActionResult UrunDetay(int id)
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
@@ -77,21 +79,23 @@ namespace Kurumsal.Controllers
         #endregion
 
         #region Kategori Listesi
-        [Route("UrunPost/{HizmetKategoriAdi}/{id:int}")]
+        [Route("ÜrünPost/{HizmetKategoriAdi}/{id:int}")]
         public ActionResult KategoriListesi()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-            var settingvalue = (from s in db.HizmetKategori
-                                where s.HizmetKategoriAdi == "GA"
-                                select s).FirstOrDefault();
+            //var settingvalue = (from s in db.HizmetKategori
+            //                    where s.HizmetKategoriAdi == "GA"
+            //                    select s).FirstOrDefault();
 
-            return PartialView(settingvalue);
+
+
+            return PartialView(db.HizmetKategori.ToList());
         }
         #endregion
 
         #region Kategooriye Ait Ürünler
         //Kategoriye Ait Hizmetler
-        [Route("UrunPost/{HizmetKategoriAdi}/{id:int}")]
+        [Route("ÜrünPost/{HizmetKategoriAdi}/{id:int}")]
         public ActionResult KategoriyeAitUrunler(int id, int Sayfa = 1)
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
@@ -102,6 +106,7 @@ namespace Kurumsal.Controllers
         #endregion
 
         #region Hakkımızda 
+        [Route("Hakkımızda")]
         public ActionResult Hakkimizda()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
@@ -118,6 +123,7 @@ namespace Kurumsal.Controllers
         #endregion
 
         #region Arama Yap
+        [Route("AramaSayfası")]
         public ActionResult AramaYap(string aranan)
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();

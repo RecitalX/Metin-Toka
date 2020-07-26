@@ -12,6 +12,10 @@
             {
                 <h5 class="alert alert-danger"> @TempData["DeleteMessage1"]</h5>
             }
+                @if (TempData["Bilgi"] != null)
+                {
+                    <h5 class="alert alert-success"> @TempData["Bilgi"]</h5>
+                }
         </div>
 
         <div class="card shadow mb-4">

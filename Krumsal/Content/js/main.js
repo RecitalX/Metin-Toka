@@ -69,14 +69,9 @@ $(window).on('load', function() {
 		Add Carousel
 	--------------------*/
     $('.add-slider').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 0,
-        nav: false,
         items: 1,
-        dots: false,
-        autoplay: true,
-        animateOut: 'fadeOut',
-    	animateIn: 'fadeIn',
     });
 
 

@@ -53,16 +53,11 @@ namespace Kurumsal.App_Start
 
             bundles.Add(new StyleBundle("~/css/adminlayout").Include(
                 "~/Content/Admin Panel/css/sb-admin-2.min.css",
-                "~/Content/DataTables/css/jquery.dataTables.css",
-                "~/Content/DataTables/css/dataTables.bootstrap4.css",
                 "~/Content/ckeditor/contents.css"
 
                 ));
 
-            bundles.Add(new ScriptBundle("~/script/adminlayout").Include(
-                "~/Scripts/DataTables/dataTables.bootstrap4.js",
-                "~/Scripts/DataTables/jquery.dataTables.js"
-                ));
+
 
             bundles.Add(new ScriptBundle("~/script/adminlayout2").Include(
                 "~/Content/Admin Panel/vendor/bootstrap/js/bootstrap.bundle.min.js",
@@ -81,7 +76,6 @@ namespace Kurumsal.App_Start
             bundles.Add(new ScriptBundle("~/script/login").Include(
                     "~/Content/Admin Panel/vendor/jquery-easing/jquery.easing.min.js",
                     "~/Content/Admin Panel/vendor/jquery/jquery.min.js",
-                    "~/Scripts/DataTables/jquery.dataTables.js",
                     "~/Scripts/DataTables/dataTables.bootstrap4.js"
                 ));
 

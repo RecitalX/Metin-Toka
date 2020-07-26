@@ -4,7 +4,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
+<div class="text-center">
+    @if (TempData["Bilgi"] != null)
+    {
+        <h5 class="alert alert-success"> @TempData["Bilgi"]</h5>
+    }
+</div>
 <div class="m-4">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -47,7 +52,7 @@
                         <img class="img-responsive" src="@item.ResimURL" width="125" height="125" />
                     </td>
                     <td>
-                        @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }, new { @class = " btn btn-primary" })
+                        @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }, new { @class = " btn btn-primary btn-sm" })
                     </td>
                 </tr>
                     }

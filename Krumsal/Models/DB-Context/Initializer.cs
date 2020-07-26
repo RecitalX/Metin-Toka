@@ -8,7 +8,7 @@ using System.Web.Helpers;
 
 namespace Kurumsal.Models.DB_Contect
 {
-    public class Initializer:DropCreateDatabaseIfModelChanges<KurumsalDB>
+    public class Initializer : DropCreateDatabaseIfModelChanges<KurumsalDB>
     {
         protected override void Seed(KurumsalDB context)
         {
@@ -32,6 +32,15 @@ namespace Kurumsal.Models.DB_Contect
             }
             context.SaveChanges();
 
+            var hakkimizda = new List<Hakkimizda>()
+            {
+                new Hakkimizda(){Aciklama="Test Verisi"}
+            };
+            foreach (var item in hakkimizda)
+            {
+                context.Hakkimizda.Add(item);
+            }
+            context.SaveChanges();
             var banner = new List<Banner>()
             {
                 new Banner(){Baslik="Test Verisi",Aciklama="Test Verisi",ResimURL=".JPG"}

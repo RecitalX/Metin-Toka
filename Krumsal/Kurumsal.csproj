@@ -2222,6 +2222,8 @@
     <Content Include="Content\img\instagram\6.jpg" />
     <Content Include="Content\img\k.gif" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\MetinToka.png" />
+    <Content Include="Content\img\MetinToka1.png" />
     <Content Include="Content\img\newslatter.png" />
     <Content Include="Content\img\page-top-bg.jpg" />
     <Content Include="Content\img\recipes\1.jpg" />
@@ -2251,6 +2253,7 @@
     <Content Include="Content\img\thumb\7.jpg" />
     <Content Include="Content\img\thumb\8.jpg" />
     <Content Include="Content\img\thumb\9.jpg" />
+    <Content Include="Content\img\WhatsApp Image 2020-07-25 at 20.40.37.jpeg" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\circle-progress.min.js" />
     <Content Include="Content\js\jquery-3.2.1.min.js" />
@@ -2603,6 +2606,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BannerController.cs" />
+    <Compile Include="Controllers\HakkimizdaController.cs" />
     <Compile Include="Controllers\HizmetController.cs" />
     <Compile Include="Controllers\HizmetKategoriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2616,6 +2620,7 @@
     <Compile Include="Models\DB-Context\Initializer.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\Banner.cs" />
+    <Compile Include="Models\Sınıflar\Hakkimizda.cs" />
     <Compile Include="Models\Sınıflar\Hizmet.cs" />
     <Compile Include="Models\Sınıflar\HizmetKategori.cs" />
     <Compile Include="Models\Sınıflar\Iletisim.cs" />

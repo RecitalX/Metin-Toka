@@ -2,48 +2,102 @@
 @using PagedList;
 @using PagedList.Mvc;
 @using Kurumsal.Helper;
-@{
-    ViewBag.Title = "KategoriHizmet";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "KategoriHizmet";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
-<div class="products margintopxx">
+<section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
     <div class="container">
+        <h2>Ürünler</h2>
+    </div>
+</section>
+<!-- Hero section end -->
+<!-- Search section -->
+<div class="search-form-section">
+    <div class="sf-warp">
+        <div class="container">
+            <form action="/AramaSayfası" method="post" class="big-search-form">
+                <div class="row">
 
-        <h1 class="mb-5">Kategori Adı</h1>
+                    <div class="col-lg-6 col-sm-6">
+                        <select>
+                            <option>Kategori Seçiniz</option>
+                            @{ Html.RenderAction("KategoriListesi", "Home"); }
+                        </select>
 
-        <div class="row">
-            <div class="col">
 
-                <div class="product_grid">
+                    </div>
 
-                    @foreach (var item in Model)
-                    {
-                        <div class="product">
-                            <div class="product_image"><img src="@item.ResimURL" alt=""></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="/UrunPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId">@item.Baslik</a></div>
-                                <div class="product_price">@item.Aciklama</div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="row">
+
+                            <div class="col-lg-8 col-sm-8">
+                                <input type="text" name="aranan" placeholder="Ürün Ara">
                             </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <input type="submit" value="Ara" class="bsf-btn" />
+                            </div>
+
                         </div>
-                    }
+
+                    </div>
 
                 </div>
 
-            </div>
+
+                @*<select>
+            <option>All Ingredients</option>
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+        </select>*@
+
+            </form>
         </div>
     </div>
 </div>
-<div class="avds_xl pb-5">
+<!-- Search section end -->
+<!-- Recipes section -->
+<section class="recipes-page spad">
     <div class="container">
-        <div class="pagination-container">
-            <div class="pagination">
-                <span class="pagination-inner">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-title">
+                    <h2>Tüm Ürünlerimiz</h2>
+                </div>
+            </div>
 
-                    @Html.PagedListPager(Model, Sayfa => Url.Action("Hizmet", new { Sayfa }), PagedListRenderOptions.PageNumbersOnly)
+        </div>
+        <div class="row">
 
-                </span>
+            @foreach (var item in Model)
+            {
+    <div class="col-lg-4 col-md-6">
+        <div class="recipe">
+            <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><img src="@item.ResimURL" alt=""></a>
+            <div class="recipe-info-warp">
+                <div class="recipe-info">
+                    <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><h3>@item.Baslik</h3></a>
+                    <div class="rating mt-2">
+                        <h4 class="badge" style="display: inline;background-color: white;color:black">@item.UrunKodu</h4>
+                        <h4 class="badge" style="display: inline;background-color: white;color:black">@item.HizmetKategori.HizmetKategoriAdi</h4>
+
+                    </div>
+                </div>
             </div>
         </div>
+    </div>      }
+
+        </div>
+        <div class="site-pagination">
+            <span>01</span>
+            <a href="#">02</a>
+            <a href="#">03</a>
+        </div>
+
+        <div class="col-md-12 mt-4">
+            <nav aria-label="...">
+                @Html.PagedListPager(Model, Sayfa => Url.Action("Urun", new { Sayfa }))
+            </nav>
+        </div>
     </div>
-</div>
+</section>

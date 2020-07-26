@@ -19,9 +19,12 @@
 </script>
 
 <div class="container-fluid">
-
-    <!-- Page Heading -->
-    <!-- DataTales Example -->
+    <div class="text-center">
+        @if (TempData["Bilgi"] != null)
+        {
+            <h5 class="alert alert-success"> @TempData["Bilgi"]</h5>
+        }
+    </div>
     <div class="card shadow mb-4">
 
         <div class="card-header py-3">
@@ -59,7 +62,7 @@
                                 @Html.DisplayFor(modelItem => item.UrunKodu)
                             </td>
                             <td>
-                                @Html.ActionLink("Güncelle", "Edit", new { id = item.HizmetId }, new { @class = "  btn btn-primary  btn-sm" }) 
+                                @Html.ActionLink("Güncelle", "Edit", new { id = item.HizmetId }, new { @class = "  btn btn-primary btn-sm" }) 
                                 @Html.ActionLink("Sil", "Delete", new { id = item.HizmetId }, new { @class = " btn btn-danger btn-sm" })
                             </td>
                         </tr>

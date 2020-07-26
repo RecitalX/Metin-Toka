@@ -21,16 +21,25 @@
 
         <div class="form-group">
             <div class="control-label col-md-2 mb-3">
-                Anasayfa
+                Başlık
             </div>
             <div class="col-md-10">
-                <textarea name="Baslik" class="ckeditor">@Model.Baslik</textarea>
+                <input class="form-control" name="Baslik" required placeholder="Banner başlık" value="@Model.Baslik">
+                <input type="hidden" name="Baslik" value="@Model.Baslik" />
+            </div>
+            <div class="control-label col-md-2 mb-3">
+                Açıklama
             </div>
             <div class="col-md-10">
-                <textarea name="Aciklama" class="ckeditor">@Model.Aciklama</textarea>
+                <input class="form-control" name="Aciklama" required placeholder="Banner açıklama" value="@Model.Aciklama">
+                <input type="hidden" name="Aciklama" value="@Model.Aciklama" />
+            </div>
+            <div class="control-label col-md-2 mb-3">
+                Gideceği yer
             </div>
             <div class="col-md-10">
-                <textarea name="Url" class="ckeditor">@Model.Url</textarea>
+                <input class="form-control" name="Url" required placeholder="Resme tıklandığı zaman gidecek url giriniz" value="@Model.Url">
+                <input type="hidden" name="Url" value="@Model.Url" />
             </div>
         </div>
 
@@ -44,8 +53,8 @@
 
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                    <button class="btn btn-primary" type="submit">Güncelle</button>
-                    <a class="text-white btn btn-danger" href="/Banner/Index">İptal</a>
+                    <button class="btn btn-primary btn-sm" type="submit">Güncelle</button>
+                    <a class="text-white btn btn-danger btn-sm" href="/Banner/Index">İptal</a>
                 </div>
             </div>
         </div>

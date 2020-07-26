@@ -16,6 +16,7 @@ namespace Kurumsal.Models
         }
 
         public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<Hakkimizda> Hakkimizda { get; set; }
         public virtual DbSet<Slider> Slider { get; set; }
         public virtual DbSet<Banner> Banner { get; set; }
         public virtual DbSet<Hizmet> Hizmet { get; set; }

@@ -63,9 +63,10 @@ namespace Kurumsal.Controllers
                 k.Aciklama = banner.Aciklama;
                 k.Url = banner.Url;
                 db.SaveChanges();
+                TempData["Bilgi"] = "Güncelleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
             return View(banner);
-        } 
+        }
     }
 }

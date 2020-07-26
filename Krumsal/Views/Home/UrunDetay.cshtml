@@ -29,18 +29,20 @@
 
                     <div class="details_text">
                         <h2>@Model.Baslik</h2>
+                        <div class="details_share">
+
+                            <div class="mt-4 h4">
+                                <h3 class="badge" style="background-color: #0d408b;color:white">@Model.UrunKodu</h3>
+                                <h3 class="badge" style="background-color: #0d408b;color:white">@Model.HizmetKategori.HizmetKategoriAdi</h3>
+                            </div>
+                        </div>
                         <p>
-                           @Html.Raw(Model.Icerik)
+                            @Html.Raw(Model.Icerik)
                         </p>
                     </div>
 
                     <!-- Share -->
-                    <div class="details_share">
-
-                        <div class="mt-4 h3">
-                            <h1 class="badge" style="background-color: #0d408b;color:white">@Model.UrunKodu</h1>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

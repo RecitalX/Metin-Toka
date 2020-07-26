@@ -11,11 +11,11 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.Adres)
+                Adres
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Adres)
+                @Html.DisplayFor(model => model.WeChat)
             </dd>
 
             <dt>
@@ -27,11 +27,11 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.Mail)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Email)
+                @Html.DisplayFor(model => model.Mail)
             </dd>
 
             <dt>
@@ -47,8 +47,8 @@
         <hr />
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-                @Html.ActionLink("Güncelle", "Edit", new { id = Model.IletisimId }, new { @class = " btn btn-primary" })
-                <a class="text-white btn btn-danger" href="/Iletisim/Index">İptal</a>
+                @Html.ActionLink("Güncelle", "Edit", new { id = Model.IletisimId }, new { @class = " btn btn-primary btn-sm" })
+                <a class="text-white btn btn-danger btn-sm" href="/Iletisim/Index">İptal</a>
             </div>
         </div>
     </div>

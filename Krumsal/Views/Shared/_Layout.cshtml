@@ -41,16 +41,18 @@
         <div class="header-bottom">
             <div class="container">
                 <a href="/Anasayfa" class="site-logo">
-                    <img src="~/Content/img/logo.png" alt="">
+                    @*<img src="~/Content/img/logo.png" alt="">*@
+                    <img class="navbar-logo" src="~/Content/img/MetinToka1.png" />
+                    @*<img width="200" src="~/Content/img/MetinToka.png" />*@
                 </a>
                 <div class="nav-switch">
                     <i class="fa fa-bars"></i>
                 </div>
                 <ul class="main-menu">
                     <li><a href="/Anasayfa">Anasayfa</a></li>
-                    <li><a href="/Home/Hakkimizda">Hakkımızda</a></li>
-                    <li><a href="/Home/Urun">Ürünler</a></li>
-                    <li><a href="/Iletisim">İletişim</a></li>
+                    <li><a href="/Hakkımızda">Hakkımızda</a></li>
+                    <li><a href="/Ürünler">Ürünler</a></li>
+                    <li><a href="/İletişim">İletişim</a></li>
                 </ul>
             </div>
         </div>
@@ -60,14 +62,14 @@
     @RenderBody()
 
     <!-- Footer section  -->
-    <footer class="footer-section set-bg" data-setbg="~/Content/img/footer-bg.jpg">
+    <footer class="footer-section set-bg text-center">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="footer-logo">
-                        <img src="~/Content/img/logo.png" alt="">
+                <div class="col-lg-6 col-sm-12 footer-cover">
+                    <div class="footer-logo-cover">
+                        <img class="footer-logo" src="~/Content/img/MetinToka1.png" alt="footer-logo">
                     </div>
-                    <div class="footer-social">
+                    <div class="footer-social text-lg-left">
                         <a href="#"><i class="fa fa-pinterest"></i></a>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
@@ -76,7 +78,7 @@
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-6 text-lg-right">
+                <div class="col-lg-6 col-sm-12 text-lg-right">
                     <ul class="footer-menu">
                         <li><a href="/Anasayfa">Anasayfa</a></li>
                         <li><a href="/Home/Hakkimizda">Hakkımızda</a></li>
