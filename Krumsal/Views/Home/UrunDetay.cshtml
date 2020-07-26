@@ -1,49 +1,67 @@
 ﻿@model Kurumsal.Models.Hizmet
-@{
-    ViewBag.Title = "HizmetDetay";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
-    <section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
-        <div class="container">
-            <h2>@Model.Baslik</h2>
-        </div>
-    </section>
+@{ ViewBag.Title = "HizmetDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
-    <div class="product_details py-5">
-        <div class="container">
-            <div class="row details_row">
+<section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
+    <div class="container">
+        <h2>@Model.Baslik</h2>
+    </div>
+</section>
 
-                <!-- Product Image -->
-                <div class="col-lg-6">
-                    <div class="details_image">
-                        <div class="details_image_large">
-                            <img src="@Model.ResimURL" alt="">
-                        </div>
+<div class="product_details py-5">
+    <div class="container">
+        <div class="row details_row">
 
+            <!-- Product Image -->
+            <div class="col-lg-6">
+                <div class="details_image">
+                    <div class="details_image_large">
+                        <img src="@Model.ResimURL" alt="">
                     </div>
+
                 </div>
+            </div>
 
-                <!-- Product Content -->
-                <div class="col-lg-6">
+            <!-- Product Content -->
+            <div class="col-lg-6">
 
-                    <div class="details_text">
-                        <h2>@Model.Baslik</h2>
-                        <div class="details_share">
+                <div class="details_text">
+                    <h2>@Model.Baslik</h2>
 
-                            <div class="mt-4 h4">
-                                <h3 class="badge" style="background-color: #0d408b;color:white">@Model.UrunKodu</h3>
-                                <h3 class="badge" style="background-color: #0d408b;color:white">@Model.HizmetKategori.HizmetKategoriAdi</h3>
+                    <div class="details_share">
+
+                        <div class="mt-4">
+                            <div class="h5 d-inline">
+
+                                <span class="product-color" style="background-color: #0d408b;color:white">@Model.UrunKodu</span>
+
+                                <span class="product-color" style="background-color: #0d408b;color:white">@Model.HizmetKategori.HizmetKategoriAdi</span>
                             </div>
                         </div>
-                        <p>
-                            @Html.Raw(Model.Icerik)
-                        </p>
                     </div>
 
-                    <!-- Share -->
-                    
+                    <p>
+                        @Html.Raw(Model.Icerik)
+                    </p>
+
+                    <p class="product-cover">
+
+                        <div class="mt-4 h6">
+                            <div class="h5 d-inline">
+
+                                @foreach (var item in Model.Renk)
+                                {
+                    <span class="product-color">@item.RenkAdi</span>}
+                            </div>
+                        </div>
+
+                    </p>
                 </div>
+
+                <!-- Share -->
+
             </div>
         </div>
     </div>
+</div>

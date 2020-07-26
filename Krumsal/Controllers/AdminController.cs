@@ -16,6 +16,8 @@ namespace Kurumsal.Controllers
         [Route("yonetimpaneli")]
         public ActionResult Index()
         {
+            ViewBag.Slider = db.Slider.Count();
+            ViewBag.Kategori = db.HizmetKategori.Count();
             ViewBag.HizmetSay = db.Hizmet.Count();
             return View();
         }

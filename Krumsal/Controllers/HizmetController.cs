@@ -72,7 +72,7 @@ namespace Kurumsal.Controllers
                 db.SaveChanges();
 
             }
-            TempData["Bilgi"] = "Ürün ekleme işlemi başarılı";
+            TempData["create"] = "Ürün ekleme işlemi başarılı";
             return RedirectToAction("Index");
         }
         #endregion
@@ -96,7 +96,7 @@ namespace Kurumsal.Controllers
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [HttpPost]
-        public ActionResult Edit(Hizmet m,  string renk, HttpPostedFileBase ResimURL)
+        public ActionResult Edit(Hizmet m,  string renk, HttpPostedFileBase ResimURL,string Renk)
         {
             var mkl = db.Hizmet.Where(x => x.HizmetId == m.HizmetId).SingleOrDefault();
 
@@ -139,7 +139,7 @@ namespace Kurumsal.Controllers
             mkl.Aciklama = m.Aciklama;
             mkl.HizmetKategoriId = m.HizmetKategoriId;
             db.SaveChanges();
-            TempData["Bilgi"] = "Ürün güncelleme işlemi başarılı";
+            TempData["edit"] = "Ürün güncelleme işlemi başarılı";
 
             return RedirectToAction("Index", "Hizmet");
         }
@@ -166,7 +166,7 @@ namespace Kurumsal.Controllers
 
             db.Hizmet.Remove(hizmet);
             db.SaveChanges();
-            TempData["Bilgi"] = "Ürün silme işlemi başarılı";
+            TempData["delete"] = "Ürün silme işlemi başarılı";
             return RedirectToAction("Index", "Hizmet");
         }
         #endregion

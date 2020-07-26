@@ -36,6 +36,7 @@ namespace Kurumsal.Controllers
 
                 hakkimizda.Aciklama = h.Aciklama;
                 db.SaveChanges();
+                TempData["edit"] = "Güncelleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
 

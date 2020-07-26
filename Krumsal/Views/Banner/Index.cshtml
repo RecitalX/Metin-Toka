@@ -4,12 +4,17 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<div class="text-center">
-    @if (TempData["Bilgi"] != null)
-    {
-        <h5 class="alert alert-success"> @TempData["Bilgi"]</h5>
-    }
-</div>
+    <div class="text-center">
+        @{ if (TempData["create"] != null)
+            {
+    <h5 class="alert alert-success"><i class="far fa-check-circle"></i>&nbsp;&nbsp; @TempData["create"]</h5> }
+if (TempData["edit"] != null)
+{
+    <h5 class="alert alert-primary"><i class="far fa-edit"></i>&nbsp;&nbsp; @TempData["edit"]</h5> }
+if (TempData["delete"] != null)
+{
+    <h5 class="alert alert-danger"><i class="far fa-trash-alt"></i>&nbsp;&nbsp; @TempData["delete"]</h5> }}
+    </div>
 <div class="m-4">
     <div class="card shadow mb-4">
         <div class="card-header py-3">

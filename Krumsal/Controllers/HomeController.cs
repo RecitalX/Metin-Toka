@@ -80,17 +80,21 @@ namespace Kurumsal.Controllers
 
         #region Kategori Listesi
         [Route("ÜrünPost/{HizmetKategoriAdi}/{id:int}")]
-        public ActionResult KategoriListesi()
+        public PartialViewResult KategoriListesi(int? id)
         {
-            ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-            //var settingvalue = (from s in db.HizmetKategori
-            //                    where s.HizmetKategoriAdi == "GA"
-            //                    select s).FirstOrDefault();
-
-
-
-            return PartialView(db.HizmetKategori.ToList());
+            if (id != null)
+            {
+                ViewBag.Kategoriler = id;
+                var urunlist = db.Hizmet.Where(x => x.HizmetKategoriId == id);
+                return PartialView(urunlist);
+            }
+            else
+            {
+                var urunlist = db.Hizmet.ToList();
+                return PartialView(urunlist);
+            }
         }
+
         #endregion
 
         #region Kategoriye Ait Ürünler

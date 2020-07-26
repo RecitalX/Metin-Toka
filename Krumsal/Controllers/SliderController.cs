@@ -44,7 +44,7 @@ namespace Kurumsal.Controllers
                 }
                 db.Slider.Add(slider);
                 db.SaveChanges();
-                TempData["Bilgi"] = "Slider ekleme işlemi başarılı";
+                TempData["create"] = "Slider ekleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
 
@@ -94,7 +94,7 @@ namespace Kurumsal.Controllers
                 s.Baslik = slider.Baslik;
                 s.Aciklama = slider.Aciklama;
                 db.SaveChanges();
-                TempData["Bilgi"] = "Slider güncelleme işlemi başarılı";
+                TempData["edit"] = "Slider güncelleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
             return View(slider);
@@ -115,7 +115,7 @@ namespace Kurumsal.Controllers
             }
             db.Slider.Remove(slider);
             db.SaveChanges();
-            TempData["Bilgi"] = "Slider silme işlemi başarılı";
+            TempData["delete"] = "Slider silme işlemi başarılı";
             return RedirectToAction("Index");
         }
         #endregion

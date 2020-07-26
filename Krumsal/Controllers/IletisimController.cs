@@ -45,7 +45,7 @@ namespace Kurumsal.Controllers
             {
                 db.Entry(iletisim).State = EntityState.Modified;
                 db.SaveChanges();
-                TempData["Bilgi"] = "Güncelleme işlemi başarılı";
+                TempData["edit"] = "Güncelleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
             return View(iletisim);

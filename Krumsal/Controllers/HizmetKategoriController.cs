@@ -36,7 +36,7 @@ namespace Kurumsal.Controllers
             {
                 db.HizmetKategori.Add(hizmetKategori);
                 db.SaveChanges();
-                TempData["Bilgi"] = "Kategori ekleme işlemi başarılı";
+                TempData["create"] = "Kategori ekleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
 
@@ -67,7 +67,7 @@ namespace Kurumsal.Controllers
             {
                 db.Entry(hizmetKategori).State = EntityState.Modified;
                 db.SaveChanges();
-                TempData["Bilgi"] = "Kategori güncelleme işlemi başarılı";
+                TempData["edit"] = "Kategori güncelleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
             return View(hizmetKategori);
@@ -98,7 +98,7 @@ namespace Kurumsal.Controllers
                 TempData["DeleteMessage"] = "failed : " + ex.Message;
                 TempData["DeleteMessage1"] = "Hata : " + "Bu kategoriyi kullanan ürün varken bu kategoriyi silemezsiniz.";
             }
-            TempData["Bilgi"] = "Kategori silme işlemi başarılı";
+            TempData["delete"] = "Kategori silme işlemi başarılı";
             return RedirectToAction("Index", "HizmetKategori");
         }
         #endregion

@@ -54,7 +54,7 @@ namespace Kurumsal.Controllers
                 k.Keywords = kimlik.Keywords;
                 k.Description = kimlik.Description;
                 db.SaveChanges();
-                TempData["Bilgi"] = "Güncelleme işlemi başarılı";
+                TempData["edit"] = "Güncelleme işlemi başarılı";
                 return RedirectToAction("Index");
             }
             return View(kimlik);
