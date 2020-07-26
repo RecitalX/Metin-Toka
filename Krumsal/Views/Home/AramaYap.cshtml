@@ -9,33 +9,63 @@
         <div class="container">
             <h3>Arama Sonuçları</h3>
         </div>
-        @if (ViewBag.Notfound == null)
+        @foreach (var item in Model)
         {
-<div class="container my-5">
-    <div class="row">
-        <div class="col-md-12">
-            @Html.Grid(Model).Columns(columns =>
-       {
-           columns.Add(m => m.HizmetKategori.HizmetKategoriAdi).Titled("Kategori Adı");
+            
 
-           columns.Add(m => m.Baslik).Titled("Başlık").Sanitized(false).Encoded(false).RenderValueAs(m => Html.ActionLink(m.Baslik,  m.Baslik, "ÜrünPost", new { id = m.HizmetId }, null).ToHtmlString());
+            <div class="col-lg-4 col-md-6">
+                <div class="recipe">
+                    <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><img src="@item.ResimURL" alt=""></a>
+                    <div class="recipe-info-warp">
+                        <div class="recipe-info">s
+                            <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId">
+                                <h3>
+                                @{ string baslik = "";
+                                    if (item.Baslik.Length > 25)
+                                    {
+                                        baslik = item.Baslik.Substring(0, 25) + "...";
+                                    }
+                                    else
+                                    {
+                                        baslik = @item.Baslik;
+                                    }
+                                }
 
-           columns.Add(m => m.UrunKodu).Titled("Ürün Kodu");
+                                @baslik
+                                </h3>
+                            </a>
+                            <div class="rating mt-2">
+                                <h4 class="badge" style="display: inline;background-color: white;color:black">@item.UrunKodu</h4>
+                                <h4 class="badge" style="display: inline;background-color: white;color:black">@item.HizmetKategori.HizmetKategoriAdi</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        };
 
 
-       }).WithPaging(30)
-        </div>
-    </div>
-</div> }
-            else
-            {
-<div class="container" style="padding-top:70px;">
-    <div class="row">
-        <div class="col-md-12 text-center mt-80">
-            <h3 id="notfound">@ViewBag.Notfound</h3>
-            <a href="/Ürünler" class="btn btn-primary m-4">Ürünlere'e Dön</a>
-        </div>
-    </div>
-</div>}
+
+
+
+
+
+
+
+
+
+
+
+
+       
+        
+        @*<div class="container" style="padding-top:70px;">
+            <div class="row">
+                <div class="col-md-12 text-center mt-80">
+                    <h3 id="notfound">@ViewBag.Notfound</h3>
+                    <a href="/Ürünler" class="btn btn-primary m-4">Ürünlere'e Dön</a>
+                </div>
+            </div>
+        </div>}*@
     </div>
 </div>

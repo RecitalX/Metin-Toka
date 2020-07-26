@@ -3,7 +3,7 @@
 @using PagedList.Mvc;
 @using Kurumsal.Helper;
 @{ ViewBag.Title = "KategoriHizmet";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
     <div class="container">
@@ -19,9 +19,15 @@
                 <div class="row">
 
                     <div class="col-lg-6 col-sm-6">
-                        <select>
+                        <select onchange="window.location=this.value">
                             <option>Kategori Seçiniz</option>
-                            @{ Html.RenderAction("KategoriListesi", "Home"); }
+                            @foreach (Kurumsal.Models.HizmetKategori item in ViewBag.Kategorilerim)
+                            {
+                                <option value="/ÜrünPost/@SeoHelper.ToSeoUrl(item.HizmetKategoriAdi).ToLower()/@item.HizmetKategoriId">
+                                    @item.HizmetKategoriAdi
+                                </option>
+
+                            }
                         </select>
 
 
@@ -45,11 +51,11 @@
 
 
                 @*<select>
-            <option>All Ingredients</option>
-            <option>Breakfast</option>
-            <option>Lunch</option>
-            <option>Dinner</option>
-        </select>*@
+                        <option>All Ingredients</option>
+                        <option>Breakfast</option>
+                        <option>Lunch</option>
+                        <option>Dinner</option>
+                    </select>*@
 
             </form>
         </div>
@@ -71,21 +77,21 @@
 
             @foreach (var item in Model)
             {
-    <div class="col-lg-4 col-md-6">
-        <div class="recipe">
-            <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><img src="@item.ResimURL" alt=""></a>
-            <div class="recipe-info-warp">
-                <div class="recipe-info">
-                    <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><h3>@item.Baslik</h3></a>
-                    <div class="rating mt-2">
-                        <h4 class="badge" style="display: inline;background-color: white;color:black">@item.UrunKodu</h4>
-                        <h4 class="badge" style="display: inline;background-color: white;color:black">@item.HizmetKategori.HizmetKategoriAdi</h4>
+                <div class="col-lg-4 col-md-6">
+                    <div class="recipe">
+                        <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><img src="@item.ResimURL" alt=""></a>
+                        <div class="recipe-info-warp">
+                            <div class="recipe-info">
+                                <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><h3>@item.Baslik</h3></a>
+                                <div class="rating mt-2">
+                                    <h4 class="badge" style="display: inline;background-color: white;color:black">@item.UrunKodu</h4>
+                                    <h4 class="badge" style="display: inline;background-color: white;color:black">@item.HizmetKategori.HizmetKategoriAdi</h4>
 
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>      }
+                </div>  }
 
         </div>
         <div class="site-pagination">

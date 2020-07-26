@@ -2675,7 +2675,6 @@
     <Content Include="Views\Slider\Create.cshtml" />
     <Content Include="Views\Slider\Edit.cshtml" />
     <Content Include="Views\Home\Slider.cshtml" />
-    <Content Include="Views\Home\KategoriListesi.cshtml" />
     <Content Include="Views\Banner\Index.cshtml" />
     <Content Include="Views\Banner\Edit.cshtml" />
     <Content Include="Views\Home\Banner.cshtml" />

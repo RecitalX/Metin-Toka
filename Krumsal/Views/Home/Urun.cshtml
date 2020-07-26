@@ -21,9 +21,15 @@
                 <div class="row">
 
                     <div class="col-lg-6 col-sm-6">
-                        <select>
+                        <select onchange="window.location=this.value">
                             <option>Kategori Seçiniz</option>
-                            @{ Html.RenderAction("KategoriListesi", "Home"); }
+                            @foreach (Kurumsal.Models.HizmetKategori item in ViewBag.Kategorilerim)
+                            {
+                                <option value="/ÜrünPost/@SeoHelper.ToSeoUrl(item.HizmetKategoriAdi).ToLower()/@item.HizmetKategoriId">
+                                    @item.HizmetKategoriAdi
+                                </option>
+
+                            }
                         </select>
 
 
@@ -31,14 +37,16 @@
 
                     <div class="col-lg-6 col-sm-6">
                         <div class="row">
-
+                            @using(Html.BeginForm("AramaYap","Home",FormMethod.Get))
+                            {
                             <div class="col-lg-8 col-sm-8">
                                 <input type="text" name="aranan" placeholder="Ürün Ara">
+                                @*@Html.TextBox("aranan")*@
                             </div>
                             <div class="col-lg-4 col-sm-4">
                                 <input type="submit" value="Ara" class="bsf-btn" />
                             </div>
-
+                            }
                         </div>
 
                     </div>
@@ -92,7 +100,7 @@
                             </div>
                         </div>
                     </div>
-                </div>      }
+                </div>}
 
         </div>
 

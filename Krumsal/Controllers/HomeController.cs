@@ -30,6 +30,8 @@ namespace Kurumsal.Controllers
         [Route("Ürünler")]
         public ActionResult Urun(int Sayfa = 1)
         {
+            List<HizmetKategori> kategorilistesi = db.HizmetKategori.Where(x => x.HizmetKategoriId > 0).OrderByDescending(x => x.HizmetKategoriId).ToList();
+            ViewBag.Kategorilerim = kategorilistesi;
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             return View(db.Hizmet.Include("HizmetKategori").OrderByDescending(x => x.HizmetId).ToPagedList(Sayfa, 9));
         }
@@ -78,32 +80,14 @@ namespace Kurumsal.Controllers
 
         #endregion
 
-        #region Kategori Listesi
-        [Route("ÜrünPost/{HizmetKategoriAdi}/{id:int}")]
-        public PartialViewResult KategoriListesi(int? id)
-        {
-            if (id != null)
-            {
-                ViewBag.Kategoriler = id;
-                var urunlist = db.Hizmet.Where(x => x.HizmetKategoriId == id);
-                return PartialView(urunlist);
-            }
-            else
-            {
-                var urunlist = db.Hizmet.ToList();
-                return PartialView(urunlist);
-            }
-        }
-
-        #endregion
-
         #region Kategoriye Ait Ürünler
         //Kategoriye Ait Hizmetler
         [Route("ÜrünPost/{HizmetKategoriAdi}/{id:int}")]
         public ActionResult KategoriyeAitUrunler(int id, int Sayfa = 1)
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-
+            List<HizmetKategori> kategorilistesi = db.HizmetKategori.Where(x => x.HizmetKategoriId > 0).OrderByDescending(x => x.HizmetKategoriId).ToList();
+            ViewBag.Kategorilerim = kategorilistesi;
             var u = db.Hizmet.Include("HizmetKategori").OrderByDescending(x => x.HizmetId).Where(x => x.HizmetKategori.HizmetKategoriId == id).ToPagedList(Sayfa, 9);
             return View(u);
         }
@@ -131,18 +115,12 @@ namespace Kurumsal.Controllers
         public ActionResult AramaYap(string aranan)
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-
+            var urun = from d in db.Hizmet select d;
             if (!string.IsNullOrEmpty(aranan))
             {
-                var mkl = db.Hizmet.Where(x => x.Baslik.Contains(aranan)).ToList();
-                if (mkl.Count == 0)
-                {
-                    ViewBag.NotFound = "Aramanızla Eşleşen Hiçbir Kayıt Bulunamadı!";
-                    return View(mkl);
-                }
-                return View(mkl);
+                urun = urun.Where(x => x.Baslik.Contains(aranan) || x.UrunKodu.Contains(aranan) || x.Aciklama.Contains(aranan));
             }
-            return View();
+            return View(urun.ToList());
         }
         #endregion
 
