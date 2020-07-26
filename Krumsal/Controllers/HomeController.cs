@@ -19,7 +19,7 @@ namespace Kurumsal.Controllers
         [Route("")]
         [Route("Anasayfa")]
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index() 
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             return View();
