@@ -11,19 +11,20 @@
 <section class="about-section spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 about-text">
+            <div class="col-lg-6 col-lg-push-6 about-text">
+                <img src="~/Content/img/about.jpg" />
+
+
+            </div>
+            <div class="col-lg-6 col-lg-pull-6">
+
                 <h2>
                     Hakkımızda
                 </h2>
 
                 @foreach (var item in Model)
                 {
-                    @Html.Raw(item.Aciklama)
-                }
-
-            </div>
-            <div class="col-lg-6">
-                <img src="~/Content/img/about.jpg" />
+            @Html.Raw(item.Aciklama)}
             </div>
         </div>
     </div>

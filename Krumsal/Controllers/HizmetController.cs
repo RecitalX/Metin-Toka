@@ -135,6 +135,7 @@ namespace Kurumsal.Controllers
             }
 
             mkl.Baslik = m.Baslik;
+            mkl.UrunKodu = m.UrunKodu;
             mkl.Icerik = m.Icerik;
             mkl.Aciklama = m.Aciklama;
             mkl.HizmetKategoriId = m.HizmetKategoriId;

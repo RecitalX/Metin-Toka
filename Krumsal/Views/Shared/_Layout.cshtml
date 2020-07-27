@@ -28,6 +28,23 @@
     <link rel="stylesheet" href="~/Content/css/style.css" />
     <!-- =======================================================================================-->
 
+    <!-- ========================= CSS =========================================================-->
+    <!-- WhatsApp ekleme -->
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                whatsapp: "+90 5323324082", // WhatsApp numarası
+                call_to_action: "Merhaba, nasıl yardımcı olabilirim?", // Görüntülenecek yazı
+                position: "left", // Sağ taraf için 'right' sol taraf için 'left'
+            };
+            var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <!-- WhatsApp ekleme -->
+    <!-- =======================================================================================-->
 </head>
 <body id="top">
 
@@ -79,9 +96,9 @@
                 <div class="col-lg-6 col-sm-12 text-lg-right">
                     <ul class="footer-menu">
                         <li><a href="/Anasayfa">Anasayfa</a></li>
-                        <li><a href="/Home/Hakkimizda">Hakkımızda</a></li>
-                        <li><a href="/Home/Urun">Ürünler</a></li>
-                        <li><a href="/Iletisim">İletişim</a></li>
+                        <li><a href="/Hakkımızda">Hakkımızda</a></li>
+                        <li><a href="/Ürünler">Ürünler</a></li>
+                        <li><a href="/İletişim">İletişim</a></li>
                     </ul>
                 </div>
             </div>

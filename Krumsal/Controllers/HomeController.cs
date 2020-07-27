@@ -33,7 +33,7 @@ namespace Kurumsal.Controllers
             List<HizmetKategori> kategorilistesi = db.HizmetKategori.Where(x => x.HizmetKategoriId > 0).OrderByDescending(x => x.HizmetKategoriId).ToList();
             ViewBag.Kategorilerim = kategorilistesi;
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-            return View(db.Hizmet.Include("HizmetKategori").OrderByDescending(x => x.HizmetId).ToPagedList(Sayfa, 9));
+            return View(db.Hizmet.Include("HizmetKategori").OrderByDescending(x => x.HizmetId).ToPagedList(Sayfa, 40));
         }
         #endregion
 
@@ -88,7 +88,7 @@ namespace Kurumsal.Controllers
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             List<HizmetKategori> kategorilistesi = db.HizmetKategori.Where(x => x.HizmetKategoriId > 0).OrderByDescending(x => x.HizmetKategoriId).ToList();
             ViewBag.Kategorilerim = kategorilistesi;
-            var u = db.Hizmet.Include("HizmetKategori").OrderByDescending(x => x.HizmetId).Where(x => x.HizmetKategori.HizmetKategoriId == id).ToPagedList(Sayfa, 9);
+            var u = db.Hizmet.Include("HizmetKategori").OrderByDescending(x => x.HizmetId).Where(x => x.HizmetKategori.HizmetKategoriId == id).ToPagedList(Sayfa, 40);
             TempData["UrunYok"] = "Bu kategoriye ait ürün bulunmamaktadır.";
             return View(u);
         }
@@ -122,6 +122,11 @@ namespace Kurumsal.Controllers
             if (!string.IsNullOrEmpty(aranan))
             {
                 urun = urun.Where(x => x.Baslik.Contains(aranan) || x.UrunKodu.Contains(aranan) || x.Aciklama.Contains(aranan));
+                if (urun.Count() == 0)
+                {
+                    ViewBag.NotFound = "Aramanız eşleşen bir sonuç bulunamadı.";
+                    return View(urun);
+                }
             }
             return View(urun.ToList());
         }

@@ -39,7 +39,6 @@ namespace Kurumsal.Controllers
                     WebImage img = new WebImage(ResimURL.InputStream);
                     FileInfo imginfo = new FileInfo(ResimURL.FileName);
                     string logoname = Guid.NewGuid().ToString() + imginfo.Extension;
-                    img.Resize(980, 400);
                     img.Save("~/Uploads/Slider/" + logoname);
                     slider.ResimURL = "/Uploads/Slider/" + logoname;
                 }
@@ -87,7 +86,6 @@ namespace Kurumsal.Controllers
                     FileInfo imginfo = new FileInfo(ResimURL.FileName);
 
                     string sliderimgname = Guid.NewGuid().ToString() + imginfo.Extension;
-                    img.Resize(1024, 360);
                     img.Save("~/Uploads/Slider/" + sliderimgname);
 
                     s.ResimURL = "/Uploads/Slider/" + sliderimgname;

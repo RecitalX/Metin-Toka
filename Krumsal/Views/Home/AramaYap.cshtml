@@ -27,7 +27,8 @@
                             {
                 <option value="/ÜrünPost/@SeoHelper.ToSeoUrl(item.HizmetKategoriAdi).ToLower()/@item.HizmetKategoriId">
                     @item.HizmetKategoriAdi
-                </option>}
+                </option>
+}
                         </select>
 
 
@@ -55,6 +56,8 @@
 </div>
 <!-- Search section end -->
 <!-- Recipes section -->
+@if (ViewBag.NotFound == null)
+{
 <section class="recipes-page spad">
     <div class="container">
         <div class="row">
@@ -75,7 +78,7 @@
         <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId"><img src="@item.ResimURL" alt=""></a>
         <div class="recipe-info-warp">
             <div class="recipe-info">
-                
+
                 <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()-@item.HizmetId">
                     <h3>
                         @{ string baslik = "";
@@ -98,15 +101,17 @@
             </div>
         </div>
     </div>
-</div>      }
+</div>          }
 
         </div>
 
-        @*<div class="site-pagination text-white">
-            <nav aria-label="...">
-                @Html.PagedListPager(Model, Sayfa => Url.Action("Urun", new { Sayfa }))
-            </nav>
-        </div>*@
+
 
     </div>
-</section>
+</section> }
+            else
+            {
+<div class="alert alert-info text-center mt-5" style="margin-left:50%;transform:translate(-50%);">
+    @ViewBag.NotFound
+</div>}
+
