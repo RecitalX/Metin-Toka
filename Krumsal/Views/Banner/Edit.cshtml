@@ -24,14 +24,14 @@
                 Başlık
             </div>
             <div class="col-md-10">
-                <input class="form-control" name="Baslik" required placeholder="Banner başlık" value="@Model.Baslik">
+                <input class="form-control" name="Baslik" required placeholder="Banner başlık" maxlength="100" value="@Model.Baslik">
                 <input type="hidden" name="Baslik" value="@Model.Baslik" />
             </div>
             <div class="control-label col-md-2 mb-3">
                 Açıklama
             </div>
             <div class="col-md-10">
-                <input class="form-control" name="Aciklama" required placeholder="Banner açıklama" value="@Model.Aciklama">
+                <input class="form-control" name="Aciklama" maxlength="100"  required placeholder="Banner açıklama" value="@Model.Aciklama">
                 <input type="hidden" name="Aciklama" value="@Model.Aciklama" />
             </div>
             <div class="control-label col-md-2 mb-3">

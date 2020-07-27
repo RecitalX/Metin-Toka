@@ -17,23 +17,9 @@
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group ">
-                <label for="cname" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
-                <div class="col-lg-10">
-                    <input class="form-control" id="Baslik" name="Baslik" type="text" required />
-                </div>
-            </div>
-
-            <div class="form-group ">
-                <label for="cemail" class="control-label col-lg-2">İçerik <span class="required">*</span></label>
-                <div class="col-lg-10">
-                    <textarea class="ckeditor" name="Aciklama">İçerik</textarea>
-                </div>
-            </div>
-
-            <div class="form-group ">
                 <label for="curl" class="control-label col-lg-2">Resim</label>
                 <div class="col-lg-10">
-                    <input required type="file" class="form-control" name="ResimURL" accept=".jpg,.png,.jpeg" />
+                    <input required type="file" name="ResimURL" accept=".jpg,.png,.jpeg" />
                 </div>
             </div>
 

@@ -45,13 +45,46 @@ if (TempData["delete"] != null)
                     {
                 <tr>
                     <td>
-                        @Html.Raw(item.Baslik)
+                        @{ string baslik = "";
+                            if (item.Baslik.Length > 100)
+                            {
+                                baslik = item.Baslik.Substring(0, 100) + "...";
+                            }
+                            else
+                            {
+                                baslik = @item.Baslik;
+                            }
+                        }
+
+                        @baslik
                     </td>
                     <td>
-                        @Html.Raw(item.Aciklama)
+                        @{ string aciklama = "";
+                            if (item.Aciklama.Length > 100)
+                            {
+                                aciklama = item.Aciklama.Substring(0, 100) + "...";
+                            }
+                            else
+                            {
+                                aciklama = @item.Aciklama;
+                            }
+                        }
+
+                        @aciklama
                     </td>
                     <td>
-                        @Html.Raw(item.Url)
+                        @{ string url = "";
+                            if (item.Url.Length > 100)
+                            {
+                                url = item.Url.Substring(0, 100) + "...";
+                            }
+                            else
+                            {
+                                url = @item.Url;
+                            }
+                        }
+
+                        @url
                     </td>
                     <td>
                         <img class="img-responsive" src="@item.ResimURL" width="125" height="125" />

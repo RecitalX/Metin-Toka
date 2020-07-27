@@ -3,37 +3,15 @@
 @foreach (var item in Model.OrderByDescending(x => x.ID).Where(x => x.Onay == true))
 {<a href="@item.Url">
         <section class="add-section spad">
-            @*<div class="container">
-                    <div class="add-warp">
-                        <div class="add-slider owl-carousel">
-                            <div class="as-item set-bg" data-setbg="@item.ResimURL"></div>
-                        </div>
-                        <div class="row add-text-warp">
-
-                            <div class="col-lg-4 col-md-5 offset-lg-8 offset-md-7">
-
-                                <div class="add-text text-white">
-
-                                    <h2>@item.Baslik</h2>
-
-                                    <p>@item.Aciklama</p>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>*@
-
             <div class="row">
 
-                    <div class="col-lg-4 col-xs-12 p-4 containerxz" style="background-color: #0d408b;box-sizing:border-box;">
+                <div class="col-lg-4 col-xs-12 p-4 containerxz" style="background-color: #0d408b;box-sizing:border-box;">
 
-                        <h2 class="text-white">@item.Baslik</h2>
+                    <h2 class="text-white">@item.Baslik</h2>
 
-                        <p class="text-white">@item.Aciklama</p>
+                    <p class="text-white">@item.Aciklama</p>
 
-                    </div>
+                </div>
 
                 <div class="col-lg-8 col-xs-12">
 

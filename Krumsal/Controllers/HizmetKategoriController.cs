@@ -98,7 +98,7 @@ namespace Kurumsal.Controllers
                 TempData["DeleteMessage"] = "failed : " + ex.Message;
                 TempData["DeleteMessage1"] = "Hata : " + "Bu kategoriyi kullanan ürün varken bu kategoriyi silemezsiniz.";
             }
-            TempData["delete"] = "Kategori silme işlemi başarılı";
+            //TempData["delete"] = "Kategori silme işlemi başarılı";
             return RedirectToAction("Index", "HizmetKategori");
         }
         #endregion

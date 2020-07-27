@@ -1,3 +1,7 @@
-* Arama kısmı SEO ---
-* Yanlış mailde hata veriyor 
-* Kategori listeleme
+Responsive Düzenlemeleri 
+*En küçük modda hakkımızda kısmının içreiği resimden önce geliyor onu ilk resim gelecek şekilde 
+*Adama Slider kaç cm ye kaç cm gelecek ona bakarsın ona göre yarın söyleriz hatta yarın girmeden bir kaç o boyutta resim ayarlayalım 
+*375px de ana sayfa ve üürünler kısmında kartlar sağa dayalı şekilde duruyor 
+*425 652 cartlar sağa yaslı şekilde ve flour kısmı kartlardan taşıyor o flourları ayarlayalım tam boyur vs 
+Bide bende detay kısmında renkler vs kategoriler birleşik geliyor sende öylemi bi bak ona değilse bana bi bakalım 
+                    *********************************
