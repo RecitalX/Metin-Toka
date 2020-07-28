@@ -1,0 +1,33 @@
+﻿@model Kurumsal.Models.Sınıflar.Mesaj
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+    <link href="~/Content/css/Mesaj-Details.css" rel="stylesheet" />
+
+<div class="email-app mb-4 container">
+
+    <mbootstrap.zipain class="message">
+            <div class="details">
+                <div class="header">
+                    <img class="avatar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                    <div class="from">
+                        <span>@Model.AdSoyad</span>
+                        @Model.Telefon
+                    </div>
+                    <div class="date"><b>Saat @Model.saat</b></div>
+                </div>
+                <div class="content">
+                    <p>
+                        @Model.Konu
+                    </p>
+                    <blockquote>
+                        @Model.İleti
+                    </blockquote>
+                </div>
+            </div>
+        
+    </mbootstrap.zipain>
+</div>
+
+

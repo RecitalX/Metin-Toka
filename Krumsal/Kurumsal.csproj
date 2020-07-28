@@ -2034,6 +2034,8 @@
     <Content Include="Content\ckeditor\skins\moono-lisa\images\refresh.png" />
     <Content Include="Content\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Content\ckeditor\styles.js" />
+    <Content Include="Content\css\Mesaj-Details.css" />
+    <Content Include="Content\css\Mesaj-Index.css" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\flaticon.css" />
@@ -2613,6 +2615,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Controllers\KimlikController.cs" />
+    <Compile Include="Controllers\MesajController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2627,6 +2630,7 @@
     <Compile Include="Models\Sınıflar\Iletisim.cs" />
     <Compile Include="Models\Sınıflar\Kimlik.cs" />
     <Compile Include="Models\DB-Context\KurumsalDB.cs" />
+    <Compile Include="Models\Sınıflar\Mesaj.cs" />
     <Compile Include="Models\Sınıflar\Renk.cs" />
     <Compile Include="Models\Sınıflar\Slider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2664,7 +2668,6 @@
     <Content Include="Views\Hizmet\Index.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
-    <Content Include="Views\Home\Iletisim.cshtml" />
     <Content Include="Views\Home\UrunDetay.cshtml" />
     <Content Include="Views\Home\KategoriyeAitUrunler.cshtml" />
     <Content Include="Views\Home\Hakkimizda.cshtml" />
@@ -2678,6 +2681,10 @@
     <Content Include="Views\Banner\Index.cshtml" />
     <Content Include="Views\Banner\Edit.cshtml" />
     <Content Include="Views\Home\Banner.cshtml" />
+    <Content Include="Views\Home\Mesaj.cshtml" />
+    <Content Include="Views\Home\İletisim.cshtml" />
+    <Content Include="Views\Mesaj\Index.cshtml" />
+    <Content Include="Views\Mesaj\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Mesaj>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/Content/css/Mesaj-Index.css" rel="stylesheet" />
+
+
+<div class="text-center">
+    @if (TempData["delete"] != null)
+    {
+        <h5 class="alert alert-danger"><i class="far fa-trash-alt"></i>&nbsp;&nbsp; @TempData["delete"]</h5>
+    }
+    </div>
+    @if (Model.Count() == 0)
+    {
+        <div class="alert alert-info text-center mt-5" style="margin-left:50%;transform:translate(-50%);">
+            @TempData["Mesaj"]
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <section class="content inbox">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 col-lg-12 col-xl-12">
+                            <ul class="mail_list list-group list-unstyled">
+                                @foreach (var item in Model)
+                                {
+                                    <li class="list-group-item">
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <div class="controls">
+                                                    <a href="/Mesaj/Delete/@item.ID" class="mr-3"><button type="button" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button></a>
+                                                </div>
+                                                <div class="thumb hidden-sm-down m-r-20"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt=""> </div>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="media-heading">
+                                                    <a href="/Mesaj/Details/@item.ID" class="m-r-10">@item.AdSoyad</a>
+                                                    <span class="badge bg-blue">@item.Konu</span>
+                                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">Saat @item.saat</time><i class="zmdi zmdi-attachment-alt"></i> </small>
+                                                </div>
+                                                <p class="msg">
+                                                    @{ string ileti = "";
+                                                        if (item.İleti.Length > 400)
+                                                        {
+                                                            ileti = item.İleti.Substring(0, 400) + "...";
+                                                        }
+                                                        else
+                                                        {
+                                                            ileti = @item.İleti;
+                                                        }
+                                                    }
+
+                                                    @ileti
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    }
+
+

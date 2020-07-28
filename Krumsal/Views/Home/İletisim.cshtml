@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Kurumsal.Models.Iletisim>
+    @{ 
+        Layout = null;
+    }
+
+
+
+@foreach (var item in Model)
+    {
+
+
+        <ul class="ct-list">
+            <li>
+                <h6>Adres:</h6>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;&nbsp;
+                    @item.WeChat
+                </p>
+            </li>
+            <li>
+                <h6>İletişim:</h6>
+                <p>
+                    <i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;
+                    @item.Telefon
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;
+                    @item.Mail
+                </p>
+                <p>
+                    <i class="fas fa-fax"></i>&nbsp;&nbsp;&nbsp;
+                    @item.Fax
+                </p>
+                <p>
+                    <i class="fab fa-whatsapp"></i>&nbsp;&nbsp;&nbsp;
+                    @item.Whatsapp
+                </p>
+                <p>
+                    <i class="fab fa-instagram"></i>&nbsp;&nbsp;&nbsp;
+                    @item.instagram
+                </p>
+
+            </li>
+        </ul>}

@@ -7,6 +7,7 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
+using Kurumsal.Models.Sınıflar;
 
 namespace Kurumsal.Controllers
 {
@@ -34,38 +35,6 @@ namespace Kurumsal.Controllers
             ViewBag.Kategorilerim = kategorilistesi;
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             return View(db.Hizmet.Include("HizmetKategori").OrderByDescending(x => x.HizmetId).ToPagedList(Sayfa, 40));
-        }
-        #endregion
-
-        #region İletişim
-        [HttpGet]
-        [Route("İletişim")]
-        public ActionResult Iletisim()
-        {
-            ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-            return View(db.Iletisim.ToList());
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Iletisim(string adsoyad = null, string email = null, string konu = null, string mesaj = null)
-        {
-
-            if (adsoyad != null && email != null)
-            {
-                WebMail.SmtpServer = "mail.dugmesatis.com";
-                WebMail.EnableSsl = false;
-                WebMail.UserName = "info@dugmesatis.com";
-                WebMail.Password = "MuzafferinKabugu+!";
-                WebMail.SmtpPort = 587;
-                WebMail.Send("info@dugmesatis.com", konu, "<p class='p-5 bg-primary'>" + email + "</p>" + "<p>" + mesaj + "</p>");
-                ViewBag.Uyari = "Mesajınız başarı ile gönderilmiştir.";
-            }
-            else
-            {
-                ViewBag.Uyari = "Hata Oluştu.Tekrar deneyiniz";
-            }
-            return RedirectToAction("Iletisim", "Home");
         }
         #endregion
 
@@ -143,6 +112,38 @@ namespace Kurumsal.Controllers
         public ActionResult Banner()
         {
             return View(db.Banner.ToList());
+        }
+        #endregion
+
+        #region Mesaj Gönderme
+        [HttpGet]
+        [Route("İletişim")]
+        public ActionResult Mesaj()
+        {
+            ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Mesaj([Bind(Include = "ID,AdSoyad,Telefon,Konu,İleti")] Mesaj mesaj)
+        {
+            if (ModelState.IsValid)
+            {
+                mesaj.saat = DateTime.Now.Hour;
+                db.Mesaj.Add(mesaj);
+                db.SaveChanges();
+
+            }
+            TempData["Basarılı"] = "Mesaj gönderme işlemi başarılı";
+            return RedirectToAction("Mesaj", "Home");
+        }
+        #endregion
+
+        #region İletişim Bilgileri
+        public ActionResult İletisim()
+        {
+            return View(db.Iletisim.ToList());
         }
         #endregion
     }

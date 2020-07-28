@@ -43,7 +43,7 @@ namespace Kurumsal.Models.DB_Contect
             context.SaveChanges();
             var banner = new List<Banner>()
             {
-                new Banner(){Baslik="Test Verisi",Aciklama="Test Verisi",ResimURL=".JPG"}
+                new Banner(){Baslik="Test Verisi",Aciklama="Test Verisi",ResimURL=".JPG",Url="Test verisi"}
             };
             foreach (var item in banner)
             {

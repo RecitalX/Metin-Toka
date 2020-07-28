@@ -22,13 +22,13 @@
     <div class="text-center">
         @{ if (TempData["create"] != null)
             {
-    <h5 class="alert alert-success"><i class="far fa-check-circle"></i>&nbsp;&nbsp; @TempData["create"]</h5> }
-if (TempData["edit"] != null)
-{
-    <h5 class="alert alert-primary"><i class="far fa-edit"></i>&nbsp;&nbsp; @TempData["edit"]</h5> }
-if (TempData["delete"] != null)
-{
-    <h5 class="alert alert-danger"><i class="far fa-trash-alt"></i>&nbsp;&nbsp; @TempData["delete"]</h5> }}
+                <h5 class="alert alert-success"><i class="far fa-check-circle"></i>&nbsp;&nbsp; @TempData["create"]</h5> }
+            if (TempData["edit"] != null)
+            {
+                <h5 class="alert alert-primary"><i class="far fa-edit"></i>&nbsp;&nbsp; @TempData["edit"]</h5> }
+            if (TempData["delete"] != null)
+            {
+                <h5 class="alert alert-danger"><i class="far fa-trash-alt"></i>&nbsp;&nbsp; @TempData["delete"]</h5> }}
     </div>
     <div class="card shadow mb-4">
 
@@ -56,33 +56,33 @@ if (TempData["delete"] != null)
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @{ string baslik = "";
-                                    if (item.Baslik.Length > 100)
-                                    {
-                                        baslik = item.Baslik.Substring(0, 100) + "...";
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @{ string baslik = "";
+                                        if (item.Baslik.Length > 100)
+                                        {
+                                            baslik = item.Baslik.Substring(0, 100) + "...";
+                                        }
+                                        else
+                                        {
+                                            baslik = @item.Baslik;
+                                        }
                                     }
-                                    else
-                                    {
-                                        baslik = @item.Baslik;
-                                    }
-                                }
 
-                                @baslik
-                            </td>
-                            <td><img src="@item.ResimURL" width="100" height="100" /></td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.UrunKodu)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Güncelle", "Edit", new { id = item.HizmetId }, new { @class = "  btn btn-primary btn-sm" }) 
-                                @Html.ActionLink("Sil", "Delete", new { id = item.HizmetId }, new { @class = " btn btn-danger btn-sm" })
-                            </td>
-                        </tr>
-                    }
+                                    @baslik
+                                </td>
+                                <td><img src="@item.ResimURL" width="100" height="100" /></td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UrunKodu)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Güncelle", "Edit", new { id = item.HizmetId }, new { @class = "  btn btn-primary btn-sm" })
+                                    @Html.ActionLink("Sil", "Delete", new { id = item.HizmetId }, new { @class = " btn btn-danger btn-sm" })
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
