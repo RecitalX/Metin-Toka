@@ -16,13 +16,13 @@
                     <h4>Bize ulaşın!</h4>
                     @if (TempData["Başarısız"] != null)
                     {
-                        <div class="alert alert-info text-center mt-5" style="margin-left:50%;transform:translate(-50%);">
+                        <div class="alert alert-danger text-center" style="">
                             @TempData["Başarısız"]
                         </div>
                     }
                     @if (TempData["Basarılı"] != null)
                     {
-                        <div class="alert alert-info text-center mt-5" style="margin-left:50%;transform:translate(-50%);">
+                        <div class="alert alert-success text-center" style="">
                             @TempData["Basarılı"]
                         </div>
                     }
@@ -30,14 +30,14 @@
                         @Html.AntiForgeryToken()
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" name="AdSoyad" id="AdSoyad" placeholder="İsim Soyisim" required>
+                                <input type="text" name="AdSoyad" id="AdSoyad" placeholder="Ad soyad" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="Telefon" id="Telefon" placeholder="Telefon numaranız" required>
+                                <input type="text" name="Telefon" id="Telefon" placeholder="Telefon numarası" required>
                             </div>
                             <div class="col-md-12">
                                 <input type="text" name="Konu" id="Konu" placeholder="Konu" required>
-                                <textarea name="İleti" placeholder="İleti" required></textarea>
+                                <textarea name="İleti" placeholder="Mesaj" required></textarea>
                                 <button type="submit" class="site-btn">Gönder</button>
                             </div>
                         </div>

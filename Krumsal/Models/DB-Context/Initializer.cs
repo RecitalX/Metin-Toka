@@ -63,7 +63,7 @@ namespace Kurumsal.Models.DB_Contect
 
             Admin admin = new Admin()
             {
-                Eposta = "selahattinfurkanaltun1@gmail.com",
+                Eposta = "isemihbl@gmail.com",
                 Sifre = Crypto.HashPassword("123"),
                 Yetki = "Admin"
             };

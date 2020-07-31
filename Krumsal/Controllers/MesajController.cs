@@ -16,13 +16,12 @@ namespace Kurumsal.Controllers
         public ActionResult Index()
         {
             var mesaj = db.Mesaj.ToList().OrderByDescending(x => x.ID);
-          
-                TempData["Mesaj"] = "Şuan gösterilercek hiç mesajınız yok";
-        
-                return View(mesaj);
+            TempData["Mesaj"] = "Şuan gösterilercek hiç mesajınız yok";
+
+            return View(mesaj);
         }
 
-        public ActionResult Details( int id)
+        public ActionResult Details(int id)
         {
             if (id == 0)
             {

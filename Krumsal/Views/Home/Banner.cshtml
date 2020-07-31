@@ -2,20 +2,20 @@
 @{ Layout = null; }
 @foreach (var item in Model.OrderByDescending(x => x.ID).Where(x => x.Onay == true))
 {<a href="@item.Url">
-        <section class="add-section spad">
+        <section class="add-section spad container">
             <div class="row">
 
                 <div class="col-lg-4 col-xs-12 p-4 containerxz" style="background-color: #0d408b;box-sizing:border-box;">
 
-                    <h2 class="text-white">@item.Baslik</h2>
+                    <h2 class="text-white" style="letter-spacing:0px;line-height:35px;">@item.Baslik</h2>
 
-                    <p class="text-white">@item.Aciklama</p>
+                    <p class="text-white mt-3" style="letter-spacing:0px;line-height:23px;">@item.Aciklama</p>
 
                 </div>
 
                 <div class="col-lg-8 col-xs-12">
 
-                    <img class="" src="@item.ResimURL" />
+                    <img class="" src="@item.ResimURL"/>
 
                 </div>
 

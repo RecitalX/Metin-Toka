@@ -6,7 +6,8 @@
 <link href="~/Content/css/Mesaj-Index.css" rel="stylesheet" />
 
 
-<div class="text-center">
+<div class="text-center container">
+
     @if (TempData["delete"] != null)
     {
         <h5 class="alert alert-danger"><i class="far fa-trash-alt"></i>&nbsp;&nbsp; @TempData["delete"]</h5>
@@ -42,7 +43,7 @@
                                                 <div class="media-heading">
                                                     <a href="/Mesaj/Details/@item.ID" class="m-r-10">@item.AdSoyad</a>
                                                     <span class="badge bg-blue">@item.Konu</span>
-                                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">Saat @item.saat</time><i class="zmdi zmdi-attachment-alt"></i> </small>
+                                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">Saat @item.saat.ToString("HH:mm")</time><i class="zmdi zmdi-attachment-alt"></i> </small>
                                                 </div>
                                                 <p class="msg">
                                                     @{ string ileti = "";

@@ -1888,6 +1888,18 @@ ol {
     }*/
 
 
+    .containerxz h2 {
+        font-size: 36px;
+    }
+
+@media all and (max-width:1024px) {
+
+
+    .containerxz h2 {
+        font-size: 25px;
+    }
+}
+
 @media all and (max-width:800px) {
     .containerx {
         width: 100%;
@@ -1932,7 +1944,7 @@ ol {
 
 @media (min-width: 1200px) {
     .containerx {
-        max-width: 1150px;
+        max-width: 1176px;
     }
 
 

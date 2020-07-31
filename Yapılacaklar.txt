@@ -1,14 +1,2 @@
-Responsive Düzenlemeleri:
-
-*En küçük modda hakkımızda kısmının içreiği resimden önce geliyor onu ilk resim gelecek şekilde.+++
-
-*Adama Slider kaç cm ye kaç cm gelecek ona bakarsın ona göre yarın söyleriz hatta yarın girmeden bir kaç o boyutta resim ayarlayalım.+++
-
-*375px de ana sayfa ve ürünler kısmında kartlar sağa dayalı şekilde duruyor.+++
-
-*425x652 cartlar sağa yaslı şekilde ve flour kısmı kartlardan taşıyor o flourları ayarlayalım tam boyur vs.
-
-*Bir de bende detay kısmında renkler vs kategoriler birleşik geliyor sende öylemi bi bak ona değilse bana bi bakalım.+++
-
 Slider boyut 1120x750
 Banner boyut 760x290
