@@ -72,6 +72,15 @@ namespace Kurumsal.Controllers
         }
         #endregion
 
+        #region Kataloglar
+        [Route("Kataloglar")]
+        public ActionResult Katalog()
+        {
+            ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
+            return View(db.Katalog.ToList());
+        }
+        #endregion
+
         #region En Son Eklenen Ürünler
         public ActionResult EnsonEklenenUruler()
         {

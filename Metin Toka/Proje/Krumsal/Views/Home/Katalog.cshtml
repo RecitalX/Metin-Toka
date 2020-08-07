@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Katalog>
+@using Kurumsal.Helper;
+@{
+    ViewBag.Title = "Katalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Scripts/lightbox2-2.11.3/dist/css/lightbox.css" rel="stylesheet" />
+
+<section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
+    <div class="container">
+        <h2>Kataloglar</h2>
+    </div>
+</section>
+<!-- Hero section end -->
+<!-- Search section end -->
+<!-- Recipes section -->
+<section class="recipes-page spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-title">
+                    <h2>Kataloglar</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="recipe">
+
+                        <a href="@item.ResimURL" data-lightbox="@item.ResimURL" data-title="MyCaption">
+                            <img style="border:1px solid black;" src="@item.ResimURL" alt="">
+
+                        </a>
+
+                        <div style="text-align:center" class="mt-3">
+                            <h5>@item.Baslik</h5>
+                        </div>
+                    </div>
+
+                </div>}
+
+        </div>
+
+    </div>
+</section>
+<script src="~/Scripts/lightbox2-2.11.3/dist/js/lightbox.js"></script>

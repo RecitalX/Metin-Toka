@@ -2283,6 +2283,24 @@
     <Content Include="Content\plugins\scrollmagic\ScrollMagic.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\css\lightbox.css" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\css\lightbox.min.css" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\images\close.png" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\images\loading.gif" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\images\next.png" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\images\prev.png" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\js\lightbox-plus-jquery.js" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\js\lightbox.js" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\js\lightbox.min.js" />
+    <Content Include="Scripts\lightbox2-2.11.3\examples\index.html" />
+    <Content Include="Scripts\lightbox2-2.11.3\Gruntfile.js" />
+    <Content Include="Scripts\lightbox2-2.11.3\src\css\lightbox.css" />
+    <Content Include="Scripts\lightbox2-2.11.3\src\images\close.png" />
+    <Content Include="Scripts\lightbox2-2.11.3\src\images\loading.gif" />
+    <Content Include="Scripts\lightbox2-2.11.3\src\images\next.png" />
+    <Content Include="Scripts\lightbox2-2.11.3\src\images\prev.png" />
+    <Content Include="Scripts\lightbox2-2.11.3\src\js\lightbox.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Admin Panel\scss\navs\_global.scss" />
@@ -2510,6 +2528,20 @@
     <Content Include="Content\icon-fonts\fontawesome-webfont.eot" />
     <Content Include="Content\icon-fonts\fontawesome-webfont.woff" />
     <Content Include="Content\icon-fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\lightbox2-2.11.3\.editorconfig" />
+    <Content Include="Scripts\lightbox2-2.11.3\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Scripts\lightbox2-2.11.3\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Scripts\lightbox2-2.11.3\.gitignore" />
+    <Content Include="Scripts\lightbox2-2.11.3\.jscsrc" />
+    <Content Include="Scripts\lightbox2-2.11.3\.jshintrc" />
+    <Content Include="Scripts\lightbox2-2.11.3\bower.json" />
+    <Content Include="Scripts\lightbox2-2.11.3\DEPLOY.md" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\js\lightbox-plus-jquery.min.map" />
+    <Content Include="Scripts\lightbox2-2.11.3\dist\js\lightbox.min.map" />
+    <Content Include="Scripts\lightbox2-2.11.3\LICENSE" />
+    <Content Include="Scripts\lightbox2-2.11.3\package.json" />
+    <Content Include="Scripts\lightbox2-2.11.3\README.md" />
+    <Content Include="Scripts\lightbox2-2.11.3\ROADMAP.md" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -2689,6 +2721,7 @@
     <Content Include="Views\Katalog\Create.cshtml" />
     <Content Include="Views\Katalog\Index.cshtml" />
     <Content Include="Views\Katalog\Edit.cshtml" />
+    <Content Include="Views\Home\Katalog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

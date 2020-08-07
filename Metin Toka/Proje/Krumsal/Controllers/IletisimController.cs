@@ -21,7 +21,9 @@ namespace Kurumsal.Controllers
         }
         #endregion
 
-        #region İletişim Bilgileri Düzenleme
+        #region İletişim Bilgileri Güncelleme
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit(int? id)
         {
             if (id == null)

@@ -335,7 +335,7 @@ ol {
 }
 
 .hero-slide-item {
-    height: 100vh;
+    height: 80vh;
     display: table;
     width: 100%;
     overflow: hidden;
@@ -345,7 +345,7 @@ ol {
 
 @media all and (max-width:800px) {
     .hero-slide-item {
-        height: 100vh;
+        height: 80vh;
         display: table;
         width: 100%;
         overflow: hidden;
@@ -1571,7 +1571,7 @@ ol {
     }
 
     .hero-slide-item {
-        height: 594px;
+        height: 80vh;
     }
 
         .hero-slide-item .hs-text {
@@ -1797,7 +1797,7 @@ ol {
 }
 
 .navbar-logo {
-    width: 150px;
+    width: 180px;
     margin-top: 5px;
 }
 
