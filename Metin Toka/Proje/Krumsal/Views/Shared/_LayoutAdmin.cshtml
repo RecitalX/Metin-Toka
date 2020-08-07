@@ -1,0 +1,207 @@
+﻿@using System.Web.Optimization
+@{
+    if (Session["adminid"] == null)
+    {
+        Response.Redirect("/yonetimpaneli/giris/");
+    }
+
+    string ControllerAdi = ViewContext.RouteData.GetRequiredString("controller");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Admin Panel</title>
+
+    <!-- ========================= Meta Etiketleri ===========================================-->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- ================================================================================-->
+    <!-- ========================= İşlevsellik ===========================================-->
+    <link href="~/Content/Admin Panel/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <script src="~/Content/Admin Panel/vendor/jquery/jquery.min.js"></script>
+    <!-- ================================================================================-->
+
+  
+    @Styles.Render("~/css/adminlayout")
+
+    <!-- ========================= HTML Editör ===========================================-->
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <link href="~/Content/ckeditor/contents.css" rel="stylesheet" />
+    <!-- ================================================================================-->
+    <!-- ========================= DataTables ===========================================-->
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.js"></script>
+    <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/fcd59919ba.js" crossorigin="anonymous"></script>
+    <!-- ================================================================================-->
+</head>
+<body id="page-top">
+    <div id="wrapper">
+        <!-- ========== Sidebar ======-->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <li class="nav-item active">
+                <a class="nav-link" href="/yonetimpaneli">
+                    <i class="fas fa-home"></i>
+                    <span>Yönetim Paneli</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Banner/Index">
+                    <i class="fas fa-ad"></i>
+                    <span>Banner</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Slider/Index">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Slider</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Hakkimizda/Index">
+                    <i class="fas fa-address-card"></i>
+                    <span>Hakkımızda</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Kimlik/Index">
+                    <i class="fas fa-globe"></i>
+                    <span>Site Kimlik</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Iletisim/Index">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>İletişim</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Mesaj/Index">
+                    <i class="fas fa-inbox"></i>
+                    <span>Gelen Kutusu</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Katalog/Index">
+                    <i class="fas fa-images"></i>
+                    <span>Katalog Listesi</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fab fa-product-hunt"></i>
+                    <span>
+                        Ürün
+                    </span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/HizmetKategori/Index">
+                            <i class="fas fa-swatchbook"></i>
+                            Kategoriler
+                        </a>
+
+                        <a class="collapse-item" href="/Hizmet/Index">
+                            <i class="fab fa-product-hunt"></i>
+                            Ürünler
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <!-- =========================-->
+
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+
+                <!-- ========== Üst Menü ======-->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@Session["eposta"]</span>
+                                <img class="img-profile " style="border-radius:50%" src="~/Content/img/WhatsApp Image 2020-07-25 at 20.40.37.jpeg" />
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/Admin/Adminler">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Admin Yönetim
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/Admin/Logout" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Çıkış Yap
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- =========================-->
+
+                @RenderBody()
+            </div>
+
+            <!-- ========== Footer  ======-->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; @DateTime.Now.Year</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- =========================-->
+
+        </div>
+    </div>
+
+    <!-- ========== Çıkış Popup  ======-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Çıkıyor musun?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Oturumu kapatmak için çıkış yap butonuna tıkla </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">İptal</button>
+                    <a class="btn btn-primary" href="/Admin/Logout">Çıkış yap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =========================-->
+    @*@Scripts.Render("~/script/adminlayout")*@
+
+    <script src="~/Content/Admin Panel/js/demo/chart-area-demo.js"></script>
+    <script src="~/Content/Admin Panel/js/demo/chart-bar-demo.js"></script>
+    <script src="~/Content/Admin Panel/js/demo/chart-pie-demo.js"></script>
+    <script src="~/Content/Admin Panel/js/demo/datatables-demo.js"></script>
+    <script src="~/Content/Admin Panel/js/sb-admin-2.js"></script>
+    <script src="~/Content/Admin Panel/js/sb-admin-2.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

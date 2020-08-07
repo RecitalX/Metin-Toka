@@ -1,0 +1,42 @@
+﻿@model Kurumsal.Models.Sınıflar.Katalog
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    @using (Html.BeginForm("Edit", "Katalog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h3>Katalog Güncelle</h3>
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group ">
+                <label for="cname" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="Baslik" name="Baslik" maxlength="200" type="text" required value="@Model.Baslik" />
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.ResimURL, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" name="ResimURL" accept=".png,.jpg,.jpeg" />
+                    @Html.ValidationMessageFor(model => model.ResimURL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Güncelle" class="btn btn-primary" />
+                    @Html.ActionLink("İptal", "Index", null, new { @class = "btn btn-danger" })
+
+                </div>
+            </div>
+        </div>}
+</div>
