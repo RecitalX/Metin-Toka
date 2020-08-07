@@ -2633,7 +2633,6 @@
     <Compile Include="Models\Sınıflar\Kimlik.cs" />
     <Compile Include="Models\DB-Context\KurumsalDB.cs" />
     <Compile Include="Models\Sınıflar\Mesaj.cs" />
-    <Compile Include="Models\Sınıflar\Renk.cs" />
     <Compile Include="Models\Sınıflar\Slider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

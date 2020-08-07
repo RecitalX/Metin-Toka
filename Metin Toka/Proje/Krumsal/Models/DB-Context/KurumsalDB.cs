@@ -24,15 +24,7 @@ namespace Kurumsal.Models
         public virtual DbSet<HizmetKategori> HizmetKategori { get; set; }
         public virtual DbSet<Iletisim> Iletisim { get; set; }
         public virtual DbSet<Kimlik> Kimlik { get; set; }
-        public virtual DbSet<Renk> Renk { get; set; }
         public virtual DbSet<Katalog> Katalog { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Hizmet>()
-                .HasMany(e => e.Renk)
-                .WithMany(e => e.Hizmet)
-                .Map(m => m.ToTable("RenkHizmet").MapLeftKey("HizmetId").MapRightKey("RenkId"));
-        }
     }
 }

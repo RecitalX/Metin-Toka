@@ -1,7 +1,7 @@
 ﻿@model Kurumsal.Models.Hizmet
 
 @{ ViewBag.Title = "Edit";
-                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
 
 <script type="text/javascript">CKEDITOR.replace('editor')</script>
 <div class="container">
@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="form-group ">
-                        <label for="cname" class="control-label col-lg-2" >Ürün Kodu <span class="required">*</span></label>
+                        <label for="cname" class="control-label col-lg-2">Ürün Kodu <span class="required">*</span></label>
                         <div class="col-lg-10">
                             <input class="form-control" id="UrunKodu" name="UrunKodu" maxlength="50" type="text" required value="@Model.UrunKodu" />
                         </div>
@@ -59,19 +59,16 @@
                                 Renkler :
                             </span>
                         </div>
-                        @foreach (var renk in Model.Renk.ToList())
-                        {
-                          <h5 style="display: inline-block;"><span class="badge badge-warning text-white">@renk.RenkAdi</span></h5>}
-                        @foreach (var item in Model.Renk)
-                        {
-                            <input hidden name="Renk" id="Renk" value="@item.RenkAdi" />
-                        }
+                       
+                            <h5 style="display: inline-block;"><span class="badge badge-warning text-white">@Model.RenkAdi</span></h5>
+                                            
+
                     </div>
 
                     <div class="form-group ">
                         <label for="cname" class="control-label col-lg-2">Renk <span class="required">*</span></label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" data-role="tagsInput" maxlength="200" name="Renk" id="Renk">
+                            <input type="text" class="form-control" data-role="tagsInput" maxlength="200" value="@Model.RenkAdi" name="RenkAdi" id="RenkAdi">
                         </div>
                     </div>
 

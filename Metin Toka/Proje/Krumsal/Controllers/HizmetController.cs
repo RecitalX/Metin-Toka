@@ -48,30 +48,8 @@ namespace Kurumsal.Controllers
                 h.ResimURL = "/Uploads/Hizmet/" + logoname;
             }
             db.Hizmet.Add(h);
-            //if (boy != null)
-            //{
-            //    string[] etk = boy.Split(',');
-            //    foreach (var e in etk)
-            //    {
-            //        var boylistesi = new Boy { BoyAdi = e };
-            //        db.Boy.Add(boylistesi);
-            //        h.Boy.Add(boylistesi);
-            //    }
-            //    db.SaveChanges();
-
-            //}
-            if (renk != null)
-            {
-                string[] etk = renk.Split(',');
-                foreach (var e in etk)
-                {
-                    var renklistesi = new Renk { RenkAdi = e };
-                    db.Renk.Add(renklistesi);
-                    h.Renk.Add(renklistesi);
-                }
-                db.SaveChanges();
-
-            }
+            db.SaveChanges();
+           
             TempData["create"] = "Ürün ekleme işlemi başarılı";
             return RedirectToAction("Index");
         }
@@ -116,25 +94,10 @@ namespace Kurumsal.Controllers
                 mkl.ResimURL = "/Uploads/Hizmet/" + logoname;
             }
 
-            // RENK //
-            foreach (var r in mkl.Renk.ToList())
-            {
-                db.Renk.Remove(r);
-            }
-
-            if (renk != null)
-            {
-                string[] etk = renk.Split(',');
-                foreach (var r in etk)
-                {
-                    var etiketlistesiRenk = new Renk { RenkAdi = r };
-                    db.Renk.Add(etiketlistesiRenk);
-                    mkl.Renk.Add(etiketlistesiRenk);
-                }
-                db.SaveChanges();
-            }
+         
 
             mkl.Baslik = m.Baslik;
+            mkl.RenkAdi = m.RenkAdi;
             mkl.UrunKodu = m.UrunKodu;
             mkl.Icerik = m.Icerik;
             mkl.Aciklama = m.Aciklama;
@@ -154,17 +117,6 @@ namespace Kurumsal.Controllers
             {
                 System.IO.File.Delete(Server.MapPath(hizmet.ResimURL));
             }
-
-            //foreach (var e in hizmet.Boy.ToList())
-            //{
-            //    db.Boy.Remove(e);
-            //}
-
-            foreach (var r in hizmet.Renk.ToList())
-            {
-                db.Renk.Remove(r);
-            }
-
             db.Hizmet.Remove(hizmet);
             db.SaveChanges();
             TempData["delete"] = "Ürün silme işlemi başarılı";

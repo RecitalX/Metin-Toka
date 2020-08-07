@@ -9,11 +9,6 @@ namespace Kurumsal.Models
     [Table("Hizmet")]
     public partial class Hizmet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Hizmet()
-        {
-            Renk = new HashSet<Renk>();
-        }
 
         public int HizmetId { get; set; }
 
@@ -35,11 +30,8 @@ namespace Kurumsal.Models
         [StringLength(50)]
         public string UrunKodu { get; set; }
 
-        public int? RenkId { get; set; }
+        public string RenkAdi { get; set; }
 
         public virtual HizmetKategori HizmetKategori { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Renk> Renk { get; set; }
     }
 }
