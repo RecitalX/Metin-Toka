@@ -1,12 +1,12 @@
 ﻿@model Kurumsal.Models.Iletisim
 
 @{ ViewBag.Title = "Edit";
-                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
 
 <script type="text/javascript">CKEDITOR.replace('editor')</script>
 <div class="container">
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Edit", "Iletisim", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
 @Html.AntiForgeryToken()
 

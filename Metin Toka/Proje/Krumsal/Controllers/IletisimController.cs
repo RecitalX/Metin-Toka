@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Kurumsal.Models;
+using Kurumsal.Models.Sınıflar;
 
 namespace Kurumsal.Controllers
 {
@@ -22,6 +23,7 @@ namespace Kurumsal.Controllers
         #endregion
 
         #region İletişim Bilgileri Güncelleme
+        [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         public ActionResult Edit(int? id)

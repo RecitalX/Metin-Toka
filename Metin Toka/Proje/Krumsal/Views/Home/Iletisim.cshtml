@@ -1,100 +1,42 @@
 ﻿@model IEnumerable<Kurumsal.Models.Iletisim>
-@{ ViewBag.Title = "Iletisim";
-    Layout = "~/Views/Shared/_Layout.cshtml"; }
-
-<section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
-    <div class="container">
-        <h2>İletişim</h2>
-    </div>
-</section>
-
-<section class="contact-section spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="contact-form-warp">
-                    <h4>Bize ulaşın!</h4>
-                    <form class="contact-form" action="/Home/Iletisim/" method="post" role="form">
-                        @Html.AntiForgeryToken()
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" name="adsoyad" id="adsoyad" placeholder="İsim" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="email" id="email" placeholder="E-mail" required>
-                            </div>
-                            <div class="col-md-12">
-                                <input type="text" name="konu" id="konu" placeholder="Konu" required>
-                                <textarea name="mesaj" placeholder="Mesaj" required></textarea>
-                                <button type="submit" class="site-btn">Gönder</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="contact-info">
-                    @foreach (var item in Model)
-                    {
-
-
-                        <ul class="ct-list">
-                            <li>
-                                <h6>Adres:</h6>
-                                <p>
-                                    <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;&nbsp;
-                                    @item.WeChat
-                                </p>
-                            </li>
-                            <li>
-                                <h6>İletişim:</h6>
-                                <p>
-                                    <i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;
-                                    @item.Telefon
-                                </p>
-                                <p>
-                                    <i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;
-                                    @item.Mail
-                                </p>
-                                <p>
-                                    <i class="fas fa-fax"></i>&nbsp;&nbsp;&nbsp;
-                                    @item.Fax
-                                </p>
-                                <p>
-                                    <i class="fab fa-whatsapp"></i>&nbsp;&nbsp;&nbsp;
-                                    @item.Whatsapp
-                                </p>
-                                <p>
-                                    <i class="fab fa-instagram"></i>&nbsp;&nbsp;&nbsp;
-                                    @item.instagram
-                                </p>
-
-                            </li>
-                        </ul>}
-                    <div class="contact-social">
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- map -->
-        <div class="location-map" id="map-canvas">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d24082.114315380997!2d28.91473135!3d41.0194735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMET%C4%B0N%20TOKA!5e0!3m2!1str!2str!4v1595747302001!5m2!1str!2str" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </div>
-    </div>
-</section> 
+@{ Layout = null; }
 
 
 
+@foreach (var item in Model)
+{
 
 
+<ul class="ct-list">
+    <li>
+        <h6>Adres:</h6>
+        <p>
+            <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;&nbsp;
+            @item.WeChat
+        </p>
+    </li>
+    <li>
+        <h6>İletişim:</h6>
+        <p>
+            <i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;
+            @item.Telefon
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;
+            @item.Mail
+        </p>
+        <p>
+            <i class="fas fa-fax"></i>&nbsp;&nbsp;&nbsp;
+            @item.Fax
+        </p>
+        <p>
+            <i class="fab fa-whatsapp"></i>&nbsp;&nbsp;&nbsp;
+            @item.Whatsapp
+        </p>
+        <p>
+            <i class="fab fa-instagram"></i>&nbsp;&nbsp;&nbsp;
+            @item.instagram
+        </p>
 
-
-
-
-
+    </li>
+</ul>}

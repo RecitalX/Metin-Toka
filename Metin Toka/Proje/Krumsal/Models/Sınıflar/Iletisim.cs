@@ -1,4 +1,4 @@
-namespace Kurumsal.Models
+namespace Kurumsal.Models.Sınıflar
 {
     using System;
     using System.Collections.Generic;

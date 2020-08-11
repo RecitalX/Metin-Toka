@@ -1,0 +1,44 @@
+﻿@model Kurumsal.Models.Sınıflar.KatalogKategori
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <h3>Kategori Ekle</h3>
+    <hr />
+
+    @using (Html.BeginForm("Create", "KatalogKategori", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group ">
+                <label for="cname" class="control-label col-lg-2">Kategori Adı <span class="required"></span></label>
+                <div class="col-lg-10">
+                    <input class="form-control" id="Baslik" maxlength="50" name="Baslik" type="text" required />
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <label for="curl" class="control-label col-lg-2">Resim</label>
+                <div class="col-lg-10">
+                    <input required type="file" class="form-control" name="ResimURL" accept=".jpg,.png,.jpeg" />
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <button class="btn btn-primary btn-sm" type="submit">Ekle</button>
+                    <a class="text-white btn btn-danger btn-sm" href="/KatalogKategori/Index">İptal</a>
+                </div>
+            </div>
+        </div>}
+</div>

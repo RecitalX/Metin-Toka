@@ -1,0 +1,59 @@
+﻿@model IPagedList<Kurumsal.Models.Hizmet>
+@using PagedList;
+@using PagedList.Mvc;
+@using Kurumsal.Helper;
+@{
+    ViewBag.Title = "Kataloglar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/lightbox2-master/src/css/lightbox.css" rel="stylesheet" />
+
+<!-- Hero section -->
+<section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
+    <div class="container">
+        <h2>Kataloglar</h2>
+    </div>
+</section>
+<!-- Hero section end -->
+<!-- Recipes section -->
+<section class="recipes-page spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-title">
+                    <h2>Kataloglar</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-4">
+                    <div class="recipe">
+
+                        <a href="@item.ResimURL" data-lightbox="@item.ResimURL" data-title="MyCaption">
+                            <img style="border:1px solid black;" src="@item.ResimURL" alt="">
+
+                        </a>
+
+                        <div class="recipe-info-warp">
+                            @item.Baslik
+                        </div>
+                    </div>
+                </div>}
+
+        </div>
+
+        <div class="site-pagination text-white col-custom">
+            <nav aria-label="...">
+                @Html.PagedListPager(Model, Sayfa => Url.Action("Urun", new { Sayfa }))
+            </nav>
+        </div>
+
+    </div>
+</section>
+
+<script src="~/Content/lightbox2-master/src/js/lightbox.js"></script>

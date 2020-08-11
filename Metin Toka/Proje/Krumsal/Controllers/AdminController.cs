@@ -1,4 +1,5 @@
 ﻿using Kurumsal.Models;
+using Kurumsal.Models.Sınıflar;
 using System;
 using System.Collections.Generic;
 using System.Linq;

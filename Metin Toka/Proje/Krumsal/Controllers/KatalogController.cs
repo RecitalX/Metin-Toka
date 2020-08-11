@@ -15,14 +15,13 @@ namespace Kurumsal.Controllers
         private KurumsalDB db = new KurumsalDB();
         public ActionResult Index()
         {
-            var katalog = db.Katalog.ToList()
-                .OrderByDescending
-                (x => x.Id);
+            var katalog = db.Katalog.ToList().OrderByDescending(x => x.Id);
             return View(katalog);
         }
 
         public ActionResult Create()
         {
+            ViewBag.KatalogId = new SelectList(db.KatalogKategori, "KatalogId", "Baslik");
             return View();
         }
 
@@ -59,6 +58,7 @@ namespace Kurumsal.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.KatalogId = new SelectList(db.KatalogKategori, "KatalogId", "Baslik", b.KatalogId);
             return View(b);
         }
 
@@ -84,7 +84,8 @@ namespace Kurumsal.Controllers
 
                 mkl.ResimURL = "/Uploads/Hizmet/" + logoname;
             }
-            mkl.Baslik = m.Baslik;
+            mkl.KatalogId = m.KatalogId;
+
             db.SaveChanges();
             TempData["edit"] = "Katalog güncelleme işlemi başarılı";
 

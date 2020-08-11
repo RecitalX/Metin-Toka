@@ -72,6 +72,7 @@ namespace Kurumsal.Controllers
         }
         #endregion
 
+       
         #region Kataloglar
         [Route("Kataloglar")]
         public ActionResult Katalog()
@@ -149,11 +150,10 @@ namespace Kurumsal.Controllers
         }
         #endregion
 
-        #region İletişim Bilgileri
-        public ActionResult İletisim()
+        public ActionResult Iletisim()
         {
-            return View(db.Iletisim.ToList());
+            var iletisim = db.Iletisim.ToList();
+            return PartialView(iletisim);
         }
-        #endregion
     }
 }

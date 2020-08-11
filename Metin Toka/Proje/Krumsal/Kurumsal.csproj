@@ -2263,6 +2263,24 @@
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\map.js" />
     <Content Include="Content\js\owl.carousel.min.js" />
+    <Content Include="Content\lightbox2-master\dist\css\lightbox.css" />
+    <Content Include="Content\lightbox2-master\dist\css\lightbox.min.css" />
+    <Content Include="Content\lightbox2-master\dist\images\close.png" />
+    <Content Include="Content\lightbox2-master\dist\images\loading.gif" />
+    <Content Include="Content\lightbox2-master\dist\images\next.png" />
+    <Content Include="Content\lightbox2-master\dist\images\prev.png" />
+    <Content Include="Content\lightbox2-master\dist\js\lightbox-plus-jquery.js" />
+    <Content Include="Content\lightbox2-master\dist\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Content\lightbox2-master\dist\js\lightbox.js" />
+    <Content Include="Content\lightbox2-master\dist\js\lightbox.min.js" />
+    <Content Include="Content\lightbox2-master\examples\index.html" />
+    <Content Include="Content\lightbox2-master\Gruntfile.js" />
+    <Content Include="Content\lightbox2-master\src\css\lightbox.css" />
+    <Content Include="Content\lightbox2-master\src\images\close.png" />
+    <Content Include="Content\lightbox2-master\src\images\loading.gif" />
+    <Content Include="Content\lightbox2-master\src\images\next.png" />
+    <Content Include="Content\lightbox2-master\src\images\prev.png" />
+    <Content Include="Content\lightbox2-master\src\js\lightbox.js" />
     <Content Include="Content\plugins\easing\easing.js" />
     <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -2542,6 +2560,20 @@
     <Content Include="Scripts\lightbox2-2.11.3\package.json" />
     <Content Include="Scripts\lightbox2-2.11.3\README.md" />
     <Content Include="Scripts\lightbox2-2.11.3\ROADMAP.md" />
+    <Content Include="Content\lightbox2-master\.editorconfig" />
+    <Content Include="Content\lightbox2-master\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\lightbox2-master\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Content\lightbox2-master\.gitignore" />
+    <Content Include="Content\lightbox2-master\.jscsrc" />
+    <Content Include="Content\lightbox2-master\.jshintrc" />
+    <Content Include="Content\lightbox2-master\bower.json" />
+    <Content Include="Content\lightbox2-master\DEPLOY.md" />
+    <Content Include="Content\lightbox2-master\dist\js\lightbox-plus-jquery.min.map" />
+    <Content Include="Content\lightbox2-master\dist\js\lightbox.min.map" />
+    <Content Include="Content\lightbox2-master\LICENSE" />
+    <Content Include="Content\lightbox2-master\package.json" />
+    <Content Include="Content\lightbox2-master\README.md" />
+    <Content Include="Content\lightbox2-master\ROADMAP.md" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -2647,6 +2679,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Controllers\KatalogController.cs" />
+    <Compile Include="Controllers\KatalogKategoriController.cs" />
     <Compile Include="Controllers\KimlikController.cs" />
     <Compile Include="Controllers\MesajController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
@@ -2662,10 +2695,12 @@
     <Compile Include="Models\Sınıflar\HizmetKategori.cs" />
     <Compile Include="Models\Sınıflar\Iletisim.cs" />
     <Compile Include="Models\Sınıflar\Katalog.cs" />
+    <Compile Include="Models\Sınıflar\KatalogKategori.cs" />
     <Compile Include="Models\Sınıflar\Kimlik.cs" />
     <Compile Include="Models\DB-Context\KurumsalDB.cs" />
     <Compile Include="Models\Sınıflar\Mesaj.cs" />
     <Compile Include="Models\Sınıflar\Slider.cs" />
+    <Compile Include="Models\Sınıflar\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2715,13 +2750,17 @@
     <Content Include="Views\Banner\Edit.cshtml" />
     <Content Include="Views\Home\Banner.cshtml" />
     <Content Include="Views\Home\Mesaj.cshtml" />
-    <Content Include="Views\Home\İletisim.cshtml" />
     <Content Include="Views\Mesaj\Index.cshtml" />
     <Content Include="Views\Mesaj\Details.cshtml" />
     <Content Include="Views\Katalog\Create.cshtml" />
     <Content Include="Views\Katalog\Index.cshtml" />
     <Content Include="Views\Katalog\Edit.cshtml" />
     <Content Include="Views\Home\Katalog.cshtml" />
+    <Content Include="Views\Home\Kataloglar.cshtml" />
+    <Content Include="Views\Home\Iletisim.cshtml" />
+    <Content Include="Views\KatalogKategori\Index.cshtml" />
+    <Content Include="Views\KatalogKategori\Create.cshtml" />
+    <Content Include="Views\KatalogKategori\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

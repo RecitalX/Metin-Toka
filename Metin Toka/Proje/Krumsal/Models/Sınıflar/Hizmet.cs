@@ -1,4 +1,4 @@
-namespace Kurumsal.Models
+namespace Kurumsal.Models.Sınıflar
 {
     using System;
     using System.Collections.Generic;
@@ -9,17 +9,14 @@ namespace Kurumsal.Models
     [Table("Hizmet")]
     public partial class Hizmet
     {
-
         public int HizmetId { get; set; }
 
         [StringLength(200)]
-        [MaxLength(200, ErrorMessage = "200 Karakterden fazla girilemez")]
         public string Baslik { get; set; }
 
         public string Icerik { get; set; }
 
         [StringLength(500)]
-        [MaxLength(500, ErrorMessage = "500 Karakterden fazla girilemez")]
         public string Aciklama { get; set; }
 
         [StringLength(250)]

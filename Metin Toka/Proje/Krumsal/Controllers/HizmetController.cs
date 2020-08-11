@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using Kurumsal.Models;
+using Kurumsal.Models.Sınıflar;
 
 namespace Kurumsal.Controllers
 {
@@ -28,7 +29,7 @@ namespace Kurumsal.Controllers
         #region Ürün Ekleme
         public ActionResult Create()
         {
-            ViewBag.HizmetKategoriId = new SelectList(db.HizmetKategori, "HizmetKategoriId", "HizmetKategoriAdi");
+            ViewBag.HizmetKategoriId = new SelectList(db.HizmetKategori, "KatalogId", "Baslik");
             return View();
         }
 
