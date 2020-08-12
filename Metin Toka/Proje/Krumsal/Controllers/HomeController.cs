@@ -72,13 +72,22 @@ namespace Kurumsal.Controllers
         }
         #endregion
 
-       
         #region Kataloglar
         [Route("Kataloglar")]
         public ActionResult Katalog()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-            return View(db.Katalog.ToList());
+            return View(db.KatalogKategori.ToList());
+        }
+        #endregion
+
+        #region KatalogSlider
+        [Route("Katalog/{Baslik}/{id:int}")]
+        public ActionResult KatalogSlider(int id)
+        {
+            ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
+            var katalog = db.Katalog.OrderByDescending(x => x.KatalogId == id).ToList();
+            return View(katalog);
         }
         #endregion
 
@@ -150,10 +159,13 @@ namespace Kurumsal.Controllers
         }
         #endregion
 
+        #region İletşim
         public ActionResult Iletisim()
         {
             var iletisim = db.Iletisim.ToList();
             return PartialView(iletisim);
         }
+        #endregion
+
     }
 }

@@ -2761,6 +2761,7 @@
     <Content Include="Views\KatalogKategori\Index.cshtml" />
     <Content Include="Views\KatalogKategori\Create.cshtml" />
     <Content Include="Views\KatalogKategori\Edit.cshtml" />
+    <Content Include="Views\Home\KatalogSlider.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

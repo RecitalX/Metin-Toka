@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Katalog>
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.KatalogKategori>
 @using Kurumsal.Helper;
 @{
     ViewBag.Title = "Katalog";
@@ -32,7 +32,7 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="recipe">
 
-                        <a href="@item.ResimURL" data-lightbox="@item.ResimURL" data-title="MyCaption">
+                        <a href="/Katalog/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()/@item.KatalogId">
                             <img style="border:1px solid black;" src="@item.ResimURL" alt="">
 
                         </a>

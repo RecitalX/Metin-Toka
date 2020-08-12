@@ -1,4 +1,4 @@
-﻿@model IPagedList<Kurumsal.Models.Hizmet>
+﻿@model IPagedList<Kurumsal.Models.Sınıflar.Hizmet>
 @using PagedList;
 @using PagedList.Mvc;
 @using Kurumsal.Helper;
@@ -21,7 +21,7 @@
                     <div class="col-lg-6 col-sm-6">
                         <select onchange="window.location=this.value">
                             <option>Kategori Seçiniz</option>
-                            @foreach (Kurumsal.Models.HizmetKategori item in ViewBag.Kategorilerim)
+                            @foreach (Kurumsal.Models.Sınıflar.HizmetKategori item in ViewBag.Kategorilerim)
                             {
                                 <option value="/ÜrünPost/@SeoHelper.ToSeoUrl(item.HizmetKategoriAdi).ToLower()/@item.HizmetKategoriId">
                                     @item.HizmetKategoriAdi
