@@ -2,82 +2,43 @@
 @{ ViewBag.Title = "KatalogSlider";
     Layout = "~/Views/Shared/_Layout.cshtml"; }
 
-
+<link href="~/Content/lightbox2-master/dist/css/lightbox.min.css" rel="stylesheet" />
 
 <section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
     <div class="container">
-        <h2>Kataloglar</h2>
+        <h2></h2>
     </div>
 </section>
-<!-- Hero section end -->
-<!-- Search section end -->
-<!-- Recipes section -->
+
 <section class="recipes-page spad">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <div class="section-title">
-                    <h2>Kataloglar</h2>
+                    <h2>Katalog İçeriği</h2>
                 </div>
             </div>
 
         </div>
-        <div class="row">
+        <div class="gallery row">
 
             @foreach (var item in Model)
             {
-<div class="col-lg-3 col-md-4">
-    <div class="recipe">
-        <img style="border:1px solid black;" src="@item.ResimURL" alt="">
-    </div>
+        <div class="col-lg-3 col-md-4">
+            <div class="recipe">
 
-</div>}
+                <a href="@item.ResimURL" data-lightbox="mygallery" data-title="KatalogContent">
+                    <img src="@item.ResimURL" alt="Damn" />
+                </a>
+            </div>
 
-            <div id="wrapper">
+        </div>}
 
-                <section id="content">
-                    <div class="container">
-
-                        <!-- Portfolio Projects -->
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h4 class="heading">Recent Works</h4>
-                                <div class="row">
-                                    <section id="projects">
-                                        <ul id="thumbs" class="portfolio">
-                                            <!-- Item Project and Filter Name -->
-                                            <li class="col-lg-3 design" data-id="id-0" data-type="web">
-                                                <div class="item-thumbs">
-                                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-
-                                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 1" href="~/Content/img/WhatsApp Image 2020-07-25 at 20.40.37.jpeg">
-                                                    </a>
-                                                    <!-- Thumb Image and Description -->
-                                                    <img src="~/Content/img/WhatsApp Image 2020-07-25 at 20.40.37.jpeg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                                                </div>
-                                            </li>
-                                            <!-- End Item Project -->
-                                            <!-- Item Project and Filter Name -->
-                                            <li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
-                                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                                <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 2" href="~/Content/img/WhatsApp Image 2020-07-25 at 20.40.37.jpeg">
-                                                </a>
-                                                <!-- Thumb Image and Description -->
-                                                <img src="~/Content/img/WhatsApp Image 2020-07-25 at 20.40.37.jpeg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                                            </li>
-                                            <!-- End Item Project -->
-
-                                        </ul>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
             </div>
 
         </div>
 
     </div>
 </section>
+
+<script src="~/Content/lightbox2-master/dist/js/lightbox-plus-jquery.min.js"></script>

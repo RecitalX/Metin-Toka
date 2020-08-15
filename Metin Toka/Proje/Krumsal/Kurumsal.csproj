@@ -2208,6 +2208,7 @@
     <Content Include="Content\img\add\3.jpg" />
     <Content Include="Content\img\author.jpg" />
     <Content Include="Content\img\blog\1.jpg" />
+    <Content Include="Content\img\close.png" />
     <Content Include="Content\img\favicon.ico" />
     <Content Include="Content\img\footer-bg.jpg" />
     <Content Include="Content\img\icon\1.png" />
@@ -2224,11 +2225,14 @@
     <Content Include="Content\img\instagram\5.jpg" />
     <Content Include="Content\img\instagram\6.jpg" />
     <Content Include="Content\img\k.gif" />
+    <Content Include="Content\img\loading.gif" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\MetinToka.png" />
     <Content Include="Content\img\MetinToka1.png" />
     <Content Include="Content\img\newslatter.png" />
+    <Content Include="Content\img\next.png" />
     <Content Include="Content\img\page-top-bg.jpg" />
+    <Content Include="Content\img\prev.png" />
     <Content Include="Content\img\recipes\1.jpg" />
     <Content Include="Content\img\recipes\10.jpg" />
     <Content Include="Content\img\recipes\11.jpg" />
@@ -2299,36 +2303,6 @@
     <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
     <Content Include="Content\plugins\parallax-js-master\parallax.min.js" />
     <Content Include="Content\plugins\scrollmagic\ScrollMagic.min.js" />
-    <Content Include="Content\portfolioKatalog\css\animate.css" />
-    <Content Include="Content\portfolioKatalog\css\bootstrap.min.css" />
-    <Content Include="Content\portfolioKatalog\css\custom-fonts.css" />
-    <Content Include="Content\portfolioKatalog\css\fancybox\blank.gif" />
-    <Content Include="Content\portfolioKatalog\css\fancybox\fancybox_loading.gif" />
-    <Content Include="Content\portfolioKatalog\css\fancybox\fancybox_overlay.png" />
-    <Content Include="Content\portfolioKatalog\css\fancybox\fancybox_sprite.png" />
-    <Content Include="Content\portfolioKatalog\css\fancybox\jquery.fancybox.css" />
-    <Content Include="Content\portfolioKatalog\css\flexslider.css" />
-    <Content Include="Content\portfolioKatalog\css\font-awesome.css" />
-    <Content Include="Content\portfolioKatalog\css\jcarousel.css" />
-    <Content Include="Content\portfolioKatalog\css\overwrite.css" />
-    <Content Include="Content\portfolioKatalog\css\style.css" />
-    <Content Include="Content\portfolioKatalog\js\animate.js" />
-    <Content Include="Content\portfolioKatalog\js\bootstrap.min.js" />
-    <Content Include="Content\portfolioKatalog\js\custom.js" />
-    <Content Include="Content\portfolioKatalog\js\flexslider\jquery.flexslider.js" />
-    <Content Include="Content\portfolioKatalog\js\flexslider\setting.js" />
-    <Content Include="Content\portfolioKatalog\js\google-code-prettify\prettify.css" />
-    <Content Include="Content\portfolioKatalog\js\google-code-prettify\prettify.js" />
-    <Content Include="Content\portfolioKatalog\js\jquery.easing.1.3.js" />
-    <Content Include="Content\portfolioKatalog\js\jquery.fancybox-media.js" />
-    <Content Include="Content\portfolioKatalog\js\jquery.fancybox.pack.js" />
-    <Content Include="Content\portfolioKatalog\js\jquery.flexslider.js" />
-    <Content Include="Content\portfolioKatalog\js\jquery.js" />
-    <Content Include="Content\portfolioKatalog\js\portfolio\jquery.quicksand.js" />
-    <Content Include="Content\portfolioKatalog\js\portfolio\setting.js" />
-    <Content Include="Content\portfolioKatalog\js\quicksand\jquery.quicksand.js" />
-    <Content Include="Content\portfolioKatalog\js\quicksand\setting.js" />
-    <Content Include="Content\portfolioKatalog\js\validate.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\lightbox2-2.11.3\dist\css\lightbox.css" />
@@ -2800,6 +2774,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\NewFolder1\" />
     <Folder Include="Uploads\Banner\" />
     <Folder Include="Uploads\Katalog\" />
   </ItemGroup>
