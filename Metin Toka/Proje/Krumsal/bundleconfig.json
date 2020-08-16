@@ -1,0 +1,39 @@
+[
+  {
+    "outputFileName": "Content/css/bundle.css",
+    "inputFiles": [
+      "Content/css/animate.css",
+      "Content/css/bootstrap.min.css",
+      "Content/css/flaticon.css",
+      "Content/css/font-awesome.min.css",
+      "Content/css/Mesaj-Details.css",
+      "Content/css/Mesaj-Index.css",
+      "Content/css/owl.carousel.css",
+      "Content/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/css/Site.css",
+    "inputFiles": [
+      "Content/css/animate.css",
+      "Content/css/bootstrap.min.css",
+      "Content/css/flaticon.css",
+      "Content/css/font-awesome.min.css",
+      "Content/css/Mesaj-Details.css",
+      "Content/css/Mesaj-Index.css",
+      "Content/css/owl.carousel.css",
+      "Content/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/js/Site.js",
+    "inputFiles": [
+      "Content/js/bootstrap.min.js",
+      "Content/js/circle-progress.min.js",
+      "Content/js/jquery-3.2.1.min.js",
+      "Content/js/main.js",
+      "Content/js/map.js",
+      "Content/js/owl.carousel.min.js"
+    ]
+  }
+]
