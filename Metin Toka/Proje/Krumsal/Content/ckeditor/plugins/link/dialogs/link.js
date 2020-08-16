@@ -7,7 +7,7 @@
         function p(a, b) { var c = a.createRange(); c.setStartBefore(b); c.setEndAfter(b); return c } var n = CKEDITOR.plugins.link, q,
             t = function () { var a = this.getDialog(), b = a.getContentElement("target", "popupFeatures"), a = a.getContentElement("target", "linkTargetName"), r = this.getValue(); if (b && a) switch (b = b.getElement(), b.hide(), a.setValue(""), r) { case "frame": a.setLabel(c.lang.link.targetFrameName); a.getElement().show(); break; case "popup": b.show(); a.setLabel(c.lang.link.targetPopupName); a.getElement().show(); break; default: a.setValue(r), a.getElement().hide() } }, l = function (a) { a.target && this.setValue(a.target[this.id] || "") }, e = function (a) {
                 a.advanced &&
-                this.setValue(a.advanced[this.id] || "")
+                    this.setValue(a.advanced[this.id] || "")
             }, k = function (a) { a.target || (a.target = {}); a.target[this.id] = this.getValue() || "" }, m = function (a) { a.advanced || (a.advanced = {}); a.advanced[this.id] = this.getValue() || "" }, g = c.lang.common, b = c.lang.link, d; return {
                 title: b.title, minWidth: "moono-lisa" == (CKEDITOR.skinName || c.config.skin) ? 450 : 350, minHeight: 240, contents: [{
                     id: "info", label: b.info, title: b.info, elements: [{
@@ -54,7 +54,7 @@
                         type: "vbox", id: "emailOptions", padding: 1, children: [{
                             type: "text", id: "emailAddress", label: b.emailAddress, required: !0, validate: function () { var a = this.getDialog(); return a.getContentElement("info", "linkType") && "email" == a.getValueOf("info", "linkType") ? CKEDITOR.dialog.validate.notEmpty(b.noEmail).apply(this) : !0 }, setup: function (a) {
                                 a.email &&
-                                this.setValue(a.email.address); (a = this.getDialog().getContentElement("info", "linkType")) && "email" == a.getValue() && this.select()
+                                    this.setValue(a.email.address); (a = this.getDialog().getContentElement("info", "linkType")) && "email" == a.getValue() && this.select()
                             }, commit: function (a) { a.email || (a.email = {}); a.email.address = this.getValue() }
                         }, { type: "text", id: "emailSubject", label: b.emailSubject, setup: function (a) { a.email && this.setValue(a.email.subject) }, commit: function (a) { a.email || (a.email = {}); a.email.subject = this.getValue() } }, {
                             type: "textarea", id: "emailBody", label: b.emailBody, rows: 3, "default": "", setup: function (a) { a.email && this.setValue(a.email.body) },
@@ -122,7 +122,7 @@
                     }]
                 }], onShow: function () {
                     var a = this.getParentEditor(), b = a.getSelection(), c = this.getContentElement("info", "linkDisplayText").getElement().getParent().getParent(),
-                    f = n.getSelectedLink(a, !0), h = f[0] || null; h && h.hasAttribute("href") && (b.getSelectedElement() || b.isInTable() || b.selectElement(h)); b = n.parseLinkAttributes(a, h); 1 >= f.length && n.showDisplayTextForElement(h, a) ? c.show() : c.hide(); this._.selectedElements = f; this.setupContent(b)
+                        f = n.getSelectedLink(a, !0), h = f[0] || null; h && h.hasAttribute("href") && (b.getSelectedElement() || b.isInTable() || b.selectElement(h)); b = n.parseLinkAttributes(a, h); 1 >= f.length && n.showDisplayTextForElement(h, a) ? c.show() : c.hide(); this._.selectedElements = f; this.setupContent(b)
                 }, onOk: function () {
                     var a = {}; this.commitContent(a); if (this._.selectedElements.length) {
                         var b = this._.selectedElements, g = n.getLinkAttributes(c, a), f = [], h, d, l, e, k; for (k = 0; k < b.length; k++) {

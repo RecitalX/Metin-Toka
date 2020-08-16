@@ -45,7 +45,7 @@
                     var b = !1; if (null === a.getFirst("v:imagedata")) c(a); else {
                         a.parent.find(function (c) {
                             "img" == c.name && c.attributes &&
-                            c.attributes["v:shapes"] == a.attributes.id && (b = !0)
+                                c.attributes["v:shapes"] == a.attributes.id && (b = !0)
                         }, !0); if (b) return !1; var d = ""; "v:group" === a.parent.name ? c(a) : (a.forEach(function (a) { a.attributes && a.attributes.src && (d = a.attributes.src) }, CKEDITOR.NODE_ELEMENT, !0), a.filterChildren(p), a.name = "img", a.attributes.src = a.attributes.src || d, delete a.attributes.type)
                     }
                 }, style: function () { return !1 }, object: function (a) { return !(!a.attributes || !a.attributes.data) }
@@ -60,8 +60,8 @@
     }; CKEDITOR.plugins.pastefromword.styles = {
         setStyle: function (a, b, c, d) { var e = m.parseCssText(a.attributes.style); d && e[b] || ("" === c ? delete e[b] : e[b] = c, a.attributes.style = CKEDITOR.tools.writeCssText(e)) }, mapStyles: function (a, b) { for (var c in b) if (a.attributes[c]) { if ("function" === typeof b[c]) b[c](a.attributes[c]); else k.setStyle(a, b[c], a.attributes[c]); delete a.attributes[c] } }, normalizedStyles: function (a, b) {
             var c = "background-color:transparent border-image:none color:windowtext direction:ltr mso- visibility:visible div:border:none".split(" "),
-            d = "font-family font font-size color background-color line-height text-decoration".split(" "), e = function () { for (var a = [], b = 0; b < arguments.length; b++)arguments[b] && a.push(arguments[b]); return -1 !== m.indexOf(c, a.join(":")) }, h = b && !0 === b.config.pasteFromWordRemoveFontStyles, f = m.parseCssText(a.attributes.style); "cke:li" == a.name && (f["TEXT-INDENT"] && f.MARGIN ? (a.attributes["cke-indentation"] = g.getElementIndentation(a), f.MARGIN = f.MARGIN.replace(/(([\w\.]+ ){3,3})[\d\.]+(\w+$)/, "$10$3")) : delete f["TEXT-INDENT"],
-                delete f["text-indent"]); for (var l = m.objectKeys(f), q = 0; q < l.length; q++) { var n = l[q].toLowerCase(), r = f[l[q]], k = CKEDITOR.tools.indexOf; (h && -1 !== k(d, n.toLowerCase()) || e(null, n, r) || e(null, n.replace(/\-.*$/, "-")) || e(null, n) || e(a.name, n, r) || e(a.name, n.replace(/\-.*$/, "-")) || e(a.name, n) || e(r)) && delete f[l[q]] } w(f); (function () { CKEDITOR.tools.array.forEach(["top", "right", "bottom", "left"], function (a) { a = "margin-" + a; parseFloat(f[a]) ? f[a] = CKEDITOR.tools.convertToPx(f[a]) + "px" : delete f[a] }) })(); return CKEDITOR.tools.writeCssText(f)
+                d = "font-family font font-size color background-color line-height text-decoration".split(" "), e = function () { for (var a = [], b = 0; b < arguments.length; b++)arguments[b] && a.push(arguments[b]); return -1 !== m.indexOf(c, a.join(":")) }, h = b && !0 === b.config.pasteFromWordRemoveFontStyles, f = m.parseCssText(a.attributes.style); "cke:li" == a.name && (f["TEXT-INDENT"] && f.MARGIN ? (a.attributes["cke-indentation"] = g.getElementIndentation(a), f.MARGIN = f.MARGIN.replace(/(([\w\.]+ ){3,3})[\d\.]+(\w+$)/, "$10$3")) : delete f["TEXT-INDENT"],
+                    delete f["text-indent"]); for (var l = m.objectKeys(f), q = 0; q < l.length; q++) { var n = l[q].toLowerCase(), r = f[l[q]], k = CKEDITOR.tools.indexOf; (h && -1 !== k(d, n.toLowerCase()) || e(null, n, r) || e(null, n.replace(/\-.*$/, "-")) || e(null, n) || e(a.name, n, r) || e(a.name, n.replace(/\-.*$/, "-")) || e(a.name, n) || e(r)) && delete f[l[q]] } w(f); (function () { CKEDITOR.tools.array.forEach(["top", "right", "bottom", "left"], function (a) { a = "margin-" + a; parseFloat(f[a]) ? f[a] = CKEDITOR.tools.convertToPx(f[a]) + "px" : delete f[a] }) })(); return CKEDITOR.tools.writeCssText(f)
         },
         createStyleStack: function (a, b, c, d) {
             var e = []; a.filterChildren(b); for (b = a.children.length - 1; 0 <= b; b--)e.unshift(a.children[b]), a.children[b].remove(); k.sortStyles(a); b = m.parseCssText(k.normalizedStyles(a, c)); c = a; var h = "span" === a.name, f; for (f in b) if (!f.match(d || /margin((?!-)|-left|-top|-bottom|-right)|text-indent|text-align|width|border|padding/i)) if (h) h = !1; else { var l = new CKEDITOR.htmlParser.element("span"); l.attributes.style = f + ":" + b[f]; c.add(l); c = l; delete b[f] } CKEDITOR.tools.isEmpty(b) ? delete a.attributes.style :
@@ -100,17 +100,17 @@
             t.isDegenerateListItem(a, b) && t.assignListLevels(a, b); this.getListItemInfo(b); if (!b.attributes["cke-dissolved"]) {
                 var c; b.forEach(function (a) { !c && "img" == a.name && a.attributes["cke-ignored"] && "*" == a.attributes.alt && (c = "·", a.remove()) }, CKEDITOR.NODE_ELEMENT); b.forEach(function (a) {
                     c || a.value.match(/^ /) ||
-                    (c = a.value)
+                        (c = a.value)
                 }, CKEDITOR.NODE_TEXT); if ("undefined" == typeof c) return; b.attributes["cke-symbol"] = c.replace(/(?: |&nbsp;).*$/, ""); g.removeSymbolText(b)
             } if (b.attributes.style) { var d = m.parseCssText(b.attributes.style); d["margin-left"] && (delete d["margin-left"], b.attributes.style = CKEDITOR.tools.writeCssText(d)) } b.name = "cke:li"
         }, convertToRealListItems: function (a) { var b = []; a.forEach(function (a) { "cke:li" == a.name && (a.name = "li", b.push(a)) }, CKEDITOR.NODE_ELEMENT, !1); return b }, removeSymbolText: function (a) {
             var b,
-            c = a.attributes["cke-symbol"]; a.forEach(function (d) { !b && -1 < d.value.indexOf(c) && (d.value = d.value.replace(c, ""), d.parent.getHtml().match(/^(\s|&nbsp;)*$/) && (b = d.parent !== a ? d.parent : null)) }, CKEDITOR.NODE_TEXT); b && b.remove()
+                c = a.attributes["cke-symbol"]; a.forEach(function (d) { !b && -1 < d.value.indexOf(c) && (d.value = d.value.replace(c, ""), d.parent.getHtml().match(/^(\s|&nbsp;)*$/) && (b = d.parent !== a ? d.parent : null)) }, CKEDITOR.NODE_TEXT); b && b.remove()
         }, setListSymbol: function (a, b, c) {
             c = c || 1; var d = m.parseCssText(a.attributes.style); if ("ol" == a.name) {
                 if (a.attributes.type || d["list-style-type"]) return; var e = { "[ivx]": "lower-roman", "[IVX]": "upper-roman", "[a-z]": "lower-alpha", "[A-Z]": "upper-alpha", "\\d": "decimal" }, h; for (h in e) if (g.getSubsectionSymbol(b).match(new RegExp(h))) {
                     d["list-style-type"] =
-                    e[h]; break
+                        e[h]; break
                 } a.attributes["cke-list-style-type"] = d["list-style-type"]
             } else e = { "·": "disc", o: "circle", "§": "square" }, !d["list-style-type"] && e[b] && (d["list-style-type"] = e[b]); g.setListSymbol.removeRedundancies(d, c); (a.attributes.style = CKEDITOR.tools.writeCssText(d)) || delete a.attributes.style
         }, setListStart: function (a) {
@@ -142,7 +142,7 @@
         }, cleanup: function (a) { var b = ["cke-list-level", "cke-symbol", "cke-list-id", "cke-indentation", "cke-dissolved"], c, d; for (c = 0; c < a.length; c++)for (d = 0; d < b.length; d++)delete a[c].attributes[b[d]] }, determineListItemValue: function (a) {
             if ("ol" === a.parent.name) {
                 var b = this.calculateValue(a), c = a.attributes["cke-symbol"].match(/[a-z0-9]+/gi),
-                d; c && (c = c[c.length - 1], d = a.parent.attributes["cke-list-style-type"] || this.numbering.getStyle(c), c = this.numbering.toNumber(c, d), c !== b && (a.attributes.value = c))
+                    d; c && (c = c[c.length - 1], d = a.parent.attributes["cke-list-style-type"] || this.numbering.getStyle(c), c = this.numbering.toNumber(c, d), c !== b && (a.attributes.value = c))
             }
         }, calculateValue: function (a) { if (!a.parent) return 1; var b = a.parent; a = a.getIndex(); var c = null, d, e, h; for (h = a; 0 <= h && null === c; h--)e = b.children[h], e.attributes && void 0 !== e.attributes.value && (d = h, c = parseInt(e.attributes.value, 10)); null === c && (c = void 0 !== b.attributes.start ? parseInt(b.attributes.start, 10) : 1, d = 0); return c + (a - d) }, dissolveList: function (a) {
             function b(a) {

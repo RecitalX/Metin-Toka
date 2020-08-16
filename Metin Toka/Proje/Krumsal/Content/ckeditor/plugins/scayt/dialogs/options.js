@@ -8,7 +8,7 @@
         id: "options", label: d.getLocal("tab_options"), onShow: function () { }, elements: [{
             type: "vbox", id: "scaytOptions", children: function () {
                 var b = d.getApplicationConfig(), a = [], e = { "ignore-all-caps-words": "label_allCaps", "ignore-domain-names": "label_ignoreDomainNames", "ignore-words-with-mixed-cases": "label_mixedCase", "ignore-words-with-numbers": "label_mixedWithDigits" },
-                h; for (h in b) b = { type: "checkbox" }, b.id = h, b.label = d.getLocal(e[h]), a.push(b); return a
+                    h; for (h in b) b = { type: "checkbox" }, b.id = h, b.label = d.getLocal(e[h]), a.push(b); return a
             }(), onShow: function () { this.getChild(); for (var b = c.scayt, a = 0; a < this.getChild().length; a++)this.getChild()[a].setValue(b.getApplicationConfig()[this.getChild()[a].id]) }
         }]
     }, {
@@ -47,7 +47,7 @@
                 }, {
                     type: "button", id: "editDic", label: d.getLocal("btn_goToDic"), title: d.getLocal("btn_goToDic"), onLoad: function () { this.getDialog() }, onClick: function () {
                         var b = this.getDialog(),
-                        a = b.getContentElement("dictionaries", "addWordField"); g.clearWordList.call(b); a.setValue(""); g.getUserDictionary.call(b); g.toggleDictionaryState.call(b, "wordsState")
+                            a = b.getContentElement("dictionaries", "addWordField"); g.clearWordList.call(b); a.setValue(""); g.getUserDictionary.call(b); g.toggleDictionaryState.call(b, "wordsState")
                     }
                 }]
             }, {
@@ -113,10 +113,10 @@
         }, getLangBoxes: function () { return this.getContentElement("langs", "langBox").getElement() }, toggleDictionaryState: function (b) {
             var a = this.getContentElement("dictionaries",
                 "dictionaryName").getElement().getParent(), c = this.getContentElement("dictionaries", "udButtonsHolder").getElement().getParent(), d = this.getContentElement("dictionaries", "createDic").getElement().getParent(), f = this.getContentElement("dictionaries", "restoreDic").getElement().getParent(), g = this.getContentElement("dictionaries", "disconnectDic").getElement().getParent(), l = this.getContentElement("dictionaries", "removeDic").getElement().getParent(), k = this.getContentElement("dictionaries", "renameDic").getElement().getParent(),
-            m = this.getContentElement("dictionaries", "dicInfo").getElement().getParent(), n = this.getContentElement("dictionaries", "addWordAction").getElement().getParent(), p = this.getContentElement("dictionaries", "wordsHolder").getElement().getParent(); switch (b) {
-                case "initialState": a.show(); c.show(); d.show(); f.show(); g.hide(); l.hide(); k.hide(); m.show(); n.hide(); p.hide(); break; case "wordsState": a.hide(); c.hide(); m.hide(); n.show(); p.show(); break; case "dictionaryState": a.show(), c.show(), d.hide(), f.hide(), g.show(),
-                    l.show(), k.show(), m.show(), n.hide(), p.hide()
-            }
+                m = this.getContentElement("dictionaries", "dicInfo").getElement().getParent(), n = this.getContentElement("dictionaries", "addWordAction").getElement().getParent(), p = this.getContentElement("dictionaries", "wordsHolder").getElement().getParent(); switch (b) {
+                    case "initialState": a.show(); c.show(); d.show(); f.show(); g.hide(); l.hide(); k.hide(); m.show(); n.hide(); p.hide(); break; case "wordsState": a.hide(); c.hide(); m.hide(); n.show(); p.show(); break; case "dictionaryState": a.show(), c.show(), d.hide(), f.hide(), g.show(),
+                        l.show(), k.show(), m.show(), n.hide(), p.hide()
+                }
         }, clearWordList: function () { this.getContentElement("dictionaries", "itemList").removeAllChild() }, getUserDictionary: function () { var b = this, a = c.scayt; a.getUserDictionary(a.getUserDictionaryName(), function (a) { a.error || g.renderItemList.call(b, a.wordlist) }) }, renderItemList: function (b) { for (var a = this.getContentElement("dictionaries", "itemList"), c = 0; c < b.length; c++)a.addChild(b[c]) }, contents: function (b, a) {
             var c = [], d = a.config.scayt_uiTabs; if (d) {
                 for (var f in d) 1 == d[f] &&

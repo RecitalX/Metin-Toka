@@ -39,7 +39,7 @@ var SF = function () {
     e.prototype = {
         child: function () { return e.div(this.elem) }, stylize: function (a) { a = a || {}; "undefined" !== typeof a.opacity && (a.filter = "alpha(opacity\x3d" + 100 * a.opacity + ")"); for (var b in a) a.hasOwnProperty(b) && (this.elem.style[b] = a[b]); return this }, clazz: function (a) { this.elem.className += " " + a; return this }, html: function (a) { b(a) ? this.elem.appendChild(a) : this.elem.innerHTML = a; return this }, onClick: function (a) { this.elem.addEventListener("click", a); return this }, destroy: function () { c.body.removeChild(this.elem) }, hide: function () {
             this.elem.style.display =
-            "none"
+                "none"
         }, show: function () { this.elem.style.display = "block" }, attr: function (a, b) { this.elem.setAttribute(a, b); return this }, anyAncestor: function (a) { for (var b = this.elem; b;) { if (a(new e(b))) return !0; b = b.parentNode } return !1 }
     }; "function" === typeof d.define && d.define.amd ? d.define(function () { return k }) : d.picoModal = k
 })(window, document);

@@ -118,10 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin Panel\css\bundle.css" />
-    <Content Include="Content\Admin Panel\css\bundle.min.css">
-      <DependentUpon>bundle.css</DependentUpon>
-    </Content>
     <Content Include="Content\Admin Panel\css\Css.css" />
     <Content Include="Content\Admin Panel\css\Css.min.css">
       <DependentUpon>Css.css</DependentUpon>
@@ -129,6 +125,14 @@
     <Content Include="Content\Admin Panel\css\sb-admin-2.css" />
     <Content Include="Content\Admin Panel\css\sb-admin-2.min.css" />
     <Content Include="Content\Admin Panel\img\undraw_posting_photo.svg" />
+    <Content Include="Content\Admin Panel\js\bundle.js" />
+    <Content Include="Content\Admin Panel\js\bundle.min.js">
+      <DependentUpon>bundle.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Admin Panel\js\demo\bundle.js" />
+    <Content Include="Content\Admin Panel\js\demo\bundle.min.js">
+      <DependentUpon>bundle.js</DependentUpon>
+    </Content>
     <Content Include="Content\Admin Panel\js\demo\chart-area-demo.js" />
     <Content Include="Content\Admin Panel\js\demo\chart-bar-demo.js" />
     <Content Include="Content\Admin Panel\js\demo\chart-pie-demo.js" />
@@ -2042,6 +2046,10 @@
     <Content Include="Content\ckeditor\skins\moono-lisa\images\refresh.png" />
     <Content Include="Content\ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="Content\ckeditor\styles.js" />
+    <Content Include="Content\css\bundle.css" />
+    <Content Include="Content\css\bundle.min.css">
+      <DependentUpon>bundle.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\Mesaj-Details.css" />
     <Content Include="Content\css\Mesaj-Index.css" />
     <Content Include="Content\css\animate.css" />
@@ -2049,6 +2057,10 @@
     <Content Include="Content\css\flaticon.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\css\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\style.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
@@ -2208,7 +2220,6 @@
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\img\about.jpg" />
-<<<<<<< HEAD
     <Content Include="Content\img\close.png" />
     <Content Include="Content\img\footer-bg.jpg" />
     <Content Include="Content\img\loading.gif" />
@@ -2217,66 +2228,6 @@
     <Content Include="Content\img\next.png" />
     <Content Include="Content\img\page-top-bg.jpg" />
     <Content Include="Content\img\prev.png" />
-=======
-    <Content Include="Content\img\add\01_homepage.jpg" />
-    <Content Include="Content\img\add\1.jpg" />
-    <Content Include="Content\img\add\2.jpg" />
-    <Content Include="Content\img\add\3.jpg" />
-    <Content Include="Content\img\author.jpg" />
-    <Content Include="Content\img\blog\1.jpg" />
-    <Content Include="Content\img\close.png" />
-    <Content Include="Content\img\favicon.ico" />
-    <Content Include="Content\img\footer-bg.jpg" />
-    <Content Include="Content\img\icon\1.png" />
-    <Content Include="Content\img\icon\2.png" />
-    <Content Include="Content\img\icon\3.png" />
-    <Content Include="Content\img\icon\4.png" />
-    <Content Include="Content\img\icon\angle-bottom.png" />
-    <Content Include="Content\img\icon\check-2.png" />
-    <Content Include="Content\img\icon\check.png" />
-    <Content Include="Content\img\instagram\1.jpg" />
-    <Content Include="Content\img\instagram\2.jpg" />
-    <Content Include="Content\img\instagram\3.jpg" />
-    <Content Include="Content\img\instagram\4.jpg" />
-    <Content Include="Content\img\instagram\5.jpg" />
-    <Content Include="Content\img\instagram\6.jpg" />
-    <Content Include="Content\img\k.gif" />
-    <Content Include="Content\img\loading.gif" />
-    <Content Include="Content\img\logo.png" />
-    <Content Include="Content\img\MetinToka.png" />
-    <Content Include="Content\img\MetinToka1.png" />
-    <Content Include="Content\img\newslatter.png" />
-    <Content Include="Content\img\next.png" />
-    <Content Include="Content\img\page-top-bg.jpg" />
-    <Content Include="Content\img\prev.png" />
-    <Content Include="Content\img\recipes\1.jpg" />
-    <Content Include="Content\img\recipes\10.jpg" />
-    <Content Include="Content\img\recipes\11.jpg" />
-    <Content Include="Content\img\recipes\12.jpg" />
-    <Content Include="Content\img\recipes\2.jpg" />
-    <Content Include="Content\img\recipes\3.jpg" />
-    <Content Include="Content\img\recipes\4.jpg" />
-    <Content Include="Content\img\recipes\5.jpg" />
-    <Content Include="Content\img\recipes\6.jpg" />
-    <Content Include="Content\img\recipes\7.jpg" />
-    <Content Include="Content\img\recipes\8.jpg" />
-    <Content Include="Content\img\recipes\9.jpg" />
-    <Content Include="Content\img\recipes\single-big.jpg" />
-    <Content Include="Content\img\slider-bg-1.jpg" />
-    <Content Include="Content\img\slider-bg-2.jpg" />
-    <Content Include="Content\img\thumb\1.jpg" />
-    <Content Include="Content\img\thumb\10.jpg" />
-    <Content Include="Content\img\thumb\11.jpg" />
-    <Content Include="Content\img\thumb\12.jpg" />
-    <Content Include="Content\img\thumb\2.jpg" />
-    <Content Include="Content\img\thumb\3.jpg" />
-    <Content Include="Content\img\thumb\4.jpg" />
-    <Content Include="Content\img\thumb\5.jpg" />
-    <Content Include="Content\img\thumb\6.jpg" />
-    <Content Include="Content\img\thumb\7.jpg" />
-    <Content Include="Content\img\thumb\8.jpg" />
-    <Content Include="Content\img\thumb\9.jpg" />
->>>>>>> 2f15fbe33a6b5e908dc6b8bc190feb162c5eeaaf
     <Content Include="Content\img\WhatsApp Image 2020-07-25 at 20.40.37.jpeg" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\circle-progress.min.js" />
@@ -2284,6 +2235,10 @@
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\map.js" />
     <Content Include="Content\js\owl.carousel.min.js" />
+    <Content Include="Content\js\Site.js" />
+    <Content Include="Content\js\Site.min.js">
+      <DependentUpon>Site.js</DependentUpon>
+    </Content>
     <Content Include="Content\lightbox2-master\dist\css\lightbox.css" />
     <Content Include="Content\lightbox2-master\dist\css\lightbox.min.css" />
     <Content Include="Content\lightbox2-master\dist\images\close.png" />
@@ -2531,6 +2486,7 @@
     <Content Include="Content\lightbox2-master\package.json" />
     <Content Include="Content\lightbox2-master\README.md" />
     <Content Include="Content\lightbox2-master\ROADMAP.md" />
+    <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <Content Include="Uploads\Banner\68c0c3a0-f3e9-41a4-8414-bca383b3f610.jpeg" />
@@ -2632,7 +2588,6 @@
     <Content Include="Views\KatalogKategori\Create.cshtml" />
     <Content Include="Views\KatalogKategori\Edit.cshtml" />
     <Content Include="Views\Home\KatalogSlider.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Katalog\Index.cshtml" />
     <Content Include="Views\Katalogs\Create.cshtml" />
     <Content Include="Views\Katalogs\Delete.cshtml" />
@@ -2642,8 +2597,6 @@
     <Content Include="Views\Katalog\Create.cshtml" />
     <Content Include="Views\Katalog\Edit.cshtml" />
     <Content Include="Views\Iletisim\Edit.cshtml" />
-=======
->>>>>>> 2f15fbe33a6b5e908dc6b8bc190feb162c5eeaaf
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2653,13 +2606,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-<<<<<<< HEAD
     <Folder Include="Uploads\Kimlik\" />
-=======
-    <Folder Include="Content\NewFolder1\" />
-    <Folder Include="Uploads\Banner\" />
-    <Folder Include="Uploads\Katalog\" />
->>>>>>> 2f15fbe33a6b5e908dc6b8bc190feb162c5eeaaf
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

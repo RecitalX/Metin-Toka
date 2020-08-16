@@ -56,7 +56,7 @@
             }
         }; d.prototype.getGroupIndex = function (a) { for (var b = this.actualConfig.toolbarGroups, c = b.length, d = 0; d < c; d += 1)if (b[d].name === a) return d; return -1 }; d.prototype._addSeparator = function () {
             var a = this._determineSeparatorToAddIndex(), b = d.createSeparatorLiteral(),
-            c = CKEDITOR.dom.element.createFromHtml(d.getToolbarSeparatorString(b)); this.actualConfig.toolbarGroups.splice(a, 0, b); c.insertBefore(this.modifyContainer.findOne("ul[data-type\x3dtable-body]").getChild(a)); this._setActiveElement("separator", b.name); this._refreshMoveBtnsAvalibility(); this._refreshBtnTabIndexes(); this._refreshEditor()
+                c = CKEDITOR.dom.element.createFromHtml(d.getToolbarSeparatorString(b)); this.actualConfig.toolbarGroups.splice(a, 0, b); c.insertBefore(this.modifyContainer.findOne("ul[data-type\x3dtable-body]").getChild(a)); this._setActiveElement("separator", b.name); this._refreshMoveBtnsAvalibility(); this._refreshBtnTabIndexes(); this._refreshEditor()
         }; d.prototype._removeSeparator = function (a) {
             var b = CKEDITOR.tools.indexOf(this.actualConfig.toolbarGroups, function (b) { return "separator" == b.type && b.name == a }); this.actualConfig.toolbarGroups.splice(b,
                 1); this._refreshMoveBtnsAvalibility(); this._refreshBtnTabIndexes(); this._refreshEditor()

@@ -58,7 +58,7 @@
                 "return": d, "break": d, "continue": d, "new": d, "delete": d, "throw": d, "debugger": d, "var": a("var"), "const": a("var"), let: a("var"), "function": a("function"), "catch": a("catch"), "for": a("for"), "switch": a("switch"), "case": a("case"), "default": a("default"), "in": f, "typeof": f, "instanceof": f, "true": h, "false": h, "null": h, undefined: h, NaN: h, Infinity: h, "this": a("this"), module: a("module"), "class": a("class"), "super": a("atom"), yield: d, "export": a("export"), "import": a("import"), "extends": d
             }; if (ka) {
                 var b = { type: "variable", style: "variable-3" },
-                b = { "interface": a("interface"), "extends": a("extends"), constructor: a("constructor"), "public": a("public"), "private": a("private"), "protected": a("protected"), "static": a("static"), string: b, number: b, bool: b, any: b }, g; for (g in b) c[g] = b[g]
+                    b = { "interface": a("interface"), "extends": a("extends"), constructor: a("constructor"), "public": a("public"), "private": a("private"), "protected": a("protected"), "static": a("static"), string: b, number: b, bool: b, any: b }, g; for (g in b) c[g] = b[g]
             } return c
         }(), K = /[+\-*&%=<>!?|~^]/, qa = /^@(context|id|value|language|type|container|list|set|reverse|index|base|vocab|graph)"/, E, I, xa = { atom: !0, number: !0, variable: !0, string: !0, regexp: !0, "this": !0, "jsonld-keyword": !0 }, f = { state: null, column: null, marked: null, cc: null }, ra = {
             name: "this",

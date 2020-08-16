@@ -15,7 +15,7 @@
             postMessage: {
                 init: function (a) { window.addEventListener ? window.addEventListener("message", a, !1) : window.attachEvent("onmessage", a) }, send: function (a) {
                     var b = Object.prototype.toString,
-                    e = a.fn || null, f = a.id || "", h = a.target || window, k = a.message || { id: f }; a.message && "[object Object]" == b.call(a.message) && (a.message.id ? a.message.id : a.message.id = f, k = a.message); a = window.JSON.stringify(k, e); h.postMessage(a, "*")
+                        e = a.fn || null, f = a.id || "", h = a.target || window, k = a.message || { id: f }; a.message && "[object Object]" == b.call(a.message) && (a.message.id ? a.message.id : a.message.id = f, k = a.message); a = window.JSON.stringify(k, e); h.postMessage(a, "*")
                 }, unbindHandler: function (a) { window.removeEventListener ? window.removeEventListener("message", a, !1) : window.detachEvent("onmessage", a) }
             }, hash: { create: function () { }, parse: function () { } }, cookie: {
                 set: a, get: function (a) {
@@ -161,7 +161,7 @@
                 }, f = { minWidth: 560, minHeight: 444 }; return {
                     title: b.config.wsc_dialogTitle || b.lang.wsc.title, minWidth: f.minWidth, minHeight: f.minHeight, buttons: [CKEDITOR.dialog.cancelButton], onLoad: function () {
                         a.dialog =
-                        this; y(); u(); q(); b.plugins.scayt && c()
+                            this; y(); u(); q(); b.plugins.scayt && c()
                     }, onShow: function () {
                         a.dialog = this; b.lockSelection(b.getSelection()); a.TextAreaNumber = "cke_textarea_" + b.name; g.postMessage.init(H); a.dataTemp = b.getData(); a.OverlayPlace = a.dialog.parts.tabs.getParent().$; if (CKEDITOR && CKEDITOR.config) {
                             a.wsc_customerId = b.config.wsc_customerId; a.cust_dic_ids = b.config.wsc_customDictionaryIds; a.userDictionaryName = b.config.wsc_userDictionaryName; a.defaultLanguage = CKEDITOR.config.defaultLanguage; var c = "file:" == document.location.protocol ?
@@ -330,7 +330,7 @@
                                     type: "vbox", id: "Options_DictionaryName", children: [{
                                         type: "text", id: "DictionaryName", style: "margin-bottom: 10px", label: "Dictionary Name:", labelLayout: "vertical", labelStyle: "font: 12px/25px arial, sans-serif;", "default": "", onLoad: function () {
                                             t =
-                                            this; var b = a.userDictionaryName ? a.userDictionaryName : (g.cookie.get("udn"), this.getValue()); this.setValue(b)
+                                                this; var b = a.userDictionaryName ? a.userDictionaryName : (g.cookie.get("udn"), this.getValue()); this.setValue(b)
                                         }, onShow: function () { t = this; var b = g.cookie.get("udn") ? g.cookie.get("udn") : this.getValue(); this.setValue(b); this.setLabel(a.LocalizationComing.DictionaryName) }, onHide: function () { this.reset() }
                                     }, {
                                         type: "hbox", id: "Options_buttons", children: [{
