@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Kurumsal.Models.Sınıflar;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
 
 namespace Kurumsal.Controllers
 {
@@ -16,16 +11,16 @@ namespace Kurumsal.Controllers
         private KurumsalDB db = new KurumsalDB();
 
         #region Listeleme
+
         public ActionResult Index()
         {
             return View(db.Iletisim.ToList());
         }
-        #endregion
+
+        #endregion Listeleme
 
         #region İletişim Bilgileri Güncelleme
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [ValidateInput(false)]
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -40,9 +35,9 @@ namespace Kurumsal.Controllers
             return View(iletisim);
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "IletisimId,Telefon,Mail,WeChat,Whatsapp,instagram,Fax,")] Iletisim iletisim)
         {
             if (ModelState.IsValid)
@@ -54,7 +49,7 @@ namespace Kurumsal.Controllers
             }
             return View(iletisim);
         }
-        #endregion
 
+        #endregion İletişim Bilgileri Güncelleme
     }
 }

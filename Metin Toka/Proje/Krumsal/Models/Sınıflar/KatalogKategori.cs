@@ -1,10 +1,8 @@
 namespace Kurumsal.Models.Sınıflar
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("KatalogKategori")]
     public partial class KatalogKategori

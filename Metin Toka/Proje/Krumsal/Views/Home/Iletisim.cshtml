@@ -1,25 +1,21 @@
-﻿@model IEnumerable<Kurumsal.Models.Iletisim>
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Iletisim>
 @{ Layout = null; }
-
-
 
 @foreach (var item in Model)
 {
-
-
 <ul class="ct-list">
     <li>
         <h6>Adres:</h6>
         <p>
             <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;&nbsp;
-            @item.WeChat
+            @Html.Raw(item.WeChat)
         </p>
     </li>
     <li>
         <h6>İletişim:</h6>
         <p>
             <i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;
-            @item.Telefon
+            @Html.Raw(item.Telefon)
         </p>
         <p>
             <i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;
@@ -37,6 +33,6 @@
             <i class="fab fa-instagram"></i>&nbsp;&nbsp;&nbsp;
             @item.instagram
         </p>
-
     </li>
-</ul>}
+</ul>
+}

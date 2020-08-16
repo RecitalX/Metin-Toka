@@ -20,23 +20,29 @@
         @Html.HiddenFor(model => model.ID)
 
         <div class="form-group">
+
             <div class="control-label col-md-2 my-3">
                 Başlık
             </div>
+
             <div class="col-md-10">
                 <input class="form-control" name="Baslik" required placeholder="Banner başlık" maxlength="100" value="@Model.Baslik">
                 <input type="hidden" name="Baslik" value="@Model.Baslik" />
             </div>
+
             <div class="control-label col-md-2 my-3">
                 Açıklama
             </div>
+
             <div class="col-md-10">
                 <input class="form-control" name="Aciklama" maxlength="100"  required placeholder="Banner açıklama" value="@Model.Aciklama">
                 <input type="hidden" name="Aciklama" value="@Model.Aciklama" />
             </div>
+
             <div class="control-label col-md-2 my-3">
                 Gideceği yer
             </div>
+
             <div class="col-md-10">
                 <input class="form-control" name="Url" required placeholder="Resme tıklandığı zaman gidecek url giriniz" value="@Model.Url">
                 <input type="hidden" name="Url" value="@Model.Url" />
@@ -61,7 +67,6 @@
             </div>
         </div>
 
-
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
                 <button class="btn btn-primary btn-sm" type="submit">Güncelle</button>
@@ -69,5 +74,6 @@
             </div>
         </div>
     </div>
+
     }
 </div>

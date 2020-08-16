@@ -1,8 +1,5 @@
-﻿using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
+﻿using Kurumsal.Models.Sınıflar;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -14,13 +11,15 @@ namespace Kurumsal.Controllers
 {
     public class BannerController : Controller
     {
-        KurumsalDB db = new KurumsalDB();
+        private KurumsalDB db = new KurumsalDB();
+
         public ActionResult Index()
         {
             return View(db.Banner.ToList());
         }
 
         #region Düzenleme
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -34,7 +33,6 @@ namespace Kurumsal.Controllers
             }
             return View(banner);
         }
-
 
         [HttpPost]
         [ValidateInput(false)]
@@ -70,6 +68,7 @@ namespace Kurumsal.Controllers
             }
             return View(banner);
         }
-        #endregion
+
+        #endregion Düzenleme
     }
 }

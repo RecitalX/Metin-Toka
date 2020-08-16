@@ -1,7 +1,5 @@
-﻿using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
+﻿using Kurumsal.Models.Sınıflar;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -13,11 +11,18 @@ namespace Kurumsal.Controllers
     public class KatalogController : Controller
     {
         private KurumsalDB db = new KurumsalDB();
+
+        #region Listeleme
+
         public ActionResult Index()
         {
             var katalog = db.Katalog.ToList().OrderByDescending(x => x.Id);
             return View(katalog);
         }
+
+        #endregion Listeleme
+
+        #region Katalog Ekleme
 
         public ActionResult Create()
         {
@@ -46,6 +51,10 @@ namespace Kurumsal.Controllers
             TempData["create"] = "Katalog ekleme işlemi başarılı";
             return RedirectToAction("Index");
         }
+
+        #endregion Katalog Ekleme
+
+        #region Katalog Güncelleme
 
         public ActionResult Edit(int id)
         {
@@ -82,7 +91,7 @@ namespace Kurumsal.Controllers
                 img.Save("~/Uploads/Katalog/" + logoname);
                 mkl.ResimURL = "/Uploads/Katalog/" + logoname;
 
-                mkl.ResimURL = "/Uploads/Hizmet/" + logoname;
+                mkl.ResimURL = "/Uploads/Katalog/" + logoname;
             }
             mkl.KatalogId = m.KatalogId;
 
@@ -92,13 +101,19 @@ namespace Kurumsal.Controllers
             return RedirectToAction("Index", "Katalog");
         }
 
+        #endregion Katalog Güncelleme
+
+        #region Katalog Silme
+
         public ActionResult Delete(int id)
         {
             var katalog = db.Katalog.Where(x => x.Id == id).SingleOrDefault();
             db.Katalog.Remove(katalog);
-            db.SaveChanges(); 
+            db.SaveChanges();
             TempData["delete"] = "Katalog silme işlemi başarılı";
             return RedirectToAction("Index");
         }
+
+        #endregion Katalog Silme
     }
 }

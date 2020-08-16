@@ -1,4 +1,4 @@
-﻿@model IPagedList<Kurumsal.Models.Hizmet>
+﻿@model IPagedList<Kurumsal.Models.Sınıflar.Hizmet>
 @using PagedList;
 @using PagedList.Mvc;
 @using Kurumsal.Helper;
@@ -10,28 +10,22 @@
         <h2>Ürünler</h2>
     </div>
 </section>
-<!-- Hero section end -->
-<!-- Search section -->
 <div class="search-form-section">
     <div class="sf-warp">
         <div class="container">
             <form action="/AramaSayfası" method="post" class="big-search-form">
                 <div class="row">
-
                     <div class="col-lg-6 col-sm-6">
                         <select onchange="window.location=this.value">
                             <option>Kategori Seçiniz</option>
-                            @foreach (Kurumsal.Models.HizmetKategori item in ViewBag.Kategorilerim)
+                            @foreach (Kurumsal.Models.Sınıflar.HizmetKategori item in ViewBag.Kategorilerim)
                             {
                                 <option value="/ÜrünPost/@SeoHelper.ToSeoUrl(item.HizmetKategoriAdi).ToLower()/@item.HizmetKategoriId">
                                     @item.HizmetKategoriAdi
                                 </option>
                             }
                         </select>
-
-
                     </div>
-
                     <div class="col-lg-6 col-sm-6">
                         <div class="row">
 
@@ -41,18 +35,13 @@
                             <div class="col-lg-4 col-sm-4">
                                 <input type="submit" value="Ara" class="bsf-btn" />
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
             </form>
         </div>
     </div>
 </div>
-<!-- Search section end -->
-<!-- Recipes section -->
 <section class="recipes-page spad">
     <div class="container">
         <div class="row">
@@ -61,7 +50,6 @@
                     <h2>Tüm Ürünlerimiz</h2>
                 </div>
             </div>
-
         </div>
         <div class="row">
 
@@ -98,7 +86,6 @@
                                     <div class="rating mt-2">
                                         <h4 class="badge" style="display: inline;background-color: white;color:black">@item.UrunKodu</h4>
                                         <h4 class="badge" style="display: inline;background-color: white;color:black">@item.HizmetKategori.HizmetKategoriAdi</h4>
-
                                     </div>
                                 </div>
                             </div>

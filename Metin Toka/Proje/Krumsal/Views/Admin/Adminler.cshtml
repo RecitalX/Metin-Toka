@@ -1,15 +1,12 @@
-﻿@model IEnumerable<Kurumsal.Models.Admin>
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Admin>
 
 @{
     ViewBag.Title = "Adminler";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
 <div class="container-fluid">
-
     <div class="card shadow mb-4">
-
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary d-inline">Admin Listesi</h6>&nbsp;&nbsp;
             <h5 class="font-weight-bold text-primary d-inline">
@@ -45,12 +42,11 @@
                                 @Html.DisplayFor(modelItem => item.Yetki)
                             </td>
                             <td>
-                                @Html.ActionLink("Güncelle", "Edit", new { id = item.AdminId }, new { @class = " btn btn-primary btn-sm" }) 
+                                @Html.ActionLink("Güncelle", "Edit", new { id = item.AdminId }, new { @class = " btn btn-primary btn-sm" })
                                 @Html.ActionLink("Sil", "Delete", new { id = item.AdminId }, new { @class = " btn btn-danger btn-sm" })
                             </td>
                         </tr>
                     }
-
                 </table>
             </div>
         </div>

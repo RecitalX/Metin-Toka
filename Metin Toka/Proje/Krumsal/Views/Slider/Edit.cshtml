@@ -16,8 +16,6 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
 
-        
-
         <div class="form-group">
            Slider Resmi
             <div class="col-md-10 mt-3 mr-3">
@@ -30,12 +28,8 @@
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Güncelle" class="btn btn-primary btn-sm" />
                 @Html.ActionLink("İptal", "Index", null, new { @class = "btn btn-danger btn-sm" })
-
             </div>
         </div>
     </div>
     }
 </div>
-
-
-

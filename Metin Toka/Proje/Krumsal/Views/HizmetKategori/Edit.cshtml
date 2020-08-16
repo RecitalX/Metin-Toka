@@ -1,5 +1,4 @@
-﻿@model Kurumsal.Models.HizmetKategori
-
+﻿@model Kurumsal.Models.Sınıflar.HizmetKategori
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -38,12 +37,9 @@
                     <input type="submit" value="Güncelle" class="btn btn-primary btn-sm" />
 
                     @Html.ActionLink("İptal", "Index",null, new { @class = "btn btn-danger btn-sm" })
-
                 </div>
-
             </div>
         </div>
 
         }
-        
     </div>

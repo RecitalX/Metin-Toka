@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Kurumsal.Models.Kimlik>
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Kimlik>
     @{
         ViewBag.Title = "Index";
         Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -36,7 +36,6 @@ if (TempData["delete"] != null)
                                 @Html.DisplayNameFor(model => model.LogoURL)
                             </th>
                             <th>
-                                
                             </th>
                         </tr>
 
@@ -60,7 +59,6 @@ if (TempData["delete"] != null)
                                 </td>
                             </tr>
                         }
-
                     </table>
                 </div>
             </div>

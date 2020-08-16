@@ -1,4 +1,4 @@
-﻿@model Kurumsal.Models.Admin
+﻿@model Kurumsal.Models.Sınıflar.Admin
 @using System.Web.Optimization
 @{
     Layout = null;
@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Sifremi Unuttum - Admin</title>
@@ -18,14 +19,12 @@
     @Styles.Render("~/css/login")
 
     @Scripts.Render("~/script/login")
-
 </head>
 
 <body class="bg-gradient-primary" style="margin-top:10%;">
 
     <div class="container">
 
-        <!-- Outer Row -->
         <div class="row justify-content-center">
 
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -52,7 +51,6 @@
                                         {
                                             <div class="alert alert-info" id="divMessage">@ViewBag.Uyari</div>
                                         }
-
                                     </div>
                                     <form class="user" action="/Admin/SifremiUnuttum/" method="post">
                                         <div class="form-group">
@@ -60,7 +58,6 @@
                                         </div>
                                         <div class="text-center">
                                             <input type="submit" value="Şifremi Gönder" class="btn btn-primary w-100" />
-
                                         </div>
                                     </form>
                                     <hr>
@@ -72,14 +69,10 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
     @Scripts.Render("~/script/login2")
-
 </body>
 </html>

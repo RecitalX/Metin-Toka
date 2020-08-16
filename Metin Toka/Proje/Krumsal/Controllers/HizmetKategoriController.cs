@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Kurumsal.Models.Sınıflar;
+using System;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
 
 namespace Kurumsal.Controllers
 {
@@ -16,18 +13,20 @@ namespace Kurumsal.Controllers
         private KurumsalDB db = new KurumsalDB();
 
         #region Listeleme
+
         public ActionResult Index()
         {
             return View(db.HizmetKategori.ToList().OrderByDescending(x => x.HizmetKategoriId));
         }
-        #endregion
+
+        #endregion Listeleme
 
         #region Kategori Ekleme
+
         public ActionResult Create()
         {
             return View();
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -43,9 +42,11 @@ namespace Kurumsal.Controllers
 
             return View(hizmetKategori);
         }
-        #endregion
+
+        #endregion Kategori Ekleme
 
         #region Kategori Düzenlme
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,9 +74,11 @@ namespace Kurumsal.Controllers
             }
             return View(hizmetKategori);
         }
-        #endregion
+
+        #endregion Kategori Düzenlme
 
         #region Kategori Sil
+
         public ActionResult Delete(int? id)
         {
             try
@@ -95,16 +98,17 @@ namespace Kurumsal.Controllers
             }
             catch (Exception ex)
             {
-
                 TempData["DeleteMessage"] = "failed : " + ex.Message;
                 TempData["DeleteMessage1"] = "Hata : " + "Bu kategoriyi kullanan ürün varken bu kategoriyi silemezsiniz.";
             }
             //TempData["delete"] = "Kategori silme işlemi başarılı";
             return RedirectToAction("Index", "HizmetKategori");
         }
-        #endregion
 
-        #region Silme İşlemi Onay 
+        #endregion Kategori Sil
+
+        #region Silme İşlemi Onay
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -114,6 +118,7 @@ namespace Kurumsal.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        #endregion
+
+        #endregion Silme İşlemi Onay
     }
 }

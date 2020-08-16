@@ -1,22 +1,18 @@
-﻿using Kurumsal.Models;
+﻿using Kurumsal.Models.Sınıflar;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
-using PagedList;
-using PagedList.Mvc;
-using Kurumsal.Models.Sınıflar;
 
 namespace Kurumsal.Controllers
 {
-
     public class HomeController : Controller
     {
-        KurumsalDB db = new KurumsalDB();
+        private KurumsalDB db = new KurumsalDB();
 
         #region Anasayfa
+
         [Route("")]
         [Route("Anasayfa")]
         [HttpGet]
@@ -25,9 +21,11 @@ namespace Kurumsal.Controllers
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             return View();
         }
-        #endregion
+
+        #endregion Anasayfa
 
         #region Ürünler
+
         [Route("Ürünler")]
         public ActionResult Urun(int Sayfa = 1)
         {
@@ -36,9 +34,11 @@ namespace Kurumsal.Controllers
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             return View(db.Hizmet.Include("HizmetKategori").OrderByDescending(x => x.HizmetId).ToPagedList(Sayfa, 40));
         }
-        #endregion
+
+        #endregion Ürünler
 
         #region Ürün Detay
+
         [Route("ÜrünPost/{Baslik}-{id:int}")]
         public ActionResult UrunDetay(int id)
         {
@@ -47,9 +47,10 @@ namespace Kurumsal.Controllers
             return View(u);
         }
 
-        #endregion
+        #endregion Ürün Detay
 
         #region Kategoriye Ait Ürünler
+
         //Kategoriye Ait Hizmetler
         [Route("ÜrünPost/{HizmetKategoriAdi}/{id:int}")]
         public ActionResult KategoriyeAitUrunler(int id, int Sayfa = 1)
@@ -61,36 +62,55 @@ namespace Kurumsal.Controllers
             TempData["UrunYok"] = "Bu kategoriye ait ürün bulunmamaktadır.";
             return View(u);
         }
-        #endregion
 
-        #region Hakkımızda 
+        #endregion Kategoriye Ait Ürünler
+
+        #region Hakkımızda
+
         [Route("Hakkımızda")]
         public ActionResult Hakkimizda()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             return View(db.Hakkimizda.ToList());
         }
-        #endregion
 
-       
+        #endregion Hakkımızda
+
         #region Kataloglar
+
         [Route("Kataloglar")]
         public ActionResult Katalog()
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
-            return View(db.Katalog.ToList());
+            return View(db.KatalogKategori.ToList());
         }
-        #endregion
+
+        #endregion Kataloglar
+
+        #region KatalogSlider
+
+        [Route("Kataloglar/{Baslik}/{id:int}")]
+        public ActionResult KatalogSlider(int id)
+        {
+            ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
+            var katalog = db.Katalog.Include("KatalogKategori").OrderByDescending(x => x.Id).Where(x => x.KatalogKategori.KatalogId == id);
+            return View(katalog);
+        }
+
+        #endregion KatalogSlider
 
         #region En Son Eklenen Ürünler
+
         public ActionResult EnsonEklenenUruler()
         {
             var urun = db.Hizmet.OrderByDescending(x => x.HizmetId).Take(9);
             return View(urun);
         }
-        #endregion
+
+        #endregion En Son Eklenen Ürünler
 
         #region Arama Yap
+
         [Route("AramaSayfası")]
         public ActionResult AramaYap(string aranan)
         {
@@ -109,23 +129,29 @@ namespace Kurumsal.Controllers
             }
             return View(urun.ToList());
         }
-        #endregion
 
-        #region Slider 
+        #endregion Arama Yap
+
+        #region Slider
+
         public ActionResult Slider()
         {
             return View(db.Slider.ToList().OrderByDescending(x => x.ID));
         }
-        #endregion
+
+        #endregion Slider
 
         #region Banner
+
         public ActionResult Banner()
         {
             return View(db.Banner.ToList());
         }
-        #endregion
+
+        #endregion Banner
 
         #region Mesaj Gönderme
+
         [HttpGet]
         [Route("İletişim")]
         public ActionResult Mesaj()
@@ -133,6 +159,7 @@ namespace Kurumsal.Controllers
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -143,17 +170,21 @@ namespace Kurumsal.Controllers
                 mesaj.saat = DateTime.Now.Hour;
                 db.Mesaj.Add(mesaj);
                 db.SaveChanges();
-
             }
             TempData["Basarılı"] = "Mesaj gönderme işlemi başarılı";
             return RedirectToAction("Mesaj", "Home");
         }
-        #endregion
+
+        #endregion Mesaj Gönderme
+
+        #region İletşim
 
         public ActionResult Iletisim()
         {
             var iletisim = db.Iletisim.ToList();
             return PartialView(iletisim);
         }
+
+        #endregion İletşim
     }
 }

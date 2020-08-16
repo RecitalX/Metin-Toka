@@ -1,9 +1,6 @@
-﻿using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
+﻿using Kurumsal.Models.Sınıflar;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 
@@ -11,9 +8,10 @@ namespace Kurumsal.Controllers
 {
     public class AdminController : Controller
     {
-        KurumsalDB db = new KurumsalDB();
+        private KurumsalDB db = new KurumsalDB();
 
         #region Anasayfa
+
         [Route("yonetimpaneli")]
         public ActionResult Index()
         {
@@ -22,9 +20,11 @@ namespace Kurumsal.Controllers
             ViewBag.HizmetSay = db.Hizmet.Count();
             return View();
         }
-        #endregion
+
+        #endregion Anasayfa
 
         #region Login
+
         [Route("yonetimpaneli/giris")]
         public ActionResult Login()
         {
@@ -34,7 +34,6 @@ namespace Kurumsal.Controllers
         [HttpPost]
         public ActionResult Login(Admin admin)
         {
-
             var login = db.Admin.Where(x => x.Eposta == admin.Eposta).SingleOrDefault();
             if (login.Eposta == admin.Eposta && login.Sifre == Crypto.Hash(admin.Sifre, "MD5"))
             {
@@ -48,11 +47,12 @@ namespace Kurumsal.Controllers
                 ViewBag.Uyari = "Kullanıcı adı yada şifre yanlış";
             }
             return View(admin);
-
         }
-        #endregion
+
+        #endregion Login
 
         #region Logout
+
         public ActionResult Logout()
         {
             Session["adminid"] = null;
@@ -60,13 +60,16 @@ namespace Kurumsal.Controllers
             Session.Abandon();
             return RedirectToAction("Login", "Admin");
         }
-        #endregion
+
+        #endregion Logout
 
         #region Şifremi Unuttum (Local Host)
+
         public ActionResult SifremiUnuttum()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult SifremiUnuttum(string eposta)
         {
@@ -93,11 +96,12 @@ namespace Kurumsal.Controllers
                 ViewBag.Uyari = "Sistemde böyle bir mail bulunmamaktadır";
             }
             return View();
-
         }
-        #endregion
+
+        #endregion Şifremi Unuttum (Local Host)
 
         #region Şifremi Unuttum (Server)
+
         //public ActionResult SifremiUnuttum(string eposta)
         //{
         //    var mail = db.Admin.Where(x => x.Eposta == eposta).SingleOrDefault();
@@ -126,24 +130,28 @@ namespace Kurumsal.Controllers
         //    return View();
 
         //}
-        #endregion
 
-        #region Admin Listelenen kısım 
+        #endregion Şifremi Unuttum (Server)
+
+        #region Admin Listelenen kısım
+
         public ActionResult Adminler()
         {
             return View(db.Admin.ToList());
         }
-        #endregion
+
+        #endregion Admin Listelenen kısım
 
         #region Yeni Admin Olusturma
+
         public ActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Create(Admin admin, string sifre, string eposta)
         {
-
             if (ModelState.IsValid)
             {
                 admin.Sifre = Crypto.Hash(sifre, "MD5");
@@ -153,16 +161,18 @@ namespace Kurumsal.Controllers
             }
             return View(admin);
         }
-        #endregion
+
+        #endregion Yeni Admin Olusturma
 
         #region Admin Düzenleme
+
         public ActionResult Edit(int id)
         {
             var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
             return View(a);
         }
-        [HttpPost]
 
+        [HttpPost]
         public ActionResult Edit(int id, Admin admin, string sifre, string eposta)
         {
             if (ModelState.IsValid)
@@ -176,9 +186,11 @@ namespace Kurumsal.Controllers
             }
             return View(admin);
         }
-        #endregion
+
+        #endregion Admin Düzenleme
 
         #region Admin Silme
+
         public ActionResult Delete(int id)
         {
             var a = db.Admin.Where(x => x.AdminId == id).SingleOrDefault();
@@ -187,10 +199,10 @@ namespace Kurumsal.Controllers
                 db.Admin.Remove(a);
                 db.SaveChanges();
                 return RedirectToAction("Adminler");
-
             }
             return View();
         }
-        #endregion
+
+        #endregion Admin Silme
     }
 }

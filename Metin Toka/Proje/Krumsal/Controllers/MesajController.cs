@@ -1,17 +1,15 @@
-﻿using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
-using System;
-using System.Collections.Generic;
+﻿using Kurumsal.Models.Sınıflar;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Kurumsal.Controllers
 {
     public class MesajController : Controller
     {
-        KurumsalDB db = new KurumsalDB();
+        private KurumsalDB db = new KurumsalDB();
+
+        #region Listeleme
 
         public ActionResult Index()
         {
@@ -20,6 +18,10 @@ namespace Kurumsal.Controllers
 
             return View(mesaj);
         }
+
+        #endregion Listeleme
+
+        #region Mesaj Detay
 
         public ActionResult Details(int id)
         {
@@ -35,6 +37,10 @@ namespace Kurumsal.Controllers
             return View(mesaj);
         }
 
+        #endregion Mesaj Detay
+
+        #region Mesaj Silme
+
         public ActionResult Delete(int id)
         {
             var mesaj = db.Mesaj.Where(x => x.ID == id).SingleOrDefault();
@@ -43,5 +49,7 @@ namespace Kurumsal.Controllers
             TempData["delete"] = "Silme İşlemi Başarılı";
             return RedirectToAction("Index", "Mesaj");
         }
+
+        #endregion Mesaj Silme
     }
 }

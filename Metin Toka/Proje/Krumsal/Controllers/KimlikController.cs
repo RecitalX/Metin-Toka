@@ -1,7 +1,4 @@
-﻿using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
-using System;
-using System.Collections.Generic;
+﻿using Kurumsal.Models.Sınıflar;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -12,15 +9,19 @@ namespace Kurumsal.Controllers
 {
     public class KimlikController : Controller
     {
-        KurumsalDB db = new KurumsalDB();
+        private KurumsalDB db = new KurumsalDB();
+
         #region Listeleme
+
         public ActionResult Index()
         {
             return View(db.Kimlik.ToList());
         }
-        #endregion
+
+        #endregion Listeleme
 
         #region Kimlik düzenleme
+
         public ActionResult Edit(int id)
         {
             var kimlik = db.Kimlik.Where(x => x.KimlikId == id).SingleOrDefault();
@@ -60,6 +61,7 @@ namespace Kurumsal.Controllers
             }
             return View(kimlik);
         }
-        #endregion
+
+        #endregion Kimlik düzenleme
     }
 }

@@ -1,27 +1,33 @@
 ﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Banner>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
-    <div class="text-center mx-4">
-        @{ if (TempData["create"] != null)
-            {
-    <h5 class="alert alert-success"><i class="far fa-check-circle"></i>&nbsp;&nbsp; @TempData["create"]</h5> }
+   ViewBag.Title = "Index";
+   Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+ }
+
+<div class="text-center mx-4">
+    @{ if (TempData["create"] != null)
+        {
+<h5 class="alert alert-success"><i class="far fa-check-circle"></i>&nbsp;&nbsp; @TempData["create"]</h5> }
 if (TempData["edit"] != null)
 {
-    <h5 class="alert alert-primary"><i class="far fa-edit"></i>&nbsp;&nbsp; @TempData["edit"]</h5> }
+<h5 class="alert alert-primary"><i class="far fa-edit"></i>&nbsp;&nbsp; @TempData["edit"]</h5> }
 if (TempData["delete"] != null)
 {
-    <h5 class="alert alert-danger"><i class="far fa-trash-alt"></i>&nbsp;&nbsp; @TempData["delete"]</h5> }}
-    </div>
+<h5 class="alert alert-danger"><i class="far fa-trash-alt"></i>&nbsp;&nbsp; @TempData["delete"]</h5> }}
+</div>
 <div class="m-4">
+
     <div class="card shadow mb-4">
+
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Hakkımızda</h6>
         </div>
+
         <div class="card-body">
+
             <div class="table-responsive">
+
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>
@@ -37,64 +43,58 @@ if (TempData["delete"] != null)
                             Resim
                         </th>
                         <th>
-
                         </th>
                     </tr>
 
                     @foreach (var item in Model)
                     {
-                <tr>
-                    <td>
-                        @{ string baslik = "";
-                            if (item.Baslik.Length > 100)
-                            {
-                                baslik = item.Baslik.Substring(0, 100) + "...";
-                            }
-                            else
-                            {
-                                baslik = @item.Baslik;
-                            }
-                        }
-
-                        @baslik
-                    </td>
-                    <td>
-                        @{ string aciklama = "";
-                            if (item.Aciklama.Length > 100)
-                            {
-                                aciklama = item.Aciklama.Substring(0, 100) + "...";
-                            }
-                            else
-                            {
-                                aciklama = @item.Aciklama;
-                            }
-                        }
-
-                        @aciklama
-                    </td>
-                    <td>
-                        @{ string url = "";
-                            if (item.Url.Length > 100)
-                            {
-                                url = item.Url.Substring(0, 100) + "...";
-                            }
-                            else
-                            {
-                                url = @item.Url;
-                            }
-                        }
-
-                        @url
-                    </td>
-                    <td>
-                        <img class="img-responsive" src="@item.ResimURL" width="125" height="125" />
-                    </td>
-                    <td>
-                        @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }, new { @class = " btn btn-primary btn-sm" })
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @{ string baslik = "";
+                    if (item.Baslik.Length > 100)
+                    {
+                        baslik = item.Baslik.Substring(0, 100) + "...";
                     }
+                    else
+                    {
+                        baslik = @item.Baslik;
+                    } }
 
+                @baslik
+            </td>
+            <td>
+                @{ string aciklama = "";
+                    if (item.Aciklama.Length > 100)
+                    {
+                        aciklama = item.Aciklama.Substring(0, 100) + "...";
+                    }
+                    else
+                    {
+                        aciklama = @item.Aciklama;
+                    } }
+
+                @aciklama
+            </td>
+            <td>
+                @{ string url = "";
+                    if (item.Url.Length > 100)
+                    {
+                        url = item.Url.Substring(0, 100) + "...";
+                    }
+                    else
+                    {
+                        url = @item.Url;
+                    } }
+
+                @url
+            </td>
+            <td>
+                <img class="img-responsive" src="@item.ResimURL" width="125" height="125" />
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }, new { @class = " btn btn-primary btn-sm" })
+            </td>
+        </tr>}
                 </table>
             </div>
         </div>

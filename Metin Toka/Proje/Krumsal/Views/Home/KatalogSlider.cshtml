@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Katalog>
+@{ ViewBag.Title = "KatalogSlider";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<link href="~/Content/lightbox2-master/dist/css/lightbox.min.css" rel="stylesheet" />
+
+<section class="page-top-section set-bg" data-setbg="/Content/img/page-top-bg.jpg">
+    <div class="container">
+        <h2></h2>
+    </div>
+</section>
+
+<section class="recipes-page spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-title">
+                    <h2>Katalog İçeriği</h2>
+                </div>
+            </div>
+        </div>
+        <div class="gallery row">
+            @foreach (var item in Model)
+            {
+        <div class="col-lg-3 col-md-4">
+            <div class="recipe">
+                <a href="@item.ResimURL" data-lightbox="mygallery" data-title="KatalogContent">
+                    <img src="@item.ResimURL" alt="Damn" />
+                </a>
+            </div>
+        </div>
+            }
+            </div>
+    </div>
+</section>
+
+<script src="~/Content/lightbox2-master/dist/js/lightbox-plus-jquery.min.js"></script>

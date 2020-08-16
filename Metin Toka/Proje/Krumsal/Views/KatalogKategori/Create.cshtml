@@ -13,8 +13,6 @@
     {
         @Html.AntiForgeryToken()
 
-
-
         <div class="form-horizontal">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group ">
@@ -30,9 +28,6 @@
                     <input required type="file" class="form-control" name="ResimURL" accept=".jpg,.png,.jpeg" />
                 </div>
             </div>
-
-
-
 
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">

@@ -1,7 +1,5 @@
-﻿using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
+﻿using Kurumsal.Models.Sınıflar;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -15,26 +13,27 @@ namespace Kurumsal.Controllers
         private KurumsalDB db = new KurumsalDB();
 
         #region Kategori Listeleme
+
         public ActionResult Index()
         {
             var kategori = db.KatalogKategori.ToList().OrderByDescending(x => x.KatalogId);
             return View(kategori);
         }
-        #endregion
+
+        #endregion Kategori Listeleme
 
         #region Kategori Ekleme
+
         public ActionResult Create()
         {
             return View();
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Create(KatalogKategori k,  HttpPostedFileBase ResimURL)
+        public ActionResult Create(KatalogKategori k, HttpPostedFileBase ResimURL)
         {
-
             if (ResimURL != null)
             {
                 WebImage img = new WebImage(ResimURL.InputStream);
@@ -49,9 +48,11 @@ namespace Kurumsal.Controllers
             TempData["create"] = "Ürün ekleme işlemi başarılı";
             return RedirectToAction("Index");
         }
-        #endregion
+
+        #endregion Kategori Ekleme
 
         #region Kategori Güncelleme
+
         public ActionResult Edit(int id)
         {
             if (id == 0)
@@ -65,6 +66,7 @@ namespace Kurumsal.Controllers
             }
             return View(b);
         }
+
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
         [HttpPost]
@@ -93,9 +95,11 @@ namespace Kurumsal.Controllers
 
             return RedirectToAction("Index", "KatalogKategori");
         }
-        #endregion
+
+        #endregion Kategori Güncelleme
 
         #region Kategori Silme
+
         public ActionResult Delete(int id)
         {
             var katalog = db.KatalogKategori.Where(x => x.KatalogId == id).SingleOrDefault();
@@ -108,6 +112,7 @@ namespace Kurumsal.Controllers
             TempData["delete"] = "Ürün silme işlemi başarılı";
             return RedirectToAction("Index", "KatalogKategori");
         }
-        #endregion
+
+        #endregion Kategori Silme
     }
 }

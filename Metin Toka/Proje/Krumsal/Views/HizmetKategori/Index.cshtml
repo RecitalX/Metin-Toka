@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Kurumsal.Models.HizmetKategori>
-
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.HizmetKategori>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -17,9 +16,6 @@
             if (TempData["edit"] != null)
             {
                 <h5 class="alert alert-primary"><i class="far fa-edit"></i>&nbsp;&nbsp; @TempData["edit"]</h5> }
-            @*if (TempData["delete"] != null)
-            {
-                <h5 class="alert alert-danger"><i class="far fa-trash-alt"></i>&nbsp;&nbsp; @TempData["delete"]</h5> }*@
             }
     </div>
 
@@ -31,8 +27,11 @@
                 @Html.ActionLink("Yeni ekle", "Create", null, new { @class = "btn btn-success btn-sm" })
             </h5>
         </div>
+
         <div class="card-body">
+
             <div class="table-responsive">
+
                 <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
                     <tr>
                         <th>
@@ -81,7 +80,6 @@
                             </td>
                         </tr>
                     }
-
                 </table>
             </div>
         </div>

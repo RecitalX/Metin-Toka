@@ -1,7 +1,5 @@
-﻿using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
+﻿using Kurumsal.Models.Sınıflar;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,15 +11,19 @@ namespace Kurumsal.Controllers
 {
     public class SliderController : Controller
     {
-        KurumsalDB db = new KurumsalDB();
+        private KurumsalDB db = new KurumsalDB();
+
         #region Listeleme
+
         public ActionResult Index()
         {
             return View(db.Slider.ToList().OrderByDescending(x => x.ID));
         }
-        #endregion
+
+        #endregion Listeleme
 
         #region Slider Ekleme
+
         public ActionResult Create()
         {
             return View();
@@ -50,9 +52,11 @@ namespace Kurumsal.Controllers
 
             return View(slider);
         }
-        #endregion
+
+        #endregion Slider Ekleme
 
         #region Slider Düzenleme
+
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -98,9 +102,11 @@ namespace Kurumsal.Controllers
             }
             return View(slider);
         }
-        #endregion
+
+        #endregion Slider Düzenleme
 
         #region Slider Silme
+
         public ActionResult Delete(int id)
         {
             Slider slider = db.Slider.Find(id);
@@ -117,6 +123,7 @@ namespace Kurumsal.Controllers
             TempData["delete"] = "Slider silme işlemi başarılı";
             return RedirectToAction("Index");
         }
-        #endregion
+
+        #endregion Slider Silme
     }
 }

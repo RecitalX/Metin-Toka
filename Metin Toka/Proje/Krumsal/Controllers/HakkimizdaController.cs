@@ -1,16 +1,14 @@
-﻿using Kurumsal.Models;
-using Kurumsal.Models.Sınıflar;
-using System;
-using System.Collections.Generic;
+﻿using Kurumsal.Models.Sınıflar;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Kurumsal.Controllers
 {
     public class HakkimizdaController : Controller
     {
-        KurumsalDB db = new KurumsalDB();
+        private KurumsalDB db = new KurumsalDB();
+
+        #region Listeleme
 
         public ActionResult Index()
         {
@@ -18,13 +16,17 @@ namespace Kurumsal.Controllers
             return View(h);
         }
 
+        #endregion Listeleme
+
         #region Düzenleme
+
         public ActionResult Edit(int id)
         {
             var h = db.Hakkimizda.Where(x => x.HakkimizdaId == id).FirstOrDefault();
 
             return View(h);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -42,6 +44,7 @@ namespace Kurumsal.Controllers
 
             return View(h);
         }
-        #endregion
+
+        #endregion Düzenleme
     }
 }

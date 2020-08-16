@@ -1255,7 +1255,6 @@ E:\Desktop\Metin-Toka-master\Metin Toka\Proje\Krumsal\bin\tr\System.Web.Webpages
 E:\Desktop\Metin-Toka-master\Metin Toka\Proje\Krumsal\bin\tr\System.Web.Webpages.Razor.resources.dll
 E:\Desktop\Metin-Toka-master\Metin Toka\Proje\Krumsal\bin\tr\System.Web.Helpers.resources.dll
 E:\Desktop\Metin-Toka-master\Metin Toka\Proje\Krumsal\bin\tr\System.Web.Mvc.resources.dll
-E:\Desktop\Metin-Toka-master\Metin Toka\Proje\Krumsal\obj\Debug\Kurumsal.csprojAssemblyReference.cache
 E:\Desktop\Metin-Toka-master\Metin Toka\Proje\Krumsal\obj\Debug\Kurumsal.csproj.CoreCompileInputs.cache
 E:\Desktop\Metin-Toka-master\Metin Toka\Proje\Krumsal\obj\Debug\Kurumsal.csproj.CopyComplete
 E:\Desktop\Metin-Toka-master\Metin Toka\Proje\Krumsal\obj\Debug\Kurumsal.dll

@@ -1,4 +1,4 @@
-﻿@model Kurumsal.Models.Hizmet
+﻿@model Kurumsal.Models.Sınıflar.Hizmet
 
 @{ ViewBag.Title = "HizmetDetay";
     Layout = "~/Views/Shared/_Layout.cshtml"; }
@@ -8,29 +8,20 @@
         <h2></h2>
     </div>
 </section>
-
 <div class="product_details py-5">
     <div class="container">
         <div class="row details_row">
-
-            <!-- Product Image -->
             <div class="col-lg-6">
                 <div class="details_image">
                     <div class="details_image_large">
                         <img src="@Model.ResimURL" alt="">
                     </div>
-
                 </div>
             </div>
-
-            <!-- Product Content -->
             <div class="col-lg-6">
-
                 <div class="details_text">
                     <h2>@Model.Baslik</h2>
-
                     <div class="details_share">
-
                         <div class="mt-4">
                             <div class="h5 d-inline">
 
@@ -40,26 +31,19 @@
                             </div>
                         </div>
                     </div>
-
                     <p>
                         @Html.Raw(Model.Icerik)
                     </p>
-
                     <p class="product-cover">
 
                         <div class="mt-4 h6">
                             <div class="h5 d-inline">
 
-                            
                     <span class="product-color">@Model.RenkAdi</span>
                             </div>
                         </div>
-
                     </p>
                 </div>
-
-                <!-- Share -->
-
             </div>
         </div>
     </div>

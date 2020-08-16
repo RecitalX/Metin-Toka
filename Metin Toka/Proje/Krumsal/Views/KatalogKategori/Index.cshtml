@@ -43,7 +43,6 @@ if (TempData["edit"] != null)
                   @foreach (var item in Model)
                   {
 
-                 
                 <tr>
                     <td>
                         @{ string kategoriadi = "";
@@ -65,7 +64,6 @@ if (TempData["edit"] != null)
                         @Html.ActionLink("Sil", "Delete", new { id = item.KatalogId }, new { @class = " btn btn-danger btn-sm" })
                     </td>
                 </tr>}
-
                 </table>
             </div>
         </div>

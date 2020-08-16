@@ -1,4 +1,4 @@
-﻿@model Kurumsal.Models.Admin
+﻿@model Kurumsal.Models.Sınıflar.Admin
 
 @{
     ViewBag.Title = "Edit";
@@ -12,6 +12,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
+
             <h4>Yönetici Güncelle</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -41,7 +42,6 @@
                     @Html.ValidationMessageFor(model => model.Yetki, "", new { @class = "text-danger" })
                 </div>
             </div>
-
 
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">

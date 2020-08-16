@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Kurumsal.Models.Iletisim>
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.Iletisim>
 
 @{
     ViewBag.Title = "Index";
@@ -50,10 +50,10 @@ if (TempData["delete"] != null)
                     {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.WeChat)
+                        @Html.Raw(item.WeChat)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Telefon)
+                        @Html.Raw(item.Telefon)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Mail)
@@ -71,11 +71,9 @@ if (TempData["delete"] != null)
                     </td>
                     <td>
                         @Html.ActionLink("Güncelle", "Edit", new { id = item.IletisimId }, new { @class = " btn btn-primary btn-sm" })
-
                     </td>
                 </tr>
                     }
-
                 </table>
             </div>
         </div>
