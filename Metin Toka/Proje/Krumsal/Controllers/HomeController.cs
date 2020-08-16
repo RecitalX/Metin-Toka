@@ -74,8 +74,11 @@ namespace Kurumsal.Controllers
             return View(db.Hakkimizda.ToList());
         }
 
+<<<<<<< HEAD
         #endregion Hakkımızda
 
+=======
+>>>>>>> 2f15fbe33a6b5e908dc6b8bc190feb162c5eeaaf
         #region Kataloglar
 
         [Route("Kataloglar")]
@@ -84,6 +87,7 @@ namespace Kurumsal.Controllers
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             return View(db.KatalogKategori.ToList());
         }
+<<<<<<< HEAD
 
         #endregion Kataloglar
 
@@ -94,6 +98,16 @@ namespace Kurumsal.Controllers
         {
             ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
             var katalog = db.Katalog.Include("KatalogKategori").OrderByDescending(x => x.Id).Where(x => x.KatalogKategori.KatalogId == id);
+=======
+        #endregion
+
+        #region KatalogSlider
+        [Route("Katalog/{Baslik}/{id:int}")]
+        public ActionResult KatalogSlider(int id)
+        {
+            ViewBag.Kimlik = db.Kimlik.SingleOrDefault();
+            var katalog = db.Katalog.OrderByDescending(x => x.KatalogId == id).ToList();
+>>>>>>> 2f15fbe33a6b5e908dc6b8bc190feb162c5eeaaf
             return View(katalog);
         }
 
@@ -179,12 +193,18 @@ namespace Kurumsal.Controllers
 
         #region İletşim
 
+        #region İletşim
         public ActionResult Iletisim()
         {
             var iletisim = db.Iletisim.ToList();
             return PartialView(iletisim);
         }
+<<<<<<< HEAD
 
         #endregion İletşim
+=======
+        #endregion
+
+>>>>>>> 2f15fbe33a6b5e908dc6b8bc190feb162c5eeaaf
     }
 }

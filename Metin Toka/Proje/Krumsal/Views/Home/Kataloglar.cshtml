@@ -1,4 +1,4 @@
-﻿@model IPagedList<Kurumsal.Models.Hizmet>
+﻿@model IEnumerable<Kurumsal.Models.Sınıflar.KatalogKategori>
 @using PagedList;
 @using PagedList.Mvc;
 @using Kurumsal.Helper;
@@ -34,9 +34,8 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="recipe">
 
-                        <a href="@item.ResimURL" data-lightbox="@item.ResimURL" data-title="MyCaption">
+                        <a href="/ÜrünPost/@SeoHelper.ToSeoUrl(item.Baslik).ToLower()/@item.KatalogId">
                             <img style="border:1px solid black;" src="@item.ResimURL" alt="">
-
                         </a>
 
                         <div class="recipe-info-warp">
@@ -46,12 +45,7 @@
                 </div>}
 
         </div>
-
-        <div class="site-pagination text-white col-custom">
-            <nav aria-label="...">
-                @Html.PagedListPager(Model, Sayfa => Url.Action("Urun", new { Sayfa }))
-            </nav>
-        </div>
+        
 
     </div>
 </section>
